@@ -15,6 +15,23 @@ Productos Ofrecidos seran del rubro tecnología como:
 Publico apuntado -> Todo publico en busqueda de un dispositivo tecnológico.
 
 Felix Andres: Amante de la tecnología, gusta de la investigación de mercado.
-Matias Agostini: Vendedor nato y fanatico de San Lorenzo.
-Gonzalo Arias: Workaholic y amante del CS.
 
+Matias Agostini: -Representante comercial de linkingpos.
+                 -Edad: 31 años.
+                 -Fana de San Lorenzo.
+                 -Estudiante de programación web Full Stack. 
+                 -Localidad: Las Heras, Mendoza. 
+
+
+Gonzalo Arias:  -Agente de propaganda Medica y encargado de comercio.
+                -Edad: 25 años.
+                -Estudiante de programación web Full Stack. 
+                -Localidad: La Plata , Buenos Aires.
+
+
+Referentes y sitios de interes:
+https://www.gezatek.com.ar/
+https://compragamer.com/
+https://www.compumundo.com.ar/
+https://www.hardgamers.com.ar/
+https://www.fullh4rd.com.ar/
