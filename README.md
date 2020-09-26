@@ -14,7 +14,10 @@ Productos Ofrecidos seran del rubro tecnología como:
 
 Publico apuntado -> Todo publico en busqueda de un dispositivo tecnológico.
 
-Felix Andres: Amante de la tecnología, gusta de la investigación de mercado.
+Felix Andres:   - Lider de confiabilidad e integridad DW YPF.
+                - Edad: 37 años.
+                - Estudiante de programación Web Full Stack.
+                - Localidad: Maipú, Mendoza.
 
 Matias Agostini: -Representante comercial de linkingpos.
                  -Edad: 31 años.
