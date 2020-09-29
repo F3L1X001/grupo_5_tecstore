@@ -14,6 +14,8 @@ Productos Ofrecidos seran del rubro tecnología como:
 
 Publico apuntado -> Todo publico en busqueda de un dispositivo tecnológico.
 
+La oferta sera mediante publicidad en redes sociales (instagram, Facebook, twitter, etc.), posicionamiento en buscadores (Google) y ofertas en la propia web.
+
 Felix Andres:   - Lider de confiabilidad e integridad DW YPF.
                 - Edad: 37 años.
                 - Estudiante de programación Web Full Stack.
