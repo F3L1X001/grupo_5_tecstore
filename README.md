@@ -40,3 +40,6 @@ https://compragamer.com/
 https://www.compumundo.com.ar/
 https://www.hardgamers.com.ar/
 https://www.fullh4rd.com.ar/
+
+
+Link a tablero de trabajo: https://trello.com/b/7fmiwc9c/proyecto-integrador-dh
