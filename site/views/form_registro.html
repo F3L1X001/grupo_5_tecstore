@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/stylesheets/estilo_registro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class=form_registro>
+            <div>
+                <h2 class=titulo_registro>Registrate!</h2>
+            </div>
+            <form action="registro" method="POST">
+                <div class=caja_registro>
+                    <div class=container>
+                        <label for="nombre" >Nombre completo</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Juan Pérez">
+                    </div>
+
+                    <div class=container>
+                        <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
+                    </div>
+                    
+                    <div class=container>
+                        <label for="mail">Correo electrónico</label>
+                        <input type="email" name="mail" id="mail" placeholder="juanperez@juan.com">
+                    </div>
+                    
+                    <div class=container>
+                        <label for="dni">Nº documento identidad</label>
+                        <input type="number" name="dni" id="dni" placeholder="3055xx8x">
+                    </div>
+                    
+                    <div class=container>
+                        <label for="password">Escriba su contraseña</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+
+                    <div class=container>
+                        <label for="password1">Cofirme su contraseña</label>
+                        <input type="password" name="password1" id="password1">
+                    </div>
+
+                    <div class=container>
+                    <h4>Sexo</h4>
+                        <div class=sexo>
+                            <input type="radio" name="genero" id="masculino">
+                            <label for="masculino">Masculino</label>
+                            <input type="radio" name="genero" id="femenino">
+                            <label for="femenino">Femenino</label>
+                            <input type="radio" name="genero" id="personalizado">
+                            <label for="personalizado">Personalizado</label>
+                        </div>
+                    </div>
+                    <!--
+                    <div class=container>
+                        <select name="" id="pais">
+                            <option value="AR">ARGENTINA</option>
+                            <option value="BR">BRASIL</option>
+                            <option value="UR">URUGUAY</option>
+                            <option disabled="true" selected="true" value="">Seleccionar un País</option>
+                        </select>
+                    </div>
+                    -->
+                    <div class=container>
+                        <select id="provincia">
+                            <option value="1">BUENOS AIRES</option>
+                            <option value="2">CATAMARCA</option>
+                            <option value="5">CHACO</option>
+                            <option value="6">CHUBUT</option>
+                            <option value="23">CIUDAD AUTONOMA DE Bs As</option>
+                            <option value="3">CORDOBA</option>
+                            <option value="4">CORRIENTES</option>
+                            <option value="7">ENTRE RIOS</option>
+                            <option value="8">FORMOSA</option>
+                            <option value="9">JUJUY</option>
+                            <option value="10">LA PAMPA</option>
+                            <option value="11">LA RIOJA</option>
+                            <option value="12">MENDOZA</option>
+                            <option value="13">MISIONES</option>
+                            <option value="14">NEUQUEN</option>
+                            <option value="15">RIO NEGRO</option>
+                            <option value="16">SALTA</option>
+                            <option value="17">SAN LUIS</option>
+                            <option value="19">SANTA CRUZ</option>
+                            <option value="20">SANTA FE</option>
+                            <option value="21">SANTIAGO DEL ESTERO</option>
+                            <option value="22">TIERRA DEL FUEGO</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                            <option value="EX">Estrangeiro</option>
+
+                            <option disabled="true" selected="true" value="">Seleccionar una Provincia</option>
+                        </select>
+                    </div>   
+
+                    <div class=container_terminos>
+                        <input type="checkbox" name="terminos" id="terminos_ok">
+                        <label for="terminos_ok">Acepto <a href="#">terminos y condiciones</a> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam autem, dicta nobis quod esse pariatur nisi ipsum necessitatibus dolores? Hic dolorum corporis pariatur quae, odio possimus iure tempora mollitia similique.</label>
+                    </div>
+
+                                   
+                </div>
+
+            </form>
+            <div class=boton_registrar>
+                <button type="submit" id="registrar" class="boton">Enviar</button>  
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
