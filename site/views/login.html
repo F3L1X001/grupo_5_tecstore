@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/stylesheets/estilo_login.css">
+    <link rel="stylesheet" href="estilo_login.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
@@ -11,32 +11,39 @@
     <header></header>
     <main>
         <section class=form_login>
-            <div>
-                <h2 class=titulo_login>Bienvenido!! ingresa tu correo y contraseña</h2>
-            </div>
+            
             
             <form action="login" method="POST">
                 
-                <div class=caja_login>
+                <div class=container_login>
                     
+                    <div>
+                        <h2 class=titulo_login>Bienvenido!! ingresa tu correo y contraseña</h2>
+                    </div>
                     
-                    <div class=container>
+                    <div class=detalle_form_login>
                         <label for="mail">Correo electrónico</label><br>
                         <input type="email" name="mail" id="mail" placeholder="juanperez@juan.com">
                     </div>
                     
-                    <div class=container>
+                    <div class=detalle_form_login>
                         <label for="password">Escriba su contraseña</label><br>
                         <input type="password" name="password" id="password">
                     </div>
-                                    
+                       
+                    <div class=boton_enviar>
+                        <button type="submit" id="enviar" class=boton>Continuar</button>  
+                    </div>
+
+                    <div class="olvidar_pass">
+                        <a href="#">olvidaste tu contraseña?</a>
+                    </div>
+
                 </div>
 
             </form>
 
-            <div class=boton_enviar>
-                <button type="submit" id="enviar" class=boton>Continuar</button>  
-            </div>
+            
         </section>
     </main>
     <footer></footer>

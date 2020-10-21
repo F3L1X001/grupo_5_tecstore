@@ -1,23 +1,13 @@
 /*estilos registros*/
+
 .form_registro{
     background-color: rgba(15, 12, 12, 0.589);
-    padding: 0%;
+    padding: 1%;
     margin: 48px auto 32px;
     width: fit-content;
-    height: fit-content;
+    height: 100%;
     border-radius: 6px;
     }
-
-@media (min-width: 600px){.form_registro{
-    background-color: rgba(15, 12, 12, 0.589);
-    padding: 0%;
-    margin: 48px auto 32px;
-    width: 50%;
-    height: 50%;
-    border-radius: 6px;
-    }
-}
-
 
 .titulo_registro{
     position: relative;
@@ -28,23 +18,22 @@
     color:  whitesmoke;
 }
 
-.caja_registro{
-
+.container_registro{
     color:  whitesmoke;
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-
+    justify-content: center;
+    font-size: 1.15em;
 }
 
-.container{
+.detalle_form_registro{
     margin: 25px;
     display: flex;
     position: relative;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
-    min-width: 250px;
- 
+    width: 100%;
 }
 
 .sexo{
@@ -54,7 +43,7 @@
     justify-content: space-between;
 }
 
-.container_terminos{
+.terminos{
     margin: 25px;
     display: flex;
     position: relative;
@@ -82,3 +71,24 @@
 body {
     font-family: Calibri,Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
 }
+
+@media (min-width: 768px){
+    .form_registro{
+    background-color: rgba(15, 12, 12, 0.589);
+    padding: 1%;
+    margin: 48px auto 32px;
+    width: 80%;
+    height: 60%;
+    border-radius: 6px;
+    }
+
+    .detalle_form_registro {
+    margin: 10px;
+    width: 45%;
+    }
+
+    .terminos{
+    margin: 10px;
+    width: 90%;
+    }
+} 
