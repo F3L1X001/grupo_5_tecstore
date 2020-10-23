@@ -1,0 +1,270 @@
+body {
+    margin: 0 !important;
+}
+
+
+/*-------------HEADER---------------*/
+header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    height: 50% !important;
+    font-family: monospace;
+}
+
+.logo {
+    width: 9%;
+    height: auto;
+}
+
+.img {
+    margin-left: 5px;
+    width: 90%;
+    height: auto;
+}
+
+.menu {
+    width: 75%;
+    height: auto;
+    text-align: center;
+    font-size: 17px;
+}
+
+.color_menu {
+    text-decoration: none !important;
+    color: lightcyan !important;
+    margin-left: 39px;
+}
+
+.iconos {
+    width: 25%;
+    color: lightcyan;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.usuario {
+  
+    width: 35%;
+    text-align: center;
+    font-size: 27px;
+    margin-left: -23px;
+    margin-top: 6px;
+}
+
+.centrado {
+    margin-left: -22px;
+    margin-top: 13px;
+}
+
+.carrito {
+    width: 35%;
+    text-align: center;
+    font-size: 27px;
+    margin-left: 51px;
+    margin-top: 7px;
+}
+
+/*-------------SECTION BANNER---------------*/
+section {
+    background-color: #f3f3f3;
+    margin-top: 1px;
+    }
+
+.banner_promo {
+    align-items: stretch;
+    height: 200px;
+}
+
+.banner {
+    width: 9%;
+    width: 100%;
+    height: 100%;
+}
+
+/*-------------SECTION---------------*/
+
+.marquee {
+    background-color: yellowgreen;
+}
+
+.novedades {
+    background-color: cyan;
+    height: 56px;    
+}
+
+.novedades h2 {
+    position: relative;
+    top: 11px;
+    text-align: center;
+    color: black;
+}
+
+.contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.post {
+    width: 33%;
+    height: auto;
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+   
+}
+
+.post div {
+    display: flex;
+   
+}
+
+.post div div{
+    width: 45%;
+    display: block;
+}
+
+.precio {
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.stock {
+    position: relative;
+    right: -58px;
+}
+
+.stock label {
+    right: -29px;
+    position: relative;
+    color: green;
+    font-weight: bold;
+    top: -233px;
+    text-decoration: underline;
+}
+
+.stock .carrito {
+    position: relative;
+    bottom: 15px;
+    right: 24px;
+    font-size: 20px;
+    color: darkorange;
+}
+
+.img_dest {
+    width: 50%;
+}
+
+
+/*-------------FOOTER---------------*/
+
+footer {
+    background-color: black;
+    height: 10%;
+    align-items: center;
+    color: lightcyan;
+    display: flex;
+    bottom: 0;
+    
+}
+
+.logo_footer {
+    width: 16%;
+    height: auto;
+    margin-right: 5px;
+    display: flex;
+    margin-bottom: 9px;
+}
+
+.img_footer {
+    margin-top: 8px;
+    width: 35%;
+    height: auto;
+}
+
+.soporte {
+    margin-left: 3%;
+    margin-top: 9%;
+    width: 60%;
+    height: auto;
+    display: grid;
+    font-size: 14px;
+}
+
+.soporte label {
+    width: 130%;
+    font-style: oblique;
+}
+
+.contacto {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contacto .telefonos {
+    height: 50%;
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+}
+
+.contacto .telefonos label {
+    margin-right: 1%;
+}
+
+.contacto i {
+    margin-left: -10%;
+}
+
+.contacto .correos {
+    height: 50%;
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+}
+
+.carta {
+    margin-left: -7% !important;
+}
+
+.sociales {
+    height: 99%;
+    width: 34%;
+}
+
+.sociales p {
+    text-align: center;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    position: relative;
+    left: 130px;
+}
+
+.redes {
+    position: relative;
+    left: 240px;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.twitter {
+    color: #00acee;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.instagram {
+    color: #E1306C;
+}
+
+
+@media screen and (max-width: 992px) {
+    /* Reescribr las class que se quieran cambiar cuando la reslucion baje de 992px */    
+  }
