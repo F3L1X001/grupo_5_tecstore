@@ -1,0 +1,431 @@
+body {
+    margin: 0 !important;
+}
+
+
+/*-------------HEADER---------------*/
+header {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    height: 50% !important;
+    font-family: monospace;
+}
+
+.logo {
+    width: 9%;
+    height: auto;
+}
+
+.img {
+    margin-left: 5px;
+    width: 90%;
+    height: auto;
+}
+
+.menu {
+    width: 75%;
+    height: auto;
+    text-align: center;
+    font-size: 17px;
+    position: relative;
+    left: 100px;
+}
+
+.color_menu {
+    text-decoration: none !important;
+    color: lightcyan !important;
+    margin-left: 39px;
+}
+
+.iconos {
+    width: 25%;
+    color: lightcyan;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.usuario {
+  
+    width: 35%;
+    text-align: center;
+    font-size: 27px;
+    margin-left: -23px;
+    margin-top: 6px;
+}
+
+.centrado {
+    margin-left: -22px;
+    margin-top: 13px;
+}
+
+.carrito {
+    width: 35%;
+    text-align: center;
+    font-size: 27px;
+    margin-left: 51px;
+    margin-top: 7px;
+}
+
+
+/*-------------SECTION BANNER---------------*/
+section {
+    background-color: #f3f3f3;
+    margin-top: 1px;
+    }
+
+.banner_promo {
+    align-items: stretch;
+    height: 200px;
+}
+
+.banner {
+    width: 9%;
+    width: 100%;
+    height: 100%;
+}
+
+/*-------------SECTION---------------*/
+
+.marquee {
+    background-color: yellowgreen;
+}
+
+.novedades {
+    background-color: cyan;
+    height: 56px;    
+}
+
+.novedades h2 {
+    position: relative;
+    top: 11px;
+    text-align: center;
+    color: black;
+}
+
+.contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+.post {
+    width: 33%;
+    height: auto;
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+   
+}
+
+.post div {
+    display: flex;
+   
+}
+
+.post div div{
+    width: 45%;
+    display: block;
+}
+
+.precio {
+    align-self: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.stock {
+    position: relative;
+    right: -58px;
+}
+
+.stock label {
+    right: -29px;
+    position: relative;
+    color: green;
+    font-weight: bold;
+    top: -233px;
+    text-decoration: underline;
+}
+
+.stock .carrito {
+    position: relative;
+    bottom: 15px;
+    right: 24px;
+    font-size: 20px;
+    color: darkorange;
+    cursor: pointer;
+}
+
+.img_dest {
+    width: 50%;
+}
+
+
+/*-------------FOOTER---------------*/
+
+footer {
+    background-color: black;
+    height: 10%;
+    align-items: center;
+    color: lightcyan;
+    display: flex;
+    bottom: 0;
+    
+}
+
+.logo_footer {
+    width: 16%;
+    height: auto;
+    display: flex;
+}
+
+.img_footer {
+    margin-top: 8px;
+    width: 35%;
+    height: auto;
+}
+
+.soporte {
+    width: 60%;
+    height: auto;
+    display: grid;
+    font-size: 14px;
+}
+
+.soporte label {
+    width: 130%;
+    font-style: oblique;
+}
+
+.contacto {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contacto .telefonos {
+    height: 50%;
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+}
+
+.contacto .telefonos label {
+    margin-right: 1%;
+}
+
+.contacto i {
+    margin-left: -10%;
+}
+
+.contacto .correos {
+    height: 50%;
+    padding-right: 1.5%;
+    padding-left: 1.5%;
+}
+
+.carta {
+    margin-left: -7% !important;
+}
+
+.sociales {
+    height: 99%;
+    width: 34%;
+}
+
+.sociales p {
+    text-align: center;   
+    position: relative; 
+}
+
+.redes {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.twitter {
+    color: #00acee;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.instagram {
+    color: #E1306C;
+}
+
+
+@media (max-width: 800px) { /*tablet horizontal*/
+    /*Navbar*/
+    .logo {
+        position: relative;
+        left: 25px;
+        top: 2px;
+    }
+
+    .menu {
+        font-size: 17px;
+        left: 0px;
+    }
+    .iconos {
+        width: 39%;
+        position: relative;
+        left: 45px;
+        bottom: 3px;
+    }
+    
+    .carrito {
+        margin-left: 0px;
+    }
+    /*Articulos*/
+    .precio {
+        font-size: 27px;
+    }
+    
+    .stock label {
+        right: 27px;
+        top: -135px;
+        font-size: 16px;
+    }
+    
+    .stock .carrito {
+        right: 47px;
+        font-size: 17px;
+    }
+    /*Footer*/
+    .logo_footer {
+        width: 24%;        
+    }
+
+    .img_footer{
+        position: relative;
+        left: 10px;
+    }
+
+    .soporte {
+        position: relative;
+        font-size: 11px;
+        left: 32px;
+        top: 2px;
+    }
+
+    .contacto {
+        width: 58%;
+        position: relative;
+        left: -12px;
+        font-size: 14px;
+    }
+
+    .sociales {
+        width: 16%;
+        position: relative;
+        left: 6px;
+    }
+
+    .sociales p {
+        left: -8px;
+        font-size: 14px;
+    }
+
+    .redes {
+        left: -13px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) and (orientation: portrait) { /*tablet vertical*/
+    /*Navbar*/
+    .logo {
+        width: 17%;
+        left: 7px;
+    }
+
+    .menu {
+        width: 76%;
+        font-size: 12px;
+    }
+    .iconos {
+        left: 30px;
+    }
+
+    .centrado {
+        position: relative;
+        left: -7px;
+        top: 11px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    
+    .carrito {
+        position: relative;
+        left: -16px;
+    }
+    /*Articulos*/
+    .post h3 {
+        font-size: 1.07em;
+    }
+    .precio {
+        font-size: 21px;
+    }
+    
+    .stock label {
+        right: 40px;
+        top: -96px;
+        font-size: 13px;
+    }
+    
+    .stock .carrito {
+        left: -64px;
+        font-size: 14px;
+        bottom: 12px;
+    }
+    /*Footer*/
+    .logo_footer {
+        width: 24%;        
+    }
+
+    .img_footer{
+        left: 1px;
+    }
+
+    .soporte {
+        left: 3px;
+        font-size: 10px;
+    }
+
+    .contacto {
+        font-size: 10px;
+        left: 0px;
+    }
+
+    .sociales {
+        width: 20%;
+        position: relative;
+        left: 6px;
+    }
+
+    .sociales p {
+        left: -8px;
+        font-size: 11px;
+    }
+
+    .redes {
+        width: 100%;
+        left: -10px;
+        bottom: 1px;
+    }
+}
+
+@media (max-width: 500px) {
+    .flex {
+        flex-wrap: wrap;
+    }
+    .columna {
+        width: 97%;
+    }
+}
