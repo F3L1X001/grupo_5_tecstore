@@ -67,6 +67,7 @@ header {
     margin-top: 7px;
 }
 
+
 /*-------------SECTION BANNER---------------*/
 section {
     background-color: #f3f3f3;
@@ -235,20 +236,15 @@ footer {
 }
 
 .sociales p {
-    text-align: center;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    position: relative;
-    left: 130px;
+    text-align: center;   
+    position: relative; 
 }
 
 .redes {
     position: relative;
-    left: 240px;
     text-align: center;
-    width: 50%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .twitter {
