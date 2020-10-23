@@ -28,6 +28,8 @@ header {
     height: auto;
     text-align: center;
     font-size: 17px;
+    position: relative;
+    left: 100px;
 }
 
 .color_menu {
@@ -104,7 +106,7 @@ section {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    
+    margin-bottom: 5px;
 }
 
 .post {
@@ -152,6 +154,7 @@ section {
     right: 24px;
     font-size: 20px;
     color: darkorange;
+    cursor: pointer;
 }
 
 .img_dest {
@@ -174,9 +177,7 @@ footer {
 .logo_footer {
     width: 16%;
     height: auto;
-    margin-right: 5px;
     display: flex;
-    margin-bottom: 9px;
 }
 
 .img_footer {
@@ -186,8 +187,6 @@ footer {
 }
 
 .soporte {
-    margin-left: 3%;
-    margin-top: 9%;
     width: 60%;
     height: auto;
     display: grid;
@@ -265,6 +264,172 @@ footer {
 }
 
 
-@media screen and (max-width: 992px) {
-    /* Reescribr las class que se quieran cambiar cuando la reslucion baje de 992px */    
-  }
+@media (max-width: 800px) { /*tablet horizontal*/
+    /*Navbar*/
+    .logo {
+        position: relative;
+        left: 25px;
+        top: 2px;
+    }
+
+    .menu {
+        font-size: 17px;
+        left: 0px;
+    }
+    .iconos {
+        width: 39%;
+        position: relative;
+        left: 45px;
+        bottom: 3px;
+    }
+    
+    .carrito {
+        margin-left: 0px;
+    }
+    /*Articulos*/
+    .precio {
+        font-size: 27px;
+    }
+    
+    .stock label {
+        right: 27px;
+        top: -135px;
+        font-size: 16px;
+    }
+    
+    .stock .carrito {
+        right: 47px;
+        font-size: 17px;
+    }
+    /*Footer*/
+    .logo_footer {
+        width: 24%;        
+    }
+
+    .img_footer{
+        position: relative;
+        left: 10px;
+    }
+
+    .soporte {
+        position: relative;
+        font-size: 11px;
+        left: 32px;
+        top: 2px;
+    }
+
+    .contacto {
+        width: 58%;
+        position: relative;
+        left: -12px;
+        font-size: 14px;
+    }
+
+    .sociales {
+        width: 16%;
+        position: relative;
+        left: 6px;
+    }
+
+    .sociales p {
+        left: -8px;
+        font-size: 14px;
+    }
+
+    .redes {
+        left: -13px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) and (orientation: portrait) { /*tablet vertical*/
+    /*Navbar*/
+    .logo {
+        width: 17%;
+        left: 7px;
+    }
+
+    .menu {
+        width: 76%;
+        font-size: 12px;
+    }
+    .iconos {
+        left: 30px;
+    }
+
+    .centrado {
+        position: relative;
+        left: -7px;
+        top: 11px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    
+    .carrito {
+        position: relative;
+        left: -16px;
+    }
+    /*Articulos*/
+    .post h3 {
+        font-size: 1.07em;
+    }
+    .precio {
+        font-size: 21px;
+    }
+    
+    .stock label {
+        right: 40px;
+        top: -96px;
+        font-size: 13px;
+    }
+    
+    .stock .carrito {
+        left: -64px;
+        font-size: 14px;
+        bottom: 12px;
+    }
+    /*Footer*/
+    .logo_footer {
+        width: 24%;        
+    }
+
+    .img_footer{
+        left: 1px;
+    }
+
+    .soporte {
+        left: 3px;
+        font-size: 10px;
+    }
+
+    .contacto {
+        font-size: 10px;
+        left: 0px;
+    }
+
+    .sociales {
+        width: 20%;
+        position: relative;
+        left: 6px;
+    }
+
+    .sociales p {
+        left: -8px;
+        font-size: 11px;
+    }
+
+    .redes {
+        width: 100%;
+        left: -10px;
+        bottom: 1px;
+    }
+}
+
+@media (max-width: 500px) {
+    .flex {
+        flex-wrap: wrap;
+    }
+    .columna {
+        width: 97%;
+    }
+}
