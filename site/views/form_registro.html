@@ -15,51 +15,49 @@
                 <h2 class=titulo_registro>Registrate!</h2>
             </div>
             <form action="registro" method="POST">
-                <div class=caja_registro>
-                    <div class=container>
+                <div class=container_registro>
+                    <div class=detalle_form_registro>
                         <label for="nombre" >Nombre completo</label>
                         <input type="text" name="nombre" id="nombre" placeholder="Juan Pérez">
                     </div>
 
-                    <div class=container>
+                    <div class=detalle_form_registro>
                         <label for="fecha_nacimiento">Fecha de nacimiento</label>
                         <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
                     </div>
                     
-                    <div class=container>
+                    <div class=detalle_form_registro>
                         <label for="mail">Correo electrónico</label>
                         <input type="email" name="mail" id="mail" placeholder="juanperez@juan.com">
                     </div>
                     
-                    <div class=container>
+                    <div class=detalle_form_registro>
                         <label for="dni">Nº documento identidad</label>
                         <input type="number" name="dni" id="dni" placeholder="3055xx8x">
                     </div>
                     
-                    <div class=container>
+                    <div class=detalle_form_registro>
                         <label for="password">Escriba su contraseña</label>
                         <input type="password" name="password" id="password">
                     </div>
 
-                    <div class=container>
+                    <div class=detalle_form_registro>
                         <label for="password1">Cofirme su contraseña</label>
                         <input type="password" name="password1" id="password1">
                     </div>
 
-                    <div class=container>
-                    <h4>Sexo</h4>
-                        <div class=sexo>
-                            <input type="radio" name="genero" id="masculino">
-                            <label for="masculino">Masculino</label>
-                            <input type="radio" name="genero" id="femenino">
-                            <label for="femenino">Femenino</label>
-                            <input type="radio" name="genero" id="personalizado">
-                            <label for="personalizado">Personalizado</label>
-                        </div>
+                    <div class=detalle_form_registro>
+                            <select name="sexo" id="sexo">
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="personalizado">Personalizado</option>
+                            <option disabled="true" selected="true" value="">Escoge tu sexo</option>
+                            </select>
                     </div>
-                    <!--
-                    <div class=container>
-                        <select name="" id="pais">
+                    
+                    <!-- seleccion de pais por si incorporamos el pais
+                    <div class=detalle_form_registro>
+                        <select name="pais" id="pais">
                             <option value="AR">ARGENTINA</option>
                             <option value="BR">BRASIL</option>
                             <option value="UR">URUGUAY</option>
@@ -67,13 +65,14 @@
                         </select>
                     </div>
                     -->
-                    <div class=container>
+                    
+                    <div class=detalle_form_registro>
                         <select id="provincia">
                             <option value="1">BUENOS AIRES</option>
                             <option value="2">CATAMARCA</option>
                             <option value="5">CHACO</option>
                             <option value="6">CHUBUT</option>
-                            <option value="23">CIUDAD AUTONOMA DE Bs As</option>
+                            <option value="23">C.A.B.A.</option>
                             <option value="3">CORDOBA</option>
                             <option value="4">CORRIENTES</option>
                             <option value="7">ENTRE RIOS</option>
@@ -91,6 +90,8 @@
                             <option value="20">SANTA FE</option>
                             <option value="21">SANTIAGO DEL ESTERO</option>
                             <option value="22">TIERRA DEL FUEGO</option>
+
+                            <!-- estados brasil por si los incorporamos 
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
                             <option value="AP">Amapá</option>
@@ -119,14 +120,15 @@
                             <option value="SE">Sergipe</option>
                             <option value="TO">Tocantins</option>
                             <option value="EX">Estrangeiro</option>
+                            -->
 
-                            <option disabled="true" selected="true" value="">Seleccionar una Provincia</option>
+                            <option disabled="true" selected="true" value="">Elige tu Provincia</option>
                         </select>
                     </div>   
 
-                    <div class=container_terminos>
+                    <div class=terminos>
                         <input type="checkbox" name="terminos" id="terminos_ok">
-                        <label for="terminos_ok">Acepto <a href="#">terminos y condiciones</a> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam autem, dicta nobis quod esse pariatur nisi ipsum necessitatibus dolores? Hic dolorum corporis pariatur quae, odio possimus iure tempora mollitia similique.</label>
+                        <label for="terminos_ok">Acepto <a href="#">terminos y condiciones</a> y autorizo el uso de mis datos de acuerdo a la declaración de privacidad.</label>
                     </div>
 
                                    
