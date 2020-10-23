@@ -1,5 +1,10 @@
+body{
+    background-color: darkgray;
+    font-family: Arial,Calibri,Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
+
 .form_recuperar{
-    background-color: rgba(15, 12, 12, 0.589);
+    background-color: whitesmoke;
     padding: 1%;
     margin: 48px auto 32px;
     width: fit-content;
@@ -8,7 +13,7 @@
 }
 
 .container_recuperar{
-    color: whitesmoke;
+    color: midnightblue;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -22,7 +27,7 @@
     text-align: center;
     font-weight: 1000;
     text-decoration: underline;
-    color:  whitesmoke;
+    color:  midnightblue;
 }
 
 .detalle_form_recuperar{
@@ -46,10 +51,10 @@
     padding: 10px;
     font-weight: 600;
     font-size: 20px;
-    color: #2d99b9;
+    color: midnightblue;
     background-color: #434647;
     border-radius: 6px;
-    border: 2px solid #2d99b9;
+    border: 2px solid midnightblue;
 }
 
 @media (min-width: 768px){
