@@ -1,21 +1,47 @@
 const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
+/*const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');
+const logger = require('morgan');*/
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const { use } = require('./routes/index');
 
 const app = express();
 
-app.listen(3000, (req, res) =>{
-  console.log('Servidor online! http://localhost:3000')
-});
-
 app.use(express.static(__dirname + '/public'));
 
+app.listen(3000, (req, res) =>{
+  console.log('Servidor online! http://localhost:3000')
+  
+});
+
+app.get('/', (req, res)=>{
+  res.sendFile(__dirname + '/views/index.html')
+});
+
+app.get('/productos', (req, res)=>{
+  res.sendFile(__dirname + '/views/productDetail.html')
+});
+
+app.get('/login', (req, res)=>{
+  res.sendFile(__dirname + '/views/login.html')
+});
+
+app.get('/registro', (req, res)=>{
+  res.sendFile(__dirname + '/views/form_registro.html')
+});
+
+app.get('/recup_pass', (req, res)=>{
+  res.sendFile(__dirname + '/views/recuperar_pass.html')
+});
+
+/*
+
 app.use(indexRouter);
+*/
+
 
 /*
 // view engine setup
