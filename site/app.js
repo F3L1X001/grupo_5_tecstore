@@ -1,52 +1,23 @@
 const createError = require('http-errors');
 const express = require('express');
-/*const path = require('path');
+const path = require('path');
 const cookieParser = require('cookie-parser');
-const logger = require('morgan');*/
+const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const { use } = require('./routes/index');
+const indexRouter = require('./routes/index.js');
+const usersRouter = require('./routes/users.js');
 
 const app = express();
 
-app.use(express.static(__dirname + '/public'));
-
-app.listen(3000, (req, res) =>{
-  console.log('Servidor online! http://localhost:3000')
-  
-});
-
-app.get('/', (req, res)=>{
-  res.sendFile(__dirname + '/views/index.html')
-});
-
 app.get('/productos', (req, res)=>{
   res.sendFile(__dirname + '/views/productDetail.html')
-});
+})
 
-app.get('/login', (req, res)=>{
-  res.sendFile(__dirname + '/views/login.html')
-});
-
-app.get('/registro', (req, res)=>{
-  res.sendFile(__dirname + '/views/form_registro.html')
-});
-
-app.get('/recup_pass', (req, res)=>{
-  res.sendFile(__dirname + '/views/recuperar_pass.html')
-});
-
-/*
-
-app.use(indexRouter);
-*/
-
-
-/*
 // view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -63,6 +34,7 @@ app.use(function(req, res, next) {
 });
 
 // error handler
+/*
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
@@ -72,6 +44,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-module.exports = app;
 */
+module.exports = app;
+
