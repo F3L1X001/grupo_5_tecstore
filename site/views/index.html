@@ -1,182 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheets/index.css">
+    <title>TecStore | Ecommerce</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a349f96f1f.js" crossorigin="anonymous"></script>
-    <title>Home</title>
+    <link href = "https://fonts.googleapis.com/css2? family = Roboto & display = swap" rel = "stylesheet">
+    <link rel="icon" type="image/png" href="images/2020-11-03 (26).png" />
 </head>
-
-<body>
-    <header>
+<body><header>
+    <div class="header">
+<div class="container">
+    <div class="navbar">
         <div class="logo">
-            <img class="img" src="../images/home/LOGO.jpeg" alt="logo_tecstore">
+            <img src="images/logo.png" alt="Logo del sitio" width="200px" >
         </div>
-        <div class="menu">
-            <a href="/registro" class="color_menu">Registrate</a> <!--/registrate-->  
-            <a href="/productos" class="color_menu">Productos</a>
-            <a href="contacto" class="color_menu">Contacto</a>
-        </div> 
-            
-        
-        <div class="iconos">
-            <i class="far fa-user-circle usuario"></i>
-            <span class="centrado">
-                <a href="/login">Mi Cuenta</a>
-            </span>
-            <i class="fas fa-cart-plus carrito"></i>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Productos</a></li>
+                <li><a href="">Registrate</a></li>
+                <li><a href="">Contacto</a></li>
+                <li><a href="">Mi cuenta</a></li>
+            </ul>
+        </nav>
+        <figure><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></figure>
+    </div>
     </header>
-
-
-
-
-    <main>
-    <section>
-        <div class="banner_promo">
-            <img class="banner" src="../images/home/LOGO.jpeg" alt="logo_tecstore">
+    <div class="portada">
+    <div class="row">
+        <div class="col-2">
+            <h1>Buscas Tecnologia<br>  de alto nivel?</h1><br>
+            <h2 class="texto-portada"> Encontra todo lo que estas buscando y mas!</h2><br>
+            <p class="texto-portada">Contamos con la Tecnología mas avanzada para tus necesidades!</p>
+            <a href="" class="btn"><bold>Ingresar</bold></a>
         </div>
-    </section>
-
-    <section>
-        <div class="novedades">
-        <h2>PROMOCIONES</h2>
-        </div>  
-
-        <div class="contenedor">
-            <article class="post">
-                <h3>Macbook Air 15.6"</h3>
-                <img class="img_dest" src="../images/home/dest1.jpeg" alt="dest1">
-                <div>
-                    <div class="precio">
-                        <label for="precio" >$11111,11</label>
-                    </div>
-                    <div class="stock">
-                        <label for="stock">Disponible</label>
-                        <i class="fas fa-cart-plus carrito">Añadir</i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <h3>Macbook Air 15.6"</h3>
-                <img class="img_dest" src="../images/home/dest1.jpeg" alt="dest1">
-                <div>
-                    <div class="precio">
-                        <label for="precio">$11111,11</label>
-                    </div>
-                    <div class="stock">
-                        <label for="stock">Disponible</label>
-                        <i class="fas fa-cart-plus carrito">Añadir</i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <h3>Macbook Air 15.6"</h3>
-                <img class="img_dest" src="../images/home/dest1.jpeg" alt="dest1">
-                <div>
-                    <div class="precio">
-                        <label for="precio">$11111,11</label>
-                    </div>
-                    <div class="stock">
-                        <label for="stock" >Disponible</label>
-                        <i class="fas fa-cart-plus carrito">Añadir</i>
-                    </div>
-                </div>
-            </article>
+        <div class="col-2">
+            <img src="images/portada.jpg" >
         </div>
-    </section>
-
-    <marquee class="marquee"><pre>¡Estamos haciendo ENVIOS a domicilio!                                           Aceptamos todos los medios de pago                                       Comunicate al 0800-888-8888</pre>
-                
-    </marquee>
-    <section>
-        <div class="novedades">
-        <h2>NOVEDADES</h2>
+    </div>
+</div>
+   </div> 
+</div>
+<div class="categories">
+    <div class="small-container">
+      <div class="row">
+        <div class="col-3">
+            <img src="images/subportada1.jpg" >
         </div>
-
-        <div class="contenedor">
-            <article class="post">
-                <h3>Macbook Air 15.6"</h3>
-                <img class="img_dest" src="../images/home/dest1.jpeg" alt="dest1">
-                <div>
-                    <div class="precio">
-                        <label for="precio" >$11111,11</label>
-                    </div>
-                    <div class="stock">
-                        <label for="stock">Disponible</label>
-                        <i class="fas fa-cart-plus carrito">Añadir</i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <h3>Macbook Air 15.6"</h3>
-                <img class="img_dest" src="../images/home/dest1.jpeg" alt="dest1">
-                <div>
-                    <div class="precio">
-                        <label for="precio">$11111,11</label>
-                    </div>
-                    <div class="stock">
-                        <label for="stock">Disponible</label>
-                        <i class="fas fa-cart-plus carrito">Añadir</i>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post">
-                <h3>Macbook Air 15.6"</h3>
-                <img class="img_dest" src="../images/home/dest1.jpeg" alt="dest1">
-                <div>
-                    <div class="precio">
-                        <label for="precio">$11111,11</label>
-                    </div>
-                    <div class="stock">
-                        <label for="stock" >Disponible</label>
-                        <i class="fas fa-cart-plus carrito">Añadir</i>
-                    </div>
-                </div>
-            </article>
+        <div class="col-3">
+            <img src="images/subportada2.jpg" >
         </div>
-    </section>
-    </main>
-
-
-
-
-
-
-    <footer>
-        <div class="logo_footer">
-            <img class="img_footer" src="../images/home/LOGO.jpeg" alt="logo_tecstore">
-            <div class="soporte">
-                <label for="Preguntas">Preguntas frecuentes</label>
-                <label for="Contactanos">Contactanos</label>
-                <label for="Nosotros">Sobre nosotros</label>
-            </div>
+        <div class="col-3">
+            <img src="images/subportada3.jpg" >
         </div>
-        <div class="contacto">
-            <div class="telefonos">
-                <i class="fas fa-headset"></i>
-                <label for="telefonos">11 46787654 - 2615556677</label>
-            </div>
-            <div class="correos">
-                <i class="far fa-envelope carta"></i>
-                <label for="mail">atencionalcliente@tecstore.com</label>
-            </div>
+    </div>
+    </div>
+
+</div>
+    
+<div class="small-container">
+    <h2 class="title">Productos Destacados</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="images/productoD1.jpg" alt="">
+            <h4>APPLE WATCH SERIE 3 - 42MM SILVER 5</h4>
+            <p>$44.000</p>
         </div>
-        <div class="sociales">
-            <p>Seguinos en</p>
-            <div class="redes">
-                <div class="twitter"><i class="fab fa-twitter"></i></div>
-                <div class="facebook"><i class="fab fa-facebook facebook"></i></div>
-                <div class="instagram"><i class="fab fa-instagram instagram"></i></div>
-            </div>
+        <div class="col-4">
+            <img src="images/productoD2.jpg" alt="">
+            <h4>NOT LENOVO 15.6 FHD THINKBOOK I5-10210U 8GB 256GB</h4>
+            <p>$129.000</p>
         </div>
-    </footer>
+        <div class="col-4">
+            <img src="images/productoD3.jpg" alt="">
+            <h4>Monitor Viewsonic 32" 4K UHD HDR10 SuperClear Sin Bordes</h4>
+            <p>$86.999</p>
+        </div>
+        <div class="col-4">
+            <img src="images/productoD4.jpg" alt="">
+            <h4>Webcam Logitech Meetup + Microfono 4K Zoom </h4>
+            <p>$29.000</p>
+        </div>
+        <div class="col-4">
+            <img src="images/productoD5.jpg" alt="">
+            <h4>Auriculares Inalambricos Logitech G733 Lightspeed RGB Black</h4>
+            <p>$26.000</p>
+        </div>
+        <div class="col-4">
+            <img src="images/productoD6.jpg" alt="">
+            <h4>Mouse Glorious Model D (Glossy Black)</h4>
+            <p>$9.000</p>
+        </div>
+    </div>
+    <h2 class="title">Ultimos Productos</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="images/productoD7.jpg" alt="">
+            <h4>Play Station 5</h4>
+            <p>$94.999</p>
+        </div>
+</div>
+</div>
+<footer>
+    <div class="footer-container">
+      <div class="left-col">
+        <img src="images/footer1.png" alt="" class="logo">
+        
+      </div>
+      
+
+      
+      <div class="row2">
+        <img src="images/footer2.png">
+        <p class="p-footer"> 11-2514795 - 47573745</p>
+      </div>
+      
+      <div class="row2">
+        <img src="images/footer3.png">
+        <p class="p-footer">atencionalcliente@tecstore.com</p>
+      </div>
+      
+        <div class="colum3">
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          
+
+   
+
+  </footer>
+
 </body>
-
 </html>
