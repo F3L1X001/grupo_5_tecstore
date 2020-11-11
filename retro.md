@@ -1,3 +1,26 @@
+Retrospectiva sprint 2
+
+    Hacer menos{
+        - Trabajar de forma desordenada.
+    }
+
+    Seguir haciendo{
+        - Confiar en el trabajo del compañero.
+        - Seguir trabajando en equipo
+        - Revisionando los entregables
+    }
+
+    Hacer mas{
+        - Trabajar con mas diseño
+        - Trabajo con buena onda
+    }
+
+    Empezar a hacer{
+        - Reorganizar tareas por baja de un miembro del equipo.
+                
+    }
+
+
 Retrospectiva sprint 1
 
     Hacer menos{
