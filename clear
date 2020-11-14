@@ -1,0 +1,48 @@
+[33mee61938[m[33m ([m[1;36mHEAD -> [m[1;32mejs_rutas[m[33m)[m Merge branch 'master' of https://github.com/Lixxx01/grupo_5_tecstore into ejs_rutas
+[33m507e94b[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Arreglo de rutas
+[33mb5916d0[m Responsive del header y footer, y le di orden al css
+[33m465b3e4[m[33m ([m[1;31morigin/ejs_rutas[m[33m)[m weekly
+[33mb569ebe[m Se trabajo en controllers, se creo la carpeta data con la BD de los productosy se agrego la planificacion weekly y la retro del sprint 2 se modificaron algunas vistas creando los ejs. Se creo el formulario de registro de productos
+[33mfb7119b[m rutas carrito
+[33m66d6cf7[m nuevas img de product-cart
+[33mb2c2ff9[m Agregando productCart
+[33m16b5e28[m Carrito de compras
+[33m664ca84[m Merge branch 'master' of https://github.com/Lixxx01/grupo_5_tecstore into ejs_rutas
+[33mba7a517[m Unificacion css login, registro y recuperar pass. realizado /views/partials/head.ejs para login, re
+[33m808dfce[m Agrege imagen icono del proyecto
+[33m5b713bc[m Modifique las rutas de las imagenes y del css
+[33mc4be1ca[m Agregando los stilos css del home
+[33m2e5eb7e[m Nuevo home arreglado y modificado
+[33m930eec7[m Agregue nuevas imagenes al home
+[33m0b34fa6[m Se crearon los archivos ejs, y se crearon los controladores y el sistema de ruteo
+[33m94ec997[m[33m ([m[1;32mmov-express[m[33m, [m[1;32mmaster[m[33m)[m Se compilaron todas las paginas, se les colocaron los links y se configuro el server de express.
+[33m0694381[m Merge branch 'master' of https://github.com/Lixxx01/grupo_5_tecstore into master
+[33m5ed40dc[m Merge branch 'nuevos_desarrollos' into master
+[33ma5af63e[m[33m ([m[1;31morigin/pagina_inicio[m[33m)[m home terminada
+[33m122dfa5[m index terminado
+[33mf6eb5ad[m carro de compras y detalle de productos
+[33m6f5888c[m Merge branch 'master' of https://github.com/Lixxx01/grupo_5_tecstore into pagina_inicio
+[33m64f61bb[m[33m ([m[1;31morigin/mov-express[m[33m)[m Merge branch 'nuevos_desarrollos' into master
+[33m0a33b6d[m home
+[33m61f855c[m maquetacion
+[33m7442ea8[m se elimino carrito
+[33m87e16fd[m se modificaron las lineas de estilo para cambiar colores
+[33m41a4a20[m se modificaron las rutas de los archivos para que funcionen dentro del sitio
+[33mc34b5c1[m moficacion estilo y ventana recuperacion contraseña
+[33m84f828c[m subida formulario registro/login y hojas de estilo
+[33mc12c14e[m archivo .gitignore para que no suba las dependencias
+[33mf8fe752[m eliminadas dependecias pug
+[33mc2ea756[m Merge branch 'master' of https://github.com/Lixxx01/grupo_5_tecstore into master
+[33m4c69e0e[m subido express-generator
+[33ma1e2f65[m Agregue carrito de compras
+[33m5809fe6[m creacion de estructura mvc
+[33ma404be3[m retro sprint 1
+[33mfba3e20[m link tablero subido a readme
+[33me471c3e[m Subiendo diseño
+[33m56fb6f6[m Creada CarpetaWireframe con HTML que tiene los links
+[33me34ea0a[m Readme con posicionamiento
+[33m0db5cd8[m Agregue mis datos
+[33mb853aec[m Merge pull request #1 from GonzaloArias/patch-1
+[33madcd975[m Update README.md
+[33m2f6e326[m readme completo
+[33m6cbc9f3[m Initial commit
