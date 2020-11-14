@@ -9,5 +9,7 @@ router.get('/create', productsController.crear);
 
 router.get('/edit', productsController.editar);
 
+router.get('/sale', productsController.carrito_compras);
+
 
 module.exports = router;

@@ -2,7 +2,8 @@ const path = require('path'); //Esto es solo para que funcione el sendFile despu
 
 const indexController = {
     home: function (req, res){
-        res.sendFile(path.join(__dirname, '../views', 'index.html'));
+        res.render('index')
+        //res.sendFile(path.join(__dirname, '../views', 'index.html'));
     },
 
     login: (req, res)=>{
