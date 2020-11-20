@@ -1,25 +1,23 @@
-const path = require('path'); //Esto es solo para que funcione el sendFile despues se elimina cuando pasemos a render con EJS
+const path = require('path'); 
+const fs = require('fs');
+const { json } = require('express');
+
+function todo_los_productos() {
+    const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
+    const productos_BD = JSON.parse(fs.readFileSync(productos_ubicacion_BD, 'utf-8'));
+    return productos_BD;
+};
+
 
 const indexController = {
     home: function (req, res){
-        res.render('index')
-        //res.sendFile(path.join(__dirname, '../views', 'index.html'));
-    },
-
-    login: (req, res)=>{
-        res.render('login')
-        //res.sendFile(path.join(__dirname, '../views', '/login.html'));
-    },
-
-    registro: (req, res)=>{
-        res.render('form_registro')
-        //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
-    },
-
-    recup_pass: (req, res)=>{
-        res.render('recuperar_pass')
-        //res.sendFile(path.join(__dirname, '../views', '/recuperar_pass.html'));
+        const productos = todo_los_productos();
+        
+        res.render('index',{
+            productos: productos
+        });
     }
+  
 };
 
 module.exports = indexController;
