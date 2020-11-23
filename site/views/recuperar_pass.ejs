@@ -1,37 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('./partials/head') %> 
-<body>
+<body style="background-color: #faf2eb;"> 
     
     <%- include('./partials/header') %> 
    
     <main>
-        <section class=form_recuperar>
-            
-            <div>
-                <h2 class=titulo>Recuperar contraseña!</h2>
-            </div>
-            
-            <form action="recuperar" method="POST">
-                
-                <div class=container>
+        <section class=form_login>
+            <h5>Recuperar contraseña</h5>
+                <form action="recuperar" method="POST">
                     
-                    <div class=detalle_form_recuperar>
-                        <h4>Por favor ingresá tu e-mail. Las instrucciones para reiniciar tu contraseña serán enviadas a tu correo electrónico</h4>
-                        <label for="mail">Correo</label><br>
-                        <input type="email" name="mail" id="mail" placeholder="juanperez@juan.com">
-                    </div>
-                                                            
-                </div>
+                        <input class="controls" type="email" name="mail" id="mail" placeholder="Email">
+                        <br>  <h6>Escribe el email asociado a tu cuenta para recuperar tu contraseña.</h6>
+                        <br><br>
 
-            </form>
-
-            <div class=boton_enviar>
-                <button type="submit" id="recuperar" class=boton>Continuar</button>  
-            </div>
-
-            
+                        <input class="buttons" type="submit" id="recuperar" value="Recuperar Contraseña">
+                        
         </section>
+
     </main>
     
     <%- include('./partials/footer') %> 
