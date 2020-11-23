@@ -1,140 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
     <%- include('./partials/head') %> 
-<body>
+<body style="background-color: #faf2eb;"> 
 
     <%- include('./partials/header') %> 
 
     <main>
-        <section class=form_registro>
-            <div>
-                <h2 class=titulo>Registrate!</h2>
-            </div>
-            <form action="registro" method="POST">
-                <div class=container>
-                    <div class=detalle_form_registro>
-                        <label for="nombre" >Nombre completo</label>
-                        <input type="text" name="nombre" id="nombre" placeholder="Juan Pérez">
-                    </div>
+        <section class=form_login>
+            <h5>Registrate</h5>
+                <form action="registro" method="POST">
+                        <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
+                        <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico">
+                        <input class="controls" type="tel" name="tel" id="tel" placeholder="Telefono">
+                        <input class="controls" type="numero" name="dni" id="dni" placeholder="Dni">
+                        <input class="controls" type="password" name="password" id="password" placeholder="Contraseña">
+                        <input class="controls" type="password" name="password" id="password" placeholder=" Confirmar contraseña">
+                        <div class="div">Sexo:
+                            <input type="radio" name="hm" value="h" id="hombre"> <label for="hombre">Hombre</label>
+                            <input type="radio" name="hm" value="m" id="mujer"> <label for="mujer">Mujer</label>
+                        </div>
+                          <br>
+                         <input class="buttons" type="submit"  name="registro" value="Registrarme">
+                        <p></p> <br>
 
-                    <div class=detalle_form_registro>
-                        <label for="fecha_nacimiento">Fecha de nacimiento</label>
-                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
-                    </div>
-                    
-                    <div class=detalle_form_registro>
-                        <label for="mail">Correo electrónico</label>
-                        <input type="email" name="mail" id="mail" placeholder="juanperez@juan.com">
-                    </div>
-                    
-                    <div class=detalle_form_registro>
-                        <label for="dni">Nº documento identidad</label>
-                        <input type="number" name="dni" id="dni" placeholder="3055xx8x">
-                    </div>
-                    
-                    <div class=detalle_form_registro>
-                        <label for="password">Escriba su contraseña</label>
-                        <input type="password" name="password" id="password">
-                    </div>
+                        <input type="checkbox" name="terminos" id="terminos"> <label for="terminos">Acepto Terminos y Condiciones</label>
+                        
+   
+                        
 
-                    <div class=detalle_form_registro>
-                        <label for="password1">Cofirme su contraseña</label>
-                        <input type="password" name="password1" id="password1">
-                    </div>
-
-                    <div class=detalle_form_registro>
-                            <select name="sexo" id="sexo">
-                            <option value="masculino">Masculino</option>
-                            <option value="femenino">Femenino</option>
-                            <option value="personalizado">Personalizado</option>
-                            <option disabled="true" selected="true" value="">Escoge tu sexo</option>
-                            </select>
-                    </div>
-                    
-                    <!-- seleccion de pais por si incorporamos el pais
-                    <div class=detalle_form_registro>
-                        <select name="pais" id="pais">
-                            <option value="AR">ARGENTINA</option>
-                            <option value="BR">BRASIL</option>
-                            <option value="UR">URUGUAY</option>
-                            <option disabled="true" selected="true" value="">Seleccionar un País</option>
-                        </select>
-                    </div>
-                    -->
-                    
-                    <div class=detalle_form_registro>
-                        <select id="provincia">
-                            <option value="1">BUENOS AIRES</option>
-                            <option value="2">CATAMARCA</option>
-                            <option value="5">CHACO</option>
-                            <option value="6">CHUBUT</option>
-                            <option value="23">C.A.B.A.</option>
-                            <option value="3">CORDOBA</option>
-                            <option value="4">CORRIENTES</option>
-                            <option value="7">ENTRE RIOS</option>
-                            <option value="8">FORMOSA</option>
-                            <option value="9">JUJUY</option>
-                            <option value="10">LA PAMPA</option>
-                            <option value="11">LA RIOJA</option>
-                            <option value="12">MENDOZA</option>
-                            <option value="13">MISIONES</option>
-                            <option value="14">NEUQUEN</option>
-                            <option value="15">RIO NEGRO</option>
-                            <option value="16">SALTA</option>
-                            <option value="17">SAN LUIS</option>
-                            <option value="19">SANTA CRUZ</option>
-                            <option value="20">SANTA FE</option>
-                            <option value="21">SANTIAGO DEL ESTERO</option>
-                            <option value="22">TIERRA DEL FUEGO</option>
-
-                            <!-- estados brasil por si los incorporamos 
-                            <option value="AC">Acre</option>
-                            <option value="AL">Alagoas</option>
-                            <option value="AP">Amapá</option>
-                            <option value="AM">Amazonas</option>
-                            <option value="BA">Bahia</option>
-                            <option value="CE">Ceará</option>
-                            <option value="DF">Distrito Federal</option>
-                            <option value="ES">Espírito Santo</option>
-                            <option value="GO">Goiás</option>
-                            <option value="MA">Maranhão</option>
-                            <option value="MT">Mato Grosso</option>
-                            <option value="MS">Mato Grosso do Sul</option>
-                            <option value="MG">Minas Gerais</option>
-                            <option value="PA">Pará</option>
-                            <option value="PB">Paraíba</option>
-                            <option value="PR">Paraná</option>
-                            <option value="PE">Pernambuco</option>
-                            <option value="PI">Piauí</option>
-                            <option value="RJ">Rio de Janeiro</option>
-                            <option value="RN">Rio Grande do Norte</option>
-                            <option value="RS">Rio Grande do Sul</option>
-                            <option value="RO">Rondônia</option>
-                            <option value="RR">Roraima</option>
-                            <option value="SC">Santa Catarina</option>
-                            <option value="SP">São Paulo</option>
-                            <option value="SE">Sergipe</option>
-                            <option value="TO">Tocantins</option>
-                            <option value="EX">Estrangeiro</option>
-                            -->
-
-                            <option disabled="true" selected="true" value="">Elige tu Provincia</option>
-                        </select>
-                    </div>   
-
-                    <div class=terminos>
-                        <input type="checkbox" name="terminos" id="terminos_ok">
-                        <label for="terminos_ok">Acepto <a href="#">terminos y condiciones</a> y autorizo el uso de mis datos de acuerdo a la declaración de privacidad.</label>
-                    </div>
-
-                                   
-                </div>
-
-            </form>
-            <div class=boton_enviar>
-                <button type="submit" id="registrar" class="boton">Enviar</button>  
-            </div>
         </section>
+    
     </main>
 
     <%- include('./partials/footer') %> 

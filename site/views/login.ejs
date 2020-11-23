@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
     <%- include('./partials/head') %> 
-<body>
+    <body style="background-color: #faf2eb;"> 
  
     <%- include('./partials/header') %> 
 
-    <main>
+   
         <section class=form_login>
-            
-            <div>
-                <h2 class=titulo>Bienvenido!! ingresa tu correo y contraseña</h2>
-            </div>
-            <form action="login" method="POST">
-                
-                <div class=container>
-                    
-                    <div class=detalle_form_login>
-                        <label for="mail">Correo electrónico</label><br>
-                        <input type="email" name="mail" id="mail" placeholder="juanperez@juan.com">
-                    </div>
-                    
-                    <div class=detalle_form_login>
-                        <label for="password">Escriba su contraseña</label><br>
-                        <input type="password" name="password" id="password">
-                    </div>
-                       
-                   
-                </div>
-
-            </form>
-
-            <div class=boton_enviar>
-                <button type="submit" id="enviar" class=boton>Continuar</button>  
-            </div>
-
-            <div class="olvidar_pass">
-                <a href="/recup_pass">olvidaste tu contraseña?</a>
-            </div>
+            <h5>Ingresar</h5>
+                <form action="login" method="POST">
+                        <input class="controls" type="email" name="mail" id="mail" placeholder="Usuario">
+                        <input class="controls" type="password" name="password" id="password" placeholder="Contraseña">
+                        <input class="buttons" type="submit" name="ingreso" value="Iniciar sesion">
+                        <p> <a href="/recup_pass">olvidaste tu contraseña?</a></p> 
+           
 
         </section>
-    </main>
+
+   
+
+
+
 
     <%- include('./partials/footer') %> 
 

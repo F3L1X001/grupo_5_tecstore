@@ -1,45 +1,34 @@
-body {
-     margin: 0;
-     padding: 0;
-    background: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-family: sans-serif;
-}
 
-.container {
-    width: 700px;
+.conten {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     background: #fff;
     margin: 20px;
 }
 
-.container .img-box {
-  
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.img-box {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
-.container .text-box {
-
+.conten .text-box {
+    width: 50%;
     padding: 20px 30px;
     box-sizing: border-box;
 }
 
-.container .text-box h1 {
+.text-box h1 {
     font-size: 3em;
     color: #444;
     line-height: .4em;
 }
 
-.container .text-box h1 span {
+.conten .text-box h1 span {
     font-size: .4em;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -47,13 +36,13 @@ body {
     font-weight: 100;
 }
 
-.container .text-box p {
+.text-box p {
     font-size: 0.9em;
     line-height: 1.5em;
     color: #555;
 
 }
-.container .text-box h2{
+.text-box h2{
     font-size: 2.5em;
     font-weight: 600;
     color: green;
@@ -61,7 +50,7 @@ body {
    
 }
 
-.container .text-box button{
+.text-box button{
     border: none;
     outline: none;
     cursor: pointer;
@@ -77,29 +66,29 @@ body {
 }
 
 @media(max-width: 1080px){
-    .container{
+    .conten{
         height: auto;
     }
-    .container .img-box{
+.img-box{
         width: 100%;
     }
-    .container .img-box img {
+ .img-box img {
         width: 80%;
         padding: 40px;
         box-sizing: border-box;
     }
-    .container .text-box {
+ .text-box {
         width: 100%;
     }
-    .container .text-box h1{
+.text-box h1{
         font-size: 2em;
         line-height: .8em;
     }
-    .container .text-box h2 {
+ .text-box h2 {
         font-size: 2.5em;
         font-weight: 600;
     }
-    .container .text-box button {
+.text-box button {
         padding: 10px 15px;
         font-size: 1em;
     }
@@ -109,3 +98,4 @@ body {
     box-shadow: 0px 0px 9px 1px rgba(0,0,0,0.1);
     padding: 12px;
 }
+
