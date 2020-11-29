@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('./partials/head') %>
+    <%- include('./partials/head', {title: 'Editando: ' + producto.name}) %>
 
 <body>
 
@@ -10,29 +10,29 @@
     <main>
         <section class=form_registro>
             <div>
-                <h2 class=titulo>Registrar Producto</h2>
+                <h2 class=titulo>Editando: <%= producto.name %>   </h2>
             </div>
-            <form action="create" method="POST" enctype="multipart/form-data">
+            <form action="edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> <!--Agregar con el boton la automatizacion en action-->
                 <div class=container>
                     <div class="detalle_form_registro">
                         <label for="marca">Marca</label>
-                        <input type="text" name="marca" id="marca">
+                        <input type="text" name="marca" id="marca" value="<%= producto.name %> ">
                     </div>
                     <div class="detalle_form_registro">
                         <label for="cod_prod">Codigo Producto</label>
-                        <input type="text" name="cod_prod" id="cod_prod">
+                        <input type="text" name="cod_prod" id="cod_prod" value="<%= producto.code %> ">
                     </div>
                     <div class="detalle_form_registro">
                         <label for="precio">Precio</label>
-                        <input type="number" name="precio" id="precio">
+                        <input type="number" name="precio" id="precio" value="<%= producto.price %> ">
                     </div>
                     <div class="detalle_form_registro">
                         <label for="descuento">Descuento</label>
-                        <input type="number" name="descuento" id="descuento">                       
+                        <input type="number" name="descuento" id="descuento" value="<%= producto.discount %> ">                       
                     </div>
                     <div class="detalle_form_registro">
                         <label for="categoria">Categoria</label>
-                        <select name="categoria" id="categoria">
+                        <select name="categoria" id="categoria" value="<%= producto.category %> ">
                             <option value="pc-notebook">PC/Notebook</option>
                             <option value="consolas">Consolas</option>
                             <option value="accesorios">Accesorios</option>
@@ -42,13 +42,13 @@
                     </div>
                     <div class="detalle_form_registro">
                         <label for="imagen">Imagen del Producto</label>
-                        <input type="file" name="imagen" id="imagen">
+                        <input type="file" name="imagen" id="imagen" value="<%= producto.image %> ">
                     </div>
                 </div>
                 <div class="container">
                     <div class="detalle_form_registro">
                         <label for="descripcion">Descripcion Producto</label>
-                        <textarea name="descripcion" id="descripcion" cols="80" rows="10"></textarea>
+                        <textarea name="descripcion" id="descripcion" cols="80" rows="10" value="<%= producto.description %> "></textarea>
                     </div>
                 </div>  
                 

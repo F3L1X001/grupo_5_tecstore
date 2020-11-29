@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { json } = require('express');
+const express = require('express');
 
 function todo_los_productos() {
     const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
@@ -14,6 +14,13 @@ function generar_id_producto(){
     return nueva_id_producto;
 }
 
+function guardar_productos(ProductosAGuardar){
+    const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
+    const productosJson = JSON.stringify(ProductosAGuardar, null, " ");
+    
+    fs.writeFileSync(productos_ubicacion_BD, productosJson);
+}
+
 const productsController = {
     mostrar: (req, res)=>{
         res.render('productDetail');
@@ -24,10 +31,41 @@ const productsController = {
         //res.sendFile(path.join(__dirname, '../views', '/login.html'));
     },
 
-    editar: (req, res)=>{
-        res.render('carga_producto')
+    crear_post: (req, res, next) => {
+        const nuevo_producto = {
+            id: generar_id_producto(),
+            name: req.body.marca,
+            price: req.body.precio,
+            discount: req.body.descuento,
+            category: req.body.categoria,
+            description: req.body.descripcion,
+            code: req.body.cod_prod,
+            image: req.files[0].filename
+        }
+
+        const productos = todo_los_productos();
+        const Productos_guardar = [...productos, nuevo_producto];
+
+        guardar_productos(Productos_guardar);
+
+        res.redirect('/products/create');
+    },
+
+    editar: (req, res) => {
+        const productos = todo_los_productos();
+        const id = req.params.id;
+        const resultado = productos.find((producto) => producto.id == id);
+
+        res.render('form_edicion_producto', {
+            producto: resultado
+        })
         //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
     },
+
+    editar_put: (req, res) => {
+
+    },
+
     carrito_compras: (req, res) =>{
         res.render('productCart')
     }

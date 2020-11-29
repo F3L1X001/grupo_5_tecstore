@@ -1,102 +1,122 @@
 [
-    {
-        "id": "1",
-        "name": "APPLE WATCH SERIE 3 - 42MM SILVER 5",
-        "price": "$44,000.00",
-        "discount": "0%",
-        "category": "Accesorios",
-        "description": "El Apple Watch es, en esencia, un dispositivo preparado para recibir notificaciones y contestar bien dictando la respuesta, bien usando scribble, la escritura letra a letra dibujada del Apple Watch o con alguna de las contestaciones predeterminadas.",
-        "code": "0001",
-        "image": "#"
-    },
-    {
-        "id": "2",
-        "name": "NOTEBOOK LENOVO 15.6 FHD THINKBOOK I5-10210U 8GB 256GB",
-        "price": "$129,000.00",
-        "discount": "0%",
-        "category": "PC/Notebook",
-        "description": "Ideal para impulsar tu empresa\r\n- Procesador, memoria y almacenamiento mejorados\r\n- Tarjeta gráfica discreta hasta AMD Radeon RX 640\r\n- Pantalla FHD de 15.6” hasta IPS, antirreflejos y 250 nits\r\n- Altavoces y sonido de vanguardia\r\n- Funciones de seguridad integradas y un precio accesible\r\n- La pantalla, el lector de huellas digitales y el color son opcionales según el modelo; la cámara y algunos puertos pueden variar.",
-        "code": "0002",
-        "image": "#"
-    },
-    {
-        "id": "3",
-        "name": "Monitor Viewsonic 32\" 4K UHD HDR10 SuperClear Sin Bordes",
-        "price": "$87,000.00",
-        "discount": "0%",
-        "category": "Accesorios",
-        "description": "VX3276-4K-mhd - Pantalla de 32 \", panel MVA, resolución 3840 x 2160\r\nEl ViewSonic® VX3276-4K-mhd es un elegante monitor 4K UHD de 32 ”(31.5\" visible) con un estilo moderno y minimalista perfecto para uso doméstico. Con tecnología de panel SuperClear® MVA y relación de contraste dinámico 80M: 1, este monitor ofrece el mejor Rendimiento de pantalla en su clase con ángulos de visión ultra amplios. Un elegante diseño sin marco de borde a borde, combinado con una impresionante resolución de 3840 x 2560, proporciona imágenes increíblemente nítidas y detalladas, mientras que el soporte de contenido HDR10 ofrece un alto rango dinámico de colores vivos. y contraste para un rendimiento de pantalla increíble. Las entradas versátiles HDMI, DisplayPort y Mini DisplayPort ofrecen opciones de conectividad flexibles tanto para informática como para juegos, mientras que una característica exclusiva de ViewMode ™ proporciona preajustes intuitivos para un rendimiento de pantalla optimizado en diferentes aplicaciones. Garantía limitada de un año, este monitor es una inversión sólida a largo plazo que combina estilo y alto rendimiento para el hogar.",
-        "code": "0003",
-        "image": "#"
-    },
-    {
-        "id": "4",
-        "name": "Webcam Logitech Meetup + Microfono 4K Zoom",
-        "price": "$29,000.00",
-        "discount": "0%",
-        "category": "Accesorios",
-        "description": "MeetUp + Micrófono de expansión Logitech\r\nCámara para conferencias todo en uno con lente ultra gran angular para salas pequeñas.\r\nDIMENSIONES:\r\nUnidad principal:\r\nAltura x Ancho x Profundidad:\r\n104 mm x 400 mm x 85 mm\r\nPeso: 1,04 kg\r\nRemoto:\r\nAltura x Ancho x Profundidad:\r\n83 mm x 83 mm x 10 mm",
-        "code": "0004",
-        "image": "#"
-    },
-    {
-        "id": "5",
-        "name": "Auriculares Inalambricos Logitech G733 Lightspeed RGB Black",
-        "price": "$26,000.00",
-        "discount": "0%",
-        "category": "Accesorios",
-        "description": "JUEGA A TU MANERA\r\nPor fin, unos audífonos que pueden ser tan expresivos como tú. Los audífonos G733 son inalámbricos y se diseñaron pensando en el confort. Y están equipados con todo el sonido envolvente, los filtros de voz y la iluminación avanzada que necesitas para lucir, sonar y jugar con más estilo que nunca.\r\nINALÁMBRICOS Y LIGEROS\r\nConectividad Lightspeed® confiable\r\nILUMINACIÓN FRONTAL\r\nRGB Lightsync® de espectro completo",
-        "code": "0005",
-        "image": "#"
-    },
-    {
-        "id": "6",
-        "name": "Mouse Glorious Model D (Glossy Black)",
-        "price": "$9,000.00",
-        "discount": "0%",
-        "category": "Accesorios",
-        "description": "TAMAÑO Y AMPLIFICACIÓN ESTILO: Ratón ambidiestro ultraligero para juegos ideal para manos . Construido para velocidad, control y comodidad.\r\nCABLE ULTRA FLEXIBLE: Nuestro cable trenzado ascendido es tan ligero que produce una sensación inalámbrica sin arrastre.\r\nPIES DE RATÓN: Nuestros gloriosos patines son 100% PTFE virgen puro que se deslizará como cuchillas sobre el hielo.\r\nPERSONALIZACIÓN DE E-SPORT: DPI de 6 pasos, efectos de iluminación, velocidad de sondeo, distancia de despegue, velocidad de clic / desplazamiento, 6 botones con soporte macro y más.",
-        "code": "0006",
-        "image": "#"
-    },
-    {
-        "id": "7",
-        "name": "Play Station 5",
-        "price": "$95,000.00",
-        "discount": "0%",
-        "category": "Consolas",
-        "description": "Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptativos y audio 3D, además de una generación completamente nueva de juegos de PlayStation.\r\nLa PS5 edición digital es una versión completamente digital de la consola PS5 que no trae unidad de disco. Inicia sesión en tu cuenta de PlayStation Network y ve a PlayStation®Store para comprar y descargar juegos*.",
-        "code": "0007",
-        "image": "#"
-    },
-    {
-        "id": "8",
-        "name": "Microsoft Xbox Series X 1 TB",
-        "price": "$99,999.00",
-        "discount": "0%",
-        "category": "Consolas",
-        "description": "La consola Xbox Series X es la consola más rápida y potente de la historia. Experimentá la velocidad y el rendimiento de la próxima generación de juegos con Xbox Velocity Architecture, impulsada por un disco SSD personalizado y software integrado.",
-        "code": "0008",
-        "image": "#"
-    },
-    {
-        "id": "9",
-        "name": "Macbook Pro 2020 13.3puLG Core I5 Ram 8gb Ssd 256gb",
-        "price": "$260,000.00",
-        "discount": "0%",
-        "category": "PC/Notebook",
-        "description": "La MacBook Pro lleva el rendimiento y la portabilidad de la notebook a otro nivel. Te ofrece, en menos de 1.4 kilogramos de peso, procesadores y memoria de alto rendimiento, gráficos avanzados, almacenamiento ultrarrápido y mucho más. Podrás llegar a donde tus ideas te lleven.",
-        "code": "0009",
-        "image": "#"
-    },
-    {
-        "id": "10",
-        "name": "Notebook Dell Inspiron 5593 15.6\" Core I5 8GB SSD256GB Con Placa Dedicada Ge Force",
-        "price": "$175,000.00",
-        "discount": "0%",
-        "category": "PC/Notebook",
-        "description": "El portátil de 15\" será tu centro de entretenimiento personal con una visualización envolvente, un borde estrecho y un procesador Intel® de 10a generación.\r\nCINEMACOLOR\r\nLas imágenes se muestran exactamente con la misma intensidad con la que las vemos en el mundo real. Experimenta un color más rico, más vibrante y detalles habilitados por los perfiles de color de Dell y aprovecha al máximo el rango dinámico superior del contenido HDR, los negros infinitamente profundos y los brillantes deslumbramientos gracias a Dolby Vision.\r\nGRÁFICOS ESPECTACULARES\r\ndisfruta de un extra de energía y un rendimiento cotidiano óptimo gracias a los potentes gráficos opcionales NVIDIA® GeForce® MX230",
-        "code": "0010",
-        "image": "#"
-    }
+ {
+  "id": 1,
+  "name": "APPLE WATCH SERIE 3 - 42MM SILVER 5",
+  "price": 44000,
+  "discount": 0,
+  "category": "Accesorios",
+  "description": "El Apple Watch es, en esencia, un dispositivo preparado para recibir notificaciones y contestar bien dictando la respuesta, bien usando scribble, la escritura letra a letra dibujada del Apple Watch o con alguna de las contestaciones predeterminadas.",
+  "code": "0001",
+  "image": "#"
+ },
+ {
+  "id": 2,
+  "name": "NOTEBOOK LENOVO 15.6 FHD THINKBOOK I5-10210U 8GB 256GB",
+  "price": 129000,
+  "discount": 0,
+  "category": "PC/Notebook",
+  "description": "Ideal para impulsar tu empresa\r\n- Procesador, memoria y almacenamiento mejorados\r\n- Tarjeta gráfica discreta hasta AMD Radeon RX 640\r\n- Pantalla FHD de 15.6” hasta IPS, antirreflejos y 250 nits\r\n- Altavoces y sonido de vanguardia\r\n- Funciones de seguridad integradas y un precio accesible\r\n- La pantalla, el lector de huellas digitales y el color son opcionales según el modelo; la cámara y algunos puertos pueden variar.",
+  "code": "0002",
+  "image": "#"
+ },
+ {
+  "id": 3,
+  "name": "Monitor Viewsonic 32\" 4K UHD HDR10 SuperClear Sin Bordes",
+  "price": 87000,
+  "discount": 0,
+  "category": "Accesorios",
+  "description": "VX3276-4K-mhd - Pantalla de 32 \", panel MVA, resolución 3840 x 2160\r\nEl ViewSonic® VX3276-4K-mhd es un elegante monitor 4K UHD de 32 ”(31.5\" visible) con un estilo moderno y minimalista perfecto para uso doméstico. Con tecnología de panel SuperClear® MVA y relación de contraste dinámico 80M: 1, este monitor ofrece el mejor Rendimiento de pantalla en su clase con ángulos de visión ultra amplios. Un elegante diseño sin marco de borde a borde, combinado con una impresionante resolución de 3840 x 2560, proporciona imágenes increíblemente nítidas y detalladas, mientras que el soporte de contenido HDR10 ofrece un alto rango dinámico de colores vivos. y contraste para un rendimiento de pantalla increíble. Las entradas versátiles HDMI, DisplayPort y Mini DisplayPort ofrecen opciones de conectividad flexibles tanto para informática como para juegos, mientras que una característica exclusiva de ViewMode ™ proporciona preajustes intuitivos para un rendimiento de pantalla optimizado en diferentes aplicaciones. Garantía limitada de un año, este monitor es una inversión sólida a largo plazo que combina estilo y alto rendimiento para el hogar.",
+  "code": "0003",
+  "image": "#"
+ },
+ {
+  "id": 4,
+  "name": "Webcam Logitech Meetup + Microfono 4K Zoom",
+  "price": 29000,
+  "discount": 0,
+  "category": "Accesorios",
+  "description": "MeetUp + Micrófono de expansión Logitech\r\nCámara para conferencias todo en uno con lente ultra gran angular para salas pequeñas.\r\nDIMENSIONES:\r\nUnidad principal:\r\nAltura x Ancho x Profundidad:\r\n104 mm x 400 mm x 85 mm\r\nPeso: 1,04 kg\r\nRemoto:\r\nAltura x Ancho x Profundidad:\r\n83 mm x 83 mm x 10 mm",
+  "code": "0004",
+  "image": "#"
+ },
+ {
+  "id": 5,
+  "name": "Auriculares Inalambricos Logitech G733 Lightspeed RGB Black",
+  "price": 26000,
+  "discount": 0,
+  "category": "Accesorios",
+  "description": "JUEGA A TU MANERA\r\nPor fin, unos audífonos que pueden ser tan expresivos como tú. Los audífonos G733 son inalámbricos y se diseñaron pensando en el confort. Y están equipados con todo el sonido envolvente, los filtros de voz y la iluminación avanzada que necesitas para lucir, sonar y jugar con más estilo que nunca.\r\nINALÁMBRICOS Y LIGEROS\r\nConectividad Lightspeed® confiable\r\nILUMINACIÓN FRONTAL\r\nRGB Lightsync® de espectro completo",
+  "code": "0005",
+  "image": "#"
+ },
+ {
+  "id": 6,
+  "name": "Mouse Glorious Model D (Glossy Black)",
+  "price": 9000,
+  "discount": 0,
+  "category": "Accesorios",
+  "description": "TAMAÑO Y AMPLIFICACIÓN ESTILO: Ratón ambidiestro ultraligero para juegos ideal para manos . Construido para velocidad, control y comodidad.\r\nCABLE ULTRA FLEXIBLE: Nuestro cable trenzado ascendido es tan ligero que produce una sensación inalámbrica sin arrastre.\r\nPIES DE RATÓN: Nuestros gloriosos patines son 100% PTFE virgen puro que se deslizará como cuchillas sobre el hielo.\r\nPERSONALIZACIÓN DE E-SPORT: DPI de 6 pasos, efectos de iluminación, velocidad de sondeo, distancia de despegue, velocidad de clic / desplazamiento, 6 botones con soporte macro y más.",
+  "code": "0006",
+  "image": "#"
+ },
+ {
+  "id": 7,
+  "name": "Play Station 5",
+  "price": 95000,
+  "discount": 0,
+  "category": "Consolas",
+  "description": "Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptativos y audio 3D, además de una generación completamente nueva de juegos de PlayStation.\r\nLa PS5 edición digital es una versión completamente digital de la consola PS5 que no trae unidad de disco. Inicia sesión en tu cuenta de PlayStation Network y ve a PlayStation®Store para comprar y descargar juegos*.",
+  "code": "0007",
+  "image": "#"
+ },
+ {
+  "id": 8,
+  "name": "Microsoft Xbox Series X 1 TB",
+  "price": 99999,
+  "discount": 0,
+  "category": "Consolas",
+  "description": "La consola Xbox Series X es la consola más rápida y potente de la historia. Experimentá la velocidad y el rendimiento de la próxima generación de juegos con Xbox Velocity Architecture, impulsada por un disco SSD personalizado y software integrado.",
+  "code": "0008",
+  "image": "#"
+ },
+ {
+  "id": 9,
+  "name": "Macbook Pro 2020 13.3puLG Core I5 Ram 8gb Ssd 256gb",
+  "price": 260000,
+  "discount": 0,
+  "category": "PC/Notebook",
+  "description": "La MacBook Pro lleva el rendimiento y la portabilidad de la notebook a otro nivel. Te ofrece, en menos de 1.4 kilogramos de peso, procesadores y memoria de alto rendimiento, gráficos avanzados, almacenamiento ultrarrápido y mucho más. Podrás llegar a donde tus ideas te lleven.",
+  "code": "0009",
+  "image": "#"
+ },
+ {
+  "id": 10,
+  "name": "Notebook Dell Inspiron 5593 15.6\" Core I5 8GB SSD256GB Con Placa Dedicada Ge Force",
+  "price": 175000,
+  "discount": 0,
+  "category": "PC/Notebook",
+  "description": "El portátil de 15\" será tu centro de entretenimiento personal con una visualización envolvente, un borde estrecho y un procesador Intel® de 10a generación.\r\nCINEMACOLOR\r\nLas imágenes se muestran exactamente con la misma intensidad con la que las vemos en el mundo real. Experimenta un color más rico, más vibrante y detalles habilitados por los perfiles de color de Dell y aprovecha al máximo el rango dinámico superior del contenido HDR, los negros infinitamente profundos y los brillantes deslumbramientos gracias a Dolby Vision.\r\nGRÁFICOS ESPECTACULARES\r\ndisfruta de un extra de energía y un rendimiento cotidiano óptimo gracias a los potentes gráficos opcionales NVIDIA® GeForce® MX230",
+  "code": "0010",
+  "image": "#"
+ },
+ {
+  "id": 11,
+  "name": "SONY",
+  "price": 6000,
+  "discount": 5,
+  "category": "accesorios",
+  "description": "asdfafafdads",
+  "code": "WH-CH510",
+  "image": "imagen-1606627179509.webp"
+ },
+ {
+  "id": 12,
+  "name": "pepe",
+  "price": "25000",
+  "discount": "23",
+  "category": "pc-notebook",
+  "description": "alñskdfjasñldfjasñlfjaslñfdkjas",
+  "code": "1234",
+  "image": "imagen-1606632092849.png"
+ }
 ]
