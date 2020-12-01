@@ -3,62 +3,41 @@
 
     <%- include('./partials/head') %>
 
-<body>
+    <body style="background-color: #27293b;">
 
     <%- include('./partials/header') %> 
 
     <main>
-        <section class=form_registro>
-            <div>
-                <h2 class=titulo>Registrar Producto</h2>
-            </div>
+        <section class=form_login>
+            <h5>Registrar Producto</h5>
             <form action="create" method="POST" enctype="multipart/form-data">
-                <div class=container>
-                    <div class="detalle_form_registro">
-                        <label for="marca">Marca</label>
-                        <input type="text" name="marca" id="marca">
-                    </div>
-                    <div class="detalle_form_registro">
-                        <label for="cod_prod">Codigo Producto</label>
-                        <input type="text" name="cod_prod" id="cod_prod">
-                    </div>
-                    <div class="detalle_form_registro">
-                        <label for="precio">Precio</label>
-                        <input type="number" name="precio" id="precio">
-                    </div>
-                    <div class="detalle_form_registro">
-                        <label for="descuento">Descuento</label>
-                        <input type="number" name="descuento" id="descuento">                       
-                    </div>
-                    <div class="detalle_form_registro">
+                        <input class="controls" type="text" name="marca" id="marca" placeholder="Marca">
+                        <input class="controls" type="text" name="cod_prod" id="cod_prod" placeholder="Codigo Producto">
+                        <input class="controls" type="number" name="precio" id="precio" placeholder="Precio">
+                        <input class="controls" type="number" name="descuento" id="descuento" placeholder="Descuento">
                         <label for="categoria">Categoria</label>
+                       <div>
                         <select name="categoria" id="categoria">
                             <option value="pc-notebook">PC/Notebook</option>
                             <option value="consolas">Consolas</option>
                             <option value="accesorios">Accesorios</option>
                         </select>
-                </div>
-                <div class="container">
-                    </div>
-                    <div class="detalle_form_registro">
-                        <label for="imagen">Imagen del Producto</label>
-                        <input type="file" name="imagen" id="imagen">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="detalle_form_registro">
-                        <label for="descripcion">Descripcion Producto</label>
-                        <textarea name="descripcion" id="descripcion" cols="80" rows="10"></textarea>
-                    </div>
-                </div>  
-                
-                <div class=boton_enviar>
-                    <button type="submit" id="guardar_producto" name="guardar_producto" class="boton">Guardar Producto</button>  
-                </div>     
-            
-            </form>
-            
+                         </div><br>
+                         <div>
+                            <label for="imagen">Imagen del Producto</label>
+                            <input type="file" name="imagen" id="imagen">
+                        </div>
+                        <div><br>
+                            <label for="descripcion">Descripcion Producto</label>
+                            <textarea name="descripcion" id="descripcion" cols="60" rows="15"></textarea>
+                        </div>
+                    
+                          <br>
+                         <input class="buttons" type="submit"  name="guardar_producto" id="guardar_producto" value="Guardar Producto">
+                        <p></p> <br>                        
+                 
         </section>
+    
     </main>
 
     <%- include('./partials/footer') %> 
