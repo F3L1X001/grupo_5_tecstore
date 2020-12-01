@@ -12,7 +12,7 @@
             <div>
                 <h2 class=titulo>Editando: <%= producto.name %>   </h2>
             </div>
-            <form action="edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> <!--Agregar con el boton la automatizacion en action-->
+            <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> <!--Agregar con el boton la automatizacion en action-->
                 <div class=container>
                     <div class="detalle_form_registro">
                         <label for="marca">Marca</label>

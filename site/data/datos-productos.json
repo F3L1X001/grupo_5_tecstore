@@ -111,12 +111,12 @@
  },
  {
   "id": 12,
-  "name": "pepe",
-  "price": "25000",
-  "discount": "23",
-  "category": "pc-notebook",
-  "description": "alñskdfjasñldfjasñlfjaslñfdkjas",
-  "code": "1234",
-  "image": "imagen-1606632092849.png"
+  "name": "juancito",
+  "price": "50000",
+  "discount": "54",
+  "category": "consolas",
+  "description": "probando para ver que onda",
+  "code": "4561 ",
+  "image": "imagen-1606858668211.png"
  }
 ]

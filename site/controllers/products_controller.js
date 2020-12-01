@@ -63,6 +63,28 @@ const productsController = {
     },
 
     editar_put: (req, res) => {
+        const productos = todo_los_productos();
+        const id = req.params.id;
+        const producto_editado = productos.map((producto) =>{
+
+            if (id == producto.id){
+                
+                producto.name = req.body.marca,
+                producto.price = req.body.precio,
+                producto.discount = req.body.descuento,
+                producto.category = req.body.categoria,
+                producto.description = req.body.descripcion,
+                producto.code = req.body.cod_prod,
+                producto.image = req.files[0] ? req.files[0].filename : product.image
+            }
+
+            return producto
+        })
+
+        guardar_productos(producto_editado);
+
+        res.redirect('/') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
+
 
     },
 
