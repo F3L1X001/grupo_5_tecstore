@@ -14,7 +14,7 @@
   "name": "NOTEBOOK LENOVO 15.6 FHD THINKBOOK I5-10210U 8GB 256GB",
   "price": 129000,
   "discount": 0,
-  "category": "PC/Notebook",
+  "category": "pc-notebook",
   "description": "Ideal para impulsar tu empresa\r\n- Procesador, memoria y almacenamiento mejorados\r\n- Tarjeta gráfica discreta hasta AMD Radeon RX 640\r\n- Pantalla FHD de 15.6” hasta IPS, antirreflejos y 250 nits\r\n- Altavoces y sonido de vanguardia\r\n- Funciones de seguridad integradas y un precio accesible\r\n- La pantalla, el lector de huellas digitales y el color son opcionales según el modelo; la cámara y algunos puertos pueden variar.",
   "code": "0002",
   "image": "#"
@@ -64,7 +64,7 @@
   "name": "Play Station 5",
   "price": 95000,
   "discount": 0,
-  "category": "Consolas",
+  "category": "consolas",
   "description": "Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptativos y audio 3D, además de una generación completamente nueva de juegos de PlayStation.\r\nLa PS5 edición digital es una versión completamente digital de la consola PS5 que no trae unidad de disco. Inicia sesión en tu cuenta de PlayStation Network y ve a PlayStation®Store para comprar y descargar juegos*.",
   "code": "0007",
   "image": "#"
@@ -74,7 +74,7 @@
   "name": "Microsoft Xbox Series X 1 TB",
   "price": 99999,
   "discount": 0,
-  "category": "Consolas",
+  "category": "consolas",
   "description": "La consola Xbox Series X es la consola más rápida y potente de la historia. Experimentá la velocidad y el rendimiento de la próxima generación de juegos con Xbox Velocity Architecture, impulsada por un disco SSD personalizado y software integrado.",
   "code": "0008",
   "image": "#"
@@ -84,7 +84,7 @@
   "name": "Macbook Pro 2020 13.3puLG Core I5 Ram 8gb Ssd 256gb",
   "price": 260000,
   "discount": 0,
-  "category": "PC/Notebook",
+  "category": "pc-notebook",
   "description": "La MacBook Pro lleva el rendimiento y la portabilidad de la notebook a otro nivel. Te ofrece, en menos de 1.4 kilogramos de peso, procesadores y memoria de alto rendimiento, gráficos avanzados, almacenamiento ultrarrápido y mucho más. Podrás llegar a donde tus ideas te lleven.",
   "code": "0009",
   "image": "#"
@@ -94,7 +94,7 @@
   "name": "Notebook Dell Inspiron 5593 15.6\" Core I5 8GB SSD256GB Con Placa Dedicada Ge Force",
   "price": 175000,
   "discount": 0,
-  "category": "PC/Notebook",
+  "category": "pc-notebook",
   "description": "El portátil de 15\" será tu centro de entretenimiento personal con una visualización envolvente, un borde estrecho y un procesador Intel® de 10a generación.\r\nCINEMACOLOR\r\nLas imágenes se muestran exactamente con la misma intensidad con la que las vemos en el mundo real. Experimenta un color más rico, más vibrante y detalles habilitados por los perfiles de color de Dell y aprovecha al máximo el rango dinámico superior del contenido HDR, los negros infinitamente profundos y los brillantes deslumbramientos gracias a Dolby Vision.\r\nGRÁFICOS ESPECTACULARES\r\ndisfruta de un extra de energía y un rendimiento cotidiano óptimo gracias a los potentes gráficos opcionales NVIDIA® GeForce® MX230",
   "code": "0010",
   "image": "#"
@@ -111,12 +111,12 @@
  },
  {
   "id": 12,
-  "name": "juancito",
-  "price": "50000",
-  "discount": "54",
-  "category": "consolas",
-  "description": "probando para ver que onda",
-  "code": "4561 ",
-  "image": "imagen-1606858668211.png"
+  "name": "josecito",
+  "price": "800000",
+  "discount": "78",
+  "category": "pc-notebook",
+  "description": "otra prueba de edicion",
+  "code": "789456",
+  "image": "imagen-1606860138557.webp"
  }
 ]

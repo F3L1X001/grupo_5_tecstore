@@ -53,8 +53,12 @@ const productsController = {
 
     editar: (req, res) => {
         const productos = todo_los_productos();
+        
         const id = req.params.id;
+
+        
         const resultado = productos.find((producto) => producto.id == id);
+        console.log(resultado)
 
         res.render('form_edicion_producto', {
             producto: resultado
@@ -75,7 +79,7 @@ const productsController = {
                 producto.category = req.body.categoria,
                 producto.description = req.body.descripcion,
                 producto.code = req.body.cod_prod,
-                producto.image = req.files[0] ? req.files[0].filename : product.image
+                producto.image = req.files[0] ? req.files[0].filename : producto.image
             }
 
             return producto
@@ -86,6 +90,18 @@ const productsController = {
         res.redirect('/') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
 
 
+    },
+
+    borrar_producto: (req, res)=>{
+        const productos =todo_los_productos();
+        const id_producto_borrar = req.params.id;
+        const producto_a_borrar = productos.find((product)=>{return product.id==id_producto_borrar});
+        const ubicacion_producto = productos.indexOf(producto_a_borrar);
+        productos.splice(ubicacion_producto, 1)
+        
+        guardar_productos(productos);
+
+        res.redirect('/');
     },
 
     carrito_compras: (req, res) =>{

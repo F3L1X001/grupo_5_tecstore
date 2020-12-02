@@ -15,6 +15,8 @@ router.post('/create', images.any(), productsController.crear_post);
 router.get('/edit/:id', productsController.editar);
 router.put('/edit/:id', images.any(), productsController.editar_put);
 
+router.delete('/delete/:id', productsController.borrar_producto);
+
 router.get('/sale', productsController.carrito_compras);
 
 
