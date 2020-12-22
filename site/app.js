@@ -8,6 +8,9 @@ const methodOverrride = require('method-override');
 const indexRouter = require('./routes/index.js');
 const productsRouter = require('./routes/products.js')
 const usersRouter = require('./routes/users.js');
+const session = require('express-session');
+const rememberMiddleware = require('./middlewares/rememberMiddleware');
+const localsMiddleware = require('./middlewares/localsMiddleware');
 
 const app = express();
 
@@ -23,13 +26,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverrride('_method'))
+app.use(methodOverrride('_method'));
+app.use(session ({secret: 'TECSTORE-SECRET'}));
+app.use(rememberMiddleware);
+app.use(localsMiddleware);
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
-/*
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -46,6 +52,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-*/
+
 module.exports = app;
 

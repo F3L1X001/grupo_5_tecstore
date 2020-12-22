@@ -1,24 +1,13 @@
 const path = require('path'); 
 const fs = require('fs');
-const { json } = require('express');
+const express = require('express');
 const bcrypt = require('bcrypt');
+const { validationResult } = require('express-validator');
 
-function todos_los_usuarios() {
-    const usuarios_ubicacion_BD = path.join(__dirname, '../data', 'datos-usuarios.json');
-    return usuarios_parseados = JSON.parse(fs.readFileSync(usuarios_ubicacion_BD, 'utf-8'));
-};
+const todos_los_usuarios = require('../helpers/users/allUsers');
+const generar_id_usuarios = require('../helpers/users/usersId');
+const guardar_usuarios = require('../helpers/users/saveUsers');
 
-function generar_id_usuarios() {
-    const usuarios = todos_los_usuarios();
-    const nueva_id_usuario = usuarios.pop().id + 1;
-    return nueva_id_usuario;
-};
-
-function guardar_usuarios (datos_usuarios){
-    const usuarios_ubicacion_BD = path.join(__dirname, '../data', 'datos-usuarios.json');
-    const usuariosJson = JSON.stringify(datos_usuarios, null, " ");
-    fs.writeFileSync(usuarios_ubicacion_BD, usuariosJson);
-};
 
 const usersControllers = {
     login: (req, res)=>{      
@@ -26,24 +15,33 @@ const usersControllers = {
     },
 
     login_send: (req, res)=>{
-        const ubicacion_usuarios = path.join(__dirname, '../data', 'datos-usuarios.json');
-        let usuarios;
-        if(ubicacion_usuarios != ""){
-            usuarios = JSON.parse(fs.readFileSync(ubicacion_usuarios, 'utf-8'));
-        }else{
-            usuarios = [];
+        const results = validationResult(req);
+        const usuarios = todos_los_usuarios();
+
+        if(!results.isEmpty()){
+            return res.render('./views/login', {
+                errors: results.errors,
+                oldInfo: req.body
+            });
         };
 
-        console.log('que pasa aca' + usuarios);
+        const usuarioEncontrado = usuarios.find((usuario) => (usuario.email = req.body.email));
         
-        for (let i=0; i < usuarios.length; i++) {
-            if(usuarios[i].email == req.body.email && bcrypt.compareSync(req.body.password, usuarios[i].password)){
-                console.log ('usuario logueado')
-                res.send('estas logueado'); //ver que vista tiene que renderizar una vez logueado
+        if(usuarioEncontrado.email == req.body.email && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)){
+            
+            req.session.userALogear = usuarioEncontradp;
+            
+            if(req.body.recordarme){
+                res.cookie('Usuario', usuarioEncontrado.id ,{ maxAge: 6000000});
+            }
+            
+        return res.redirect('/profile');
+
             } else {
-                res.send('Error en logueo') // ver de devolver los campos que falta para loguearse
-            };
-        };
+            return res.render('./form_registro', {
+                errors: {msg: 'Email o Contraseña invalidos'}
+        })};
+        
     },
 
     registro: (req, res)=>{
@@ -52,16 +50,25 @@ const usersControllers = {
     },
 
     registro_send: (req, res) =>{
+
+        const results = validationResult(req);
+        
+        if(!results.isEmpty()){
+            return res.render('./views/form_registro', {
+                errors: results.errors,
+                oldInfo: req.body
+            });
+        };
+
         const nuevo_usuario = {
             id: generar_id_usuarios(),
             nombre: req.body.nombre,
-            fecha_nacimiento: req.body.fecha_nacimiento, //ver si se quitaron en el nuevo formulario
             email: req.body.email,
             DNI: req.body.dni,
             password: bcrypt.hashSync(req.body.password, 10),
             sexo: req.body.sexo, //ver si se quitaron en el nuevo formulario
-            provincia: req.body.provincia, //ver si se quitaron en el nuevo formulario
-            terminos: req.body.terminos_ok //ver si se quitaron en el nuevo formulario
+            terminos: req.body.terminos_ok, //ver si se quitaron en el nuevo formulario
+            imagen: req.files[0].filename
         }
         
         const usuarios = todos_los_usuarios();
@@ -74,7 +81,23 @@ const usersControllers = {
 
     recup_pass: (req, res) => {
         res.render('recuperar_pass')
+    },
+
+    profile: (req, res) => {
+        res.render('profile');
+    },
+
+    logout: (req, res) =>{
+        
+        const usuarios = todos_los_usuarios();
+        const usuarioEncontrado = usuarios.find((usuario) => (usuario.email = res.locals.email));
+
+        res.cookie('Usuario', usuarioEncontrado.id, {expires: new Date(Date.now()-1000)});
+        req.session.destroy();
+        // Do the magic
+        return res.redirect('/')
     }
+    
 
 };
 

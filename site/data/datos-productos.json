@@ -68,6 +68,15 @@
   "description": "Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptativos y audio 3D, además de una generación completamente nueva de juegos de PlayStation.\r\nLa PS5 edición digital es una versión completamente digital de la consola PS5 que no trae unidad de disco. Inicia sesión en tu cuenta de PlayStation Network y ve a PlayStation®Store para comprar y descargar juegos*.",
   "code": "0007",
   "image": "productoD7.jpg"
+ },
+ {
+  "id": 8,
+  "name": "acme",
+  "price": "50000",
+  "discount": "5",
+  "category": "destacados",
+  "description": "waafsfasfasfasdfasfd",
+  "code": "tntACME",
+  "image": "imagen-1608524090976.jpg"
  }
-
 ]

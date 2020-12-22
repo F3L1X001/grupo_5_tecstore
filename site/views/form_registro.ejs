@@ -8,7 +8,7 @@
     <main>
         <section class=form_login>
             <h5>Registrate</h5>
-                <form action="registro" method="POST">
+                <form action="registro" method="POST" enctype="multipart/form-data">
                         <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
                         <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico">
                         <input class="controls" type="tel" name="tel" id="tel" placeholder="Telefono">
@@ -19,11 +19,15 @@
                             <input type="radio" name="hm" value="h" id="hombre"> <label for="hombre">Hombre</label>
                             <input type="radio" name="hm" value="m" id="mujer"> <label for="mujer">Mujer</label>
                         </div>
+                        <div>
+                            <input class="controls" type="file" name="imagen" id="imagen">
+                        </div>
                           <br>
                          <input class="buttons" type="submit"  name="registro" value="Registrarme">
                         <p></p> <br>
 
                         <input type="checkbox" name="terminos" id="terminos"> <label for="terminos">Acepto Terminos y Condiciones</label>
+                </form>
                         
    
                         

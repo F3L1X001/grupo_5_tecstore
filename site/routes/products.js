@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/products_controller')
 const images = require('../middlewares/images_products')
-const multer = require('multer');
-const path = require('path');
+
 
 
 /* GET home page. */

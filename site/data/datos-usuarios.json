@@ -1,41 +1,13 @@
 [
  {
   "id": 0
-  
  },
  {
   "id": 1,
-  "nombre": "Juan Perez",
-  "email": "juancitoperez@yoyo.com",
-  "DNI": "22555888",
-  "password": "$2b$10$.gQ4zNJfP12ixihHq5z01.eNAA/YES3sGe3Ji7JSH1m3x5D9EGXWq"
- },
- {
-  "id": 2,
-  "nombre": "123",
-  "email": "123@yoyo.com",
-  "DNI": "123",
-  "password": "$2b$10$E7E7UbrBR2y2wuhKMsFBY.NIS45zoR2x3xS7No5SQ0/kAdv/5eQmy"
- },
- {
-  "id": 3,
-  "nombre": "pepe",
-  "email": "pepe@yoyo.com",
-  "DNI": "123",
-  "password": "$2b$10$6DWkd0aWxnu6ZEQWv4HrHuSuJWfzPjBEIHtkBIa3r6imySfNNbZ36"
- },
- {
-  "id": 4,
-  "nombre": "pepe",
-  "email": "pepe@yoyo.com",
-  "DNI": "123",
-  "password": "$2b$10$jeXTOuw783Mbdc0qMOKMhOlFb.BixkxLh9acOvECAUrZnYjkO1uw2"
- },
- {
-  "id": 5,
-  "nombre": "sapopepe",
-  "email": "sapopepe@yoyo.com",
-  "DNI": "123",
-  "password": "$2b$10$mv2vtgHIgLu/KKXO4TZjresG9H0vUFO14ATWuRJvu1lJHKIC4y/yS"
+  "nombre": "pepe hongo",
+  "email": "pepe@pepe.com",
+  "DNI": "12345678",
+  "password": "$2b$10$YRIgCFOerkNH3E6.J7BHnurwCwLiqkpR1KmZSsi.z6V0Hb8qQwj3G",
+  "imagen": "imagen-1608525204999.jpg"
  }
 ]
