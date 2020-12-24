@@ -8,6 +8,14 @@
    
         <section class=form_login>
             <h5>Ingresar</h5>
+            
+            <% if (typeof errors != "undefined") { %>
+						 
+                <% errors.forEach(error => { %>     
+                    <p><%= error.msg %> </p>
+                <% }) %>
+                <% } %>
+
                 <form action="login" method="POST">
                         <input class="controls" type="email" name="email" id="email" placeholder="Usuario">
                         <input class="controls" type="password" name="password" id="password" placeholder="Contraseña">

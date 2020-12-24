@@ -1,5 +1,5 @@
 function autenticacion(req, res, next){
-    if(req.session.usarioALogear != undefined){
+    if(req.session.usuarioALogear != undefined){
         next()
     } else{
         res.redirect('./login');

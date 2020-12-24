@@ -4,20 +4,22 @@
 <body>
     
     <%- include('./partials/header') %>
-    <main>
-        <div class="portada">
-            <div class="row">
-                <div class="col-2">
-                    <h2 class="products-title"><%= locals.usuarioSesion.email %></h2>
-                </div>
-                <div class="col-2">
-                    <img src="/images/users/<%= locals.usuarioSesion.imagen %>" alt="">
-                </div>
-            </div>
+
+<main>
+    <div class="portada">
+        
+        <div class="col-2">
+            <h2 class="products-title"><%= locals.usuarioSesion.email %></h2>
         </div>
-    </main>
+        <div class="col-2">
+            <img src="/images/users/<%= locals.usuarioSesion.imagen %>" alt="">
+        </div>
+        
+    </div>
+</main>
 
     <%- include('./partials/footer') %>
+
 </body>
 
 </html>

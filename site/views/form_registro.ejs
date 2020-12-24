@@ -8,13 +8,33 @@
     <main>
         <section class=form_login>
             <h5>Registrate</h5>
+
+            <% if (typeof errors != "undefined") { %>
+						 
+                <% errors.forEach(error => { %>     
+                    <p><%= error.msg %> </p>
+                <% }) %>
+                <% } %>
+                
                 <form action="registro" method="POST" enctype="multipart/form-data">
+
+                    <% if (typeof errors != "undefined") { %>
+                        <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo" value="<%= oldInfo.nombre %>">
+                        <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico" value="<%= oldInfo.email %>">
+                        <input class="controls" type="tel" name="tel" id="tel" placeholder="Telefono" value="<%= oldInfo.tel %>">
+                        <input class="controls" type="numero" name="dni" id="dni" placeholder="Dni" value="<%= oldInfo.dni %>">
+                        <input class="controls" type="password" name="password" id="password" placeholder="Contraseña" value="<%= oldInfo.password %>">
+                        <input class="controls" type="password" name="password1" id="password1" placeholder=" Confirmar contraseña" value="<%= oldInfo.password1 %>"> <!-- se modifica name y id porque son dos datos distintos.-->
+
+                    <% } else {%>
                         <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
                         <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico">
                         <input class="controls" type="tel" name="tel" id="tel" placeholder="Telefono">
                         <input class="controls" type="numero" name="dni" id="dni" placeholder="Dni">
                         <input class="controls" type="password" name="password" id="password" placeholder="Contraseña">
                         <input class="controls" type="password" name="password1" id="password1" placeholder=" Confirmar contraseña"> <!-- se modifica name y id porque son dos datos distintos.-->
+
+                    <% } %> 
                         <div class="div">Sexo:
                             <input type="radio" name="hm" value="h" id="hombre"> <label for="hombre">Hombre</label>
                             <input type="radio" name="hm" value="m" id="mujer"> <label for="mujer">Mujer</label>

@@ -17,7 +17,7 @@ module.exports = {
                 .bail()
             .custom(function(value){
                 
-                const usersReadDB = path.join(__dirname, '../database', 'users.json');
+                const usersReadDB = path.join(__dirname, '../data', 'datos-usuarios.json');
                 const users = JSON.parse(fs.readFileSync(usersReadDB, 'utf-8'));
                 
                 const emailFound = users.find(function (user){return user.email == value});

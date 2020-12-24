@@ -2,7 +2,7 @@ function guest(req, res, next){
     if(req.session.userALogear == undefined){
         next()
     } else{
-        res.redirect('./');
+        res.redirect('/');
     }
 
 };

@@ -19,26 +19,26 @@ const usersControllers = {
         const usuarios = todos_los_usuarios();
 
         if(!results.isEmpty()){
-            return res.render('./views/login', {
+            return res.render('login', {
                 errors: results.errors,
                 oldInfo: req.body
             });
         };
 
-        const usuarioEncontrado = usuarios.find((usuario) => (usuario.email = req.body.email));
+        const usuarioEncontrado = usuarios.find((usuario) => (usuario.email == req.body.email));
         
         if(usuarioEncontrado.email == req.body.email && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)){
             
-            req.session.userALogear = usuarioEncontradp;
+            req.session.usuarioALogear = usuarioEncontrado;
             
-            if(req.body.recordarme){
+            if(req.body.recordame){
                 res.cookie('Usuario', usuarioEncontrado.id ,{ maxAge: 6000000});
             }
             
-        return res.redirect('/profile');
+        return res.redirect('/users/profile');
 
             } else {
-            return res.render('./form_registro', {
+            return res.render('form_registro', {
                 errors: {msg: 'Email o Contraseña invalidos'}
         })};
         
@@ -54,7 +54,7 @@ const usersControllers = {
         const results = validationResult(req);
         
         if(!results.isEmpty()){
-            return res.render('./views/form_registro', {
+            return res.render('form_registro', {
                 errors: results.errors,
                 oldInfo: req.body
             });
@@ -90,9 +90,17 @@ const usersControllers = {
     logout: (req, res) =>{
         
         const usuarios = todos_los_usuarios();
-        const usuarioEncontrado = usuarios.find((usuario) => (usuario.email = res.locals.email));
+        const usuarioEncontrado = usuarios.find((usuario) => (usuario.email == res.locals.email));
 
-        res.cookie('Usuario', usuarioEncontrado.id, {expires: new Date(Date.now()-1000)});
+        console.log(res.locals)
+        console.log('estos son los usuarios ' + usuarios)
+        console.log('El usuario encontrado es ' + usuarioEncontrado)
+
+
+        if(req.cookies.Usuario){
+            req.cookie('Usuario', usuarioEncontrado.id, {expires: new Date(Date.now()-1000)});
+        };
+        
         req.session.destroy();
         // Do the magic
         return res.redirect('/')

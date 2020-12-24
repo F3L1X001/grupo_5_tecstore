@@ -1,13 +1,26 @@
 [
  {
-  "id": 0
- },
- {
   "id": 1,
   "nombre": "pepe hongo",
   "email": "pepe@pepe.com",
   "DNI": "12345678",
   "password": "$2b$10$YRIgCFOerkNH3E6.J7BHnurwCwLiqkpR1KmZSsi.z6V0Hb8qQwj3G",
   "imagen": "imagen-1608525204999.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "yoyo",
+  "email": "yono@yono.com",
+  "DNI": "12345678",
+  "password": "$2b$10$1ukFtiABuwwE3XPtEugkcuHEZ2t76yAn6s6q86ES5wAhvWf3Mzg3S",
+  "imagen": "imagen-1608761818832.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "123",
+  "email": "123@123.com",
+  "DNI": "12345678",
+  "password": "$2b$10$GQwsmBhgIHsfSCnqPTJdE.Emx57T4nSv5WcoOxFqcFVh/fbBvB1W.",
+  "imagen": "imagen-1608762970925.jpg"
  }
 ]

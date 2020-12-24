@@ -23,7 +23,16 @@ function guardar_productos(ProductosAGuardar){
 
 const productsController = {
     mostrar: (req, res)=>{
-        res.render('productDetail');
+       
+        const id = req.params.id;
+		const productos = todo_los_productos();
+		const resultado = productos.find((producto) => {
+			return producto.id == id
+		})
+        
+        res.render('productDetail', {
+            product: resultado
+        });
     },
 
     crear: (req, res)=>{

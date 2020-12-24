@@ -8,6 +8,8 @@ const images = require('../middlewares/images_products')
 /* GET home page. */
 router.get('/', productsController.mostrar);
 
+router.get('/detail/:id', productsController.mostrar);
+
 router.get('/create', productsController.crear); 
 router.post('/create', images.any(), productsController.crear_post);
 
