@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const db = require('../database/models');
 
 function todo_los_productos() {
     const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
@@ -22,11 +23,13 @@ function guardar_productos(ProductosAGuardar){
 }
 
 const productsController = {
-    mostrar: (req, res)=>{
+    mostrar: async (req, res)=>{
        
+        const todosProductos = await db.Product.findAll()
+
         const id = req.params.id;
-		const productos = todo_los_productos();
-		const resultado = productos.find((producto) => {
+		//const productos = todo_los_productos();
+		const resultado = todosProductos.find((producto) => {
 			return producto.id == id
 		})
         
@@ -40,9 +43,9 @@ const productsController = {
         //res.sendFile(path.join(__dirname, '../views', '/login.html'));
     },
 
-    crear_post: (req, res, next) => {
+    crear_post: async (req, res, next) => {
         const nuevo_producto = {
-            id: generar_id_producto(),
+            //id: generar_id_producto(),
             name: req.body.marca,
             price: req.body.precio,
             discount: req.body.descuento,
@@ -52,31 +55,37 @@ const productsController = {
             image: req.files[0].filename
         }
 
-        const productos = todo_los_productos();
+        await db.Product.create(nuevo_producto)
+
+       /*  const productos = todo_los_productos();
         const Productos_guardar = [...productos, nuevo_producto];
 
-        guardar_productos(Productos_guardar);
+        guardar_productos(Productos_guardar); */
 
         res.redirect('/products/create');
     },
 
-    editar: (req, res) => {
-        const productos = todo_los_productos();
+    editar: async (req, res) => {
         
-        const id = req.params.id;
+        const resultado = await db.Product.findByPk(req.params.id);
+
+        const categorias = await db.Category.findAll();
+        
+       /*  const id = req.params.id;
 
         
-        const resultado = productos.find((producto) => producto.id == id);
-        console.log(resultado)
+        const resultado = productos.find((producto) => producto.id == id); */
+        
 
         res.render('form_edicion_producto', {
-            producto: resultado
+            producto: resultado,
+            categoria: categorias
         })
         //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
     },
 
     editar_put: (req, res) => {
-        const productos = todo_los_productos();
+     /*    const productos = todo_los_productos();
         const id = req.params.id;
         const producto_editado = productos.map((producto) =>{
 
@@ -92,9 +101,24 @@ const productsController = {
             }
 
             return producto
-        })
+        }) 
 
-        guardar_productos(producto_editado);
+        guardar_productos(producto_editado);*/
+
+        db.Product.update ({
+                
+            name: req.body.marca,
+            price: req.body.precio,
+            discount: req.body.descuento,
+            category_id: req.body.categoria,
+            description: req.body.descripcion,
+            code: req.body.cod_prod,
+            image: req.files[0] ? req.files[0].filename : producto.image
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
 
         res.redirect('/') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
 

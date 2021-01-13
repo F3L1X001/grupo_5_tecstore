@@ -3,6 +3,7 @@ const fs = require('fs');
 const express = require('express');
 const bcrypt = require('bcrypt');
 const { validationResult } = require('express-validator');
+const db = require('../database/models') 
 
 const todos_los_usuarios = require('../helpers/users/allUsers');
 const generar_id_usuarios = require('../helpers/users/usersId');
@@ -14,9 +15,9 @@ const usersControllers = {
         res.render('login')
     },
 
-    login_send: (req, res)=>{
+    login_send: async (req, res)=>{
         const results = validationResult(req);
-        const usuarios = todos_los_usuarios();
+        const usuarios = await db.User.findAll();
 
         if(!results.isEmpty()){
             return res.render('login', {
@@ -49,7 +50,7 @@ const usersControllers = {
         
     },
 
-    registro_send: (req, res) =>{
+    registro_send: async (req, res) =>{
 
         const results = validationResult(req);
         
@@ -58,23 +59,27 @@ const usersControllers = {
                 errors: results.errors,
                 oldInfo: req.body
             });
-        };
+        } else {
 
-        const nuevo_usuario = {
-            id: generar_id_usuarios(),
-            nombre: req.body.nombre,
-            email: req.body.email,
-            DNI: req.body.dni,
-            password: bcrypt.hashSync(req.body.password, 10),
-            sexo: req.body.sexo, //ver si se quitaron en el nuevo formulario
-            terminos: req.body.terminos_ok, //ver si se quitaron en el nuevo formulario
-            imagen: req.files[0].filename
+            const nuevoUsuario = {
+                name: req.body.nombre,
+                email: req.body.email,
+                dni: req.body.dni,
+                password: bcrypt.hashSync(req.body.password, 10),
+                sex: req.body.sexo, //ver si se quitaron en el nuevo formulario
+                terms: req.body.terminos_ok, //ver si se quitaron en el nuevo formulario
+                image: req.files[0].filename
+            }
+            
+            await db.User.create(nuevoUsuario)
+
         }
-        
-        const usuarios = todos_los_usuarios();
+
+                
+       /*  const usuarios = todos_los_usuarios();
         const usuarios_a_guardar = [...usuarios, nuevo_usuario];
 
-        guardar_usuarios(usuarios_a_guardar);
+        guardar_usuarios(usuarios_a_guardar); */
 
         res.redirect('/')
     },
@@ -89,16 +94,8 @@ const usersControllers = {
 
     logout: (req, res) =>{
         
-        const usuarios = todos_los_usuarios();
-        const usuarioEncontrado = usuarios.find((usuario) => (usuario.email == res.locals.email));
-
-        console.log(res.locals)
-        console.log('estos son los usuarios ' + usuarios)
-        console.log('El usuario encontrado es ' + usuarioEncontrado)
-
-
         if(req.cookies.Usuario){
-            req.cookie('Usuario', usuarioEncontrado.id, {expires: new Date(Date.now()-1000)});
+            req.cookie('Usuario',null, {expires: new Date(Date.now()-1000)});
         };
         
         req.session.destroy();
