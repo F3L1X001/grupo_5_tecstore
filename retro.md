@@ -1,3 +1,23 @@
+Retrospectiva sprint 6
+
+    Hacer menos{
+        - Demorar definicion de trabajos.
+    }
+
+    Seguir haciendo{
+        - Confiar en el trabajo del compañero.
+        - Revisionando los entregables.
+    }
+
+    Hacer mas{
+        - Trabajo en equipo.
+        - Arreglo de errores pasados 
+    }
+
+    Empezar a hacer{
+        - Adelantarnos a las entregas de los sprints.        
+    }
+
 Retrospectiva sprint 3
 
     Hacer menos{
