@@ -95,7 +95,7 @@ const usersControllers = {
     logout: (req, res) =>{
         
         if(req.cookies.Usuario){
-            req.cookie('Usuario',null, {expires: new Date(Date.now()-1000)});
+            res.cookie('Usuario',null, {expires: new Date(Date.now()-1000)});
         };
         
         req.session.destroy();
