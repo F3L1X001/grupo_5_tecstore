@@ -3,26 +3,20 @@ const path = require('path');
 const express = require('express');
 const db = require('../database/models');
 
-function todo_los_productos() {
-    const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
-    const productos_BD = JSON.parse(fs.readFileSync(productos_ubicacion_BD, 'utf-8'));
-    return productos_BD;
-};
-
-function generar_id_producto(){
-    const productos = todo_los_productos();
-    const nueva_id_producto = productos.pop().id + 1;
-    return nueva_id_producto;
-}
-
-function guardar_productos(ProductosAGuardar){
-    const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
-    const productosJson = JSON.stringify(ProductosAGuardar, null, " ");
-    
-    fs.writeFileSync(productos_ubicacion_BD, productosJson);
-}
 
 const productsController = {
+    
+    listar: (req, res)=> {
+
+        db.Product.findAll()
+            .then(productos=>{
+
+                res.render('productList', { products: productos })
+
+            })   
+
+    },
+    
     mostrar: async (req, res)=>{
        
         const todosProductos = await db.Product.findAll()

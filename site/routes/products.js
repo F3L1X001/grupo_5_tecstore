@@ -6,7 +6,7 @@ const images = require('../middlewares/images_products')
 
 
 /* GET home page. */
-router.get('/', productsController.mostrar);
+router.get('/', productsController.listar);
 
 router.get('/detail/:id', productsController.mostrar);
 
