@@ -16,7 +16,17 @@ const productsController = {
             })   
 
     },
-    
+
+     lisar_admin : (req, res)=> {
+
+        db.Product.findAll()
+            .then(productos=>{
+
+                res.render('admin_products', { products: productos })
+
+            })   
+
+    },
     mostrar: async (req, res)=>{
        
         const todosProductos = await db.Product.findAll()
@@ -64,17 +74,18 @@ const productsController = {
         const resultado = await db.Product.findByPk(req.params.id);
 
         const categorias = await db.Category.findAll();
-        
+       
+   
        /*  const id = req.params.id;
 
         
         const resultado = productos.find((producto) => producto.id == id); */
         
 
-        res.render('form_edicion_producto', {
-            producto: resultado,
-            categoria: categorias
-        })
+          res.render('form_edicion_producto', {
+               producto: resultado,
+              categoria: categorias
+            })
         //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
     },
 

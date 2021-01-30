@@ -1,0 +1,40 @@
+
+
+
+.admin_list li{
+ display: inline; 
+
+}
+
+
+
+
+  
+
+
+.admin_list_article{
+ display: flex;
+ flex-direction: row;
+ justify-content:space-around;
+ 
+
+}
+.admin_list_article li{
+display: inline;
+
+}
+
+
+.admin_list_article img{
+    width:150px;
+    height:150px;
+
+}
+
+.admin_list_article div{
+    flex-direction: row;
+}
+
+    
+
+

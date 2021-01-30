@@ -27,7 +27,14 @@ const indexController = {
             
         });
 
-    }
+    },
+   dash: function (req,res){
+       res.render('dash')
+
+   }
+
+
+    
    
 };
 

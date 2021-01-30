@@ -1,40 +1,11 @@
 <header>
-
+    <title><%=title%></title>
     <div class="header">
         <div class="container">
             <img src="../../images/home/logo.png" alt="Logo del sitio" width="220px" >
             <div class="header-right">
-            <nav>
-                <a href="/">Home</a>
-
-                <% if (locals.usuarioSesion) { %>
-<<<<<<< HEAD
-                   
-=======
-                    <a href="/">Home</a>
-                    <a href="/products">Productos</a>
->>>>>>> origin/listar
-                    <a href="#">Contacto</a>
-                    <a href="/products/create">Admin Dashboard</a>
-                    <li><a href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
-                    <li><a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
-                    
-                    <% }  else { %>
-<<<<<<< HEAD
-                      
-=======
-                        <a href="/">Home</a>
->>>>>>> origin/listar
-                        <a href="/products">Productos</a>
-                        <a href="#">Contacto</a>
-                    <li><a href="/users/registro">Registrate <i class="fas fa-address-card"></i></a></li>
-                    <li><a href="/users/login">Mi cuenta <i class="fas fa-sign-in-alt"></i></a></li>
-                    
-                    <% } %> 
-
-                <a href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
-                </div>
-            </nav>
+                
         </div>
+
     </div>
 </header>

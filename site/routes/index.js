@@ -4,6 +4,7 @@ const indexController = require('../controllers/index_controller')
 
 /* GET home page. */
 router.get('/', indexController.home);
+router.get('/dash', indexController.dash);
 
 
 
