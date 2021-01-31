@@ -17,7 +17,7 @@ const productsController = {
 
     },
 
-     lisar_admin : (req, res)=> {
+     listar_admin : (req, res)=> {
 
         db.Product.findAll()
             .then(productos=>{
@@ -66,7 +66,7 @@ const productsController = {
 
         guardar_productos(Productos_guardar); */
 
-        res.redirect('/products/create');
+        res.redirect('/products/listar_admin');
     },
 
     editar: async (req, res) => {
@@ -131,15 +131,24 @@ const productsController = {
     },
 
     borrar_producto: (req, res)=>{
-        const productos =todo_los_productos();
+        /*const productos =todo_los_productos();
         const id_producto_borrar = req.params.id;
         const producto_a_borrar = productos.find((product)=>{return product.id==id_producto_borrar});
         const ubicacion_producto = productos.indexOf(producto_a_borrar);
         productos.splice(ubicacion_producto, 1)
-        
-        guardar_productos(productos);
+        guardar_productos(productos);*/
+              db.Product.destroy({
+                where :{
 
-        res.redirect('/');
+                      id:req.params.id
+
+                }
+
+
+              });
+
+
+        res.redirect('/products/listar_admin');
     },
 
     carrito_compras: (req, res) =>{

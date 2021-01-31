@@ -54,12 +54,14 @@
                 </div>  
                 
                 <div class=boton_enviar>
-                    <button type="submit" id="guardar_producto" name="guardar_producto" class="boton">Guardar Producto</button>  
+                    <button type="submit" id="guardar_producto" name="guardar_producto" class="boton">Guardar fProducto</button>  
                 </div>     
             </form>
-            <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+
+            <% if (locals.usuarioSesion.typeuser_id==3) { %> <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
                 <button type="submit" id="borrar_producto" name="borrar_producto" class="boton">Borrar Producto</button>
             </form>
+             <% } %> 
             
         </section>
     </main>
