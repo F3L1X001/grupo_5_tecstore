@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <%- include('./partials/head') %> 
-<body style="background-color: #faf2eb;"> 
+<body style="background-color: #cec6c0;"> 
 
     <%- include('./partials/header') %> 
 
@@ -16,43 +16,167 @@
                 <% }) %>
                 <% } %>
                 
-                <form action="registro" method="POST" enctype="multipart/form-data">
+                <form action="registro" method="POST" enctype="multipart/form-data" class="formulario" id="formulario">
 
                     <% if (typeof errors != "undefined") { %>
+                        <div class="formulario_grupo" id="grupo_nombre">
+                        <div class="formulario_grupo-input">
                         <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo" value="<%= oldInfo.nombre %>">
-                        <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico" value="<%= oldInfo.email %>">
-                        <input class="controls" type="tel" name="tel" id="tel" placeholder="Telefono" value="<%= oldInfo.tel %>">
-                        <input class="controls" type="numero" name="dni" id="dni" placeholder="Dni" value="<%= oldInfo.dni %>">
-                        <input class="controls" type="password" name="password" id="password" placeholder="Contraseña" value="<%= oldInfo.password %>">
-                        <input class="controls" type="password" name="password1" id="password1" placeholder=" Confirmar contraseña" value="<%= oldInfo.password1 %>"> <!-- se modifica name y id porque son dos datos distintos.-->
+                        <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
+                        </div>
+                        
+                        <div class="formulario_grupo" id="grupo_email">
+                            <div class="formulario_grupo-input">
+                            <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico" value="<%= oldInfo.email %>">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                            </div>
+                            <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                            </div>
 
+
+                        <div class="formulario_grupo" id="grupo_tel">
+                            <div class="formulario_grupo-input">
+                            <input class="controls" type="text" name="tel" id="tel" placeholder="Telefono" value="<%= oldInfo.tel %>">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                               </div>
+                               <p class="formulario_input-error">El telefono solo puede contener numeros y el maximo son 14 dígitos.</p>
+                               </div>      
+
+                        <div class="formulario_grupo" id="grupo_dni">
+                             <div class="formulario_grupo-input">
+                             <input class="controls" type="number" name="dni" id="dni" placeholder="Dni" value="<%= oldInfo.dni %>">
+                             <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                 </div>
+                                  <p class="formulario_input-error">El dni solo puede contener numeros.</p>
+                                </div>  
+
+                        <div class="formulario_grupo" id="grupo_password">
+                                <div class="formulario_grupo-input">
+                                 <input class="controls" type="password" name="password" id="password" placeholder="Contraseña" value="<%= oldInfo.password %>">
+                                    <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                     </div>
+                                     <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                                            </div>  
+
+                         <div class="formulario_grupo" id="grupo_password2">
+                                 <div class="formulario_grupo-input">
+                                     <input class="controls" type="password" name="password2" id="password2" placeholder="Confirmar contraseña" value="<%= oldInfo.password2 %>">
+                                     <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                         </div>
+                                         <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                                                 </div>                      
+                                            
+
+
+                        
                     <% } else {%>
-                        <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
-                        <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico">
-                        <input class="controls" type="tel" name="tel" id="tel" placeholder="Telefono">
-                        <input class="controls" type="numero" name="dni" id="dni" placeholder="Dni">
-                        <input class="controls" type="password" name="password" id="password" placeholder="Contraseña">
-                        <input class="controls" type="password" name="password1" id="password1" placeholder=" Confirmar contraseña"> <!-- se modifica name y id porque son dos datos distintos.-->
 
+                        <div class="formulario_grupo" id="grupo_nombre">
+                            <div class="formulario_grupo-input">
+                            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                            </div>
+                            <p class="formulario_input-error">El Nombre tiene que ser de 4 a 16 dígitos y solo puede contener letras.</p>
+                            </div>
+                            
+                            <div class="formulario_grupo" id="grupo_email">
+                                <div class="formulario_grupo-input">
+                                <input class="controls" type="email" name="email" id="email" placeholder="Correo electronico">
+                                <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                </div>
+                                <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                                </div>
+    
+    
+                            <div class="formulario_grupo" id="grupo_tel">
+                                <div class="formulario_grupo-input">
+                                <input class="controls" type="text" name="tel" id="tel" placeholder="Teléfono">
+                                <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                   </div>
+                                   <p class="formulario_input-error">El teléfono solo puede contener numeros y el maximo son 14 dígitos.</p>
+                                   </div>      
+    
+                            <div class="formulario_grupo" id="grupo_dni">
+                                 <div class="formulario_grupo-input">
+                                 <input class="controls" type="number" name="dni" id="dni" placeholder="Dni">
+                                 <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                     </div>
+                                      <p class="formulario_input-error">El Dni solo puede contener numeros.</p>
+                                    </div>  
+    
+                            <div class="formulario_grupo" id="grupo_password">
+                                    <div class="formulario_grupo-input">
+                                     <input class="controls" type="password" name="password" id="password" placeholder="Contraseña">
+                                        <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                         </div>
+                                         <p class="formulario_input-error">La contraseña tiene que ser de 4 a 12 dígitos.</p>
+                                                </div>  
+    
+                             <div class="formulario_grupo" id="grupo_password2">
+                                     <div class="formulario_grupo-input">
+                                         <input class="controls" type="password" name="password2" id="password2" placeholder="Confirmar contraseña">
+                                         <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                             </div>
+                                             <p class="formulario_input-error">Ambas contraseñas deben ser iguales.</p>
+                                                     </div>                      
+                                              
                     <% } %> 
+
+                    
+                    <div class="formulario_grupo" id="grupo_genero"> 
                         <div class="div">Sexo:
                             <input type="radio" name="hm" value="h" id="hombre"> <label for="hombre">Hombre</label>
                             <input type="radio" name="hm" value="m" id="mujer"> <label for="mujer">Mujer</label>
                         </div>
+                    </div>
+                    
+                    <!-- 
+                        
+                    <div class="formulario_grupo" id="grupo_img"> 
                         <div>
                             <input class="controls" type="file" name="imagen" id="imagen">
                         </div>
-                          <br>
-                         <input class="buttons" type="submit"  name="registro" value="Registrarme">
-                        <p></p> <br>
+                    </div>   
 
-                        <input type="checkbox" name="terminos" id="terminos"> <label for="terminos">Acepto Terminos y Condiciones</label>
+                 -->
+                  
+                
+                    <div class="formulario_mensaje" id="formulario_mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
+                    </div>
+
+                         
+
+                            <br> 
+                          <div class="formulario_grupo formulario_grupo-btn-enviar">
+                            <button type="submit" class="buttons">Registrarme</button>
+                            <p class="formulario_mensaje-exito" id="formulario_mensaje-exito">Formulario enviado exitosamente!</p>
+                        </div>
+                      
+
+                       
+
+                    
+                        <div class="formulario_grupo" id="grupo_terminos">
+                            <label class="formulario_label">
+                                <input class="formulario_checkbox" type="checkbox" name="terminos" id="terminos">
+                                Acepto los Terminos y Condiciones
+                            </label>
+                        </div>
+
+
+
+
                 </form>
                         
    
                         
 
         </section>
+        <script src="../javascript/registro.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     
     </main>
 
