@@ -1,28 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-
-
-<nav-container class="nav-containter">
-<nav class="nav">
-<a href="/">Home</a>
-<a href="#">Contacto</a>
-
-<% if (locals.usuarioSesion) { %>
-     
-   
-    <% if (locals.usuarioSesion.typeuser_id>1) { %><a href="/dash">Dashboard</a> <%}%>
-    <a href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
-    <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
-    
-    <% }  else { %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav ">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+            <li class="nav-item">
+             <a class="nav-link" href="#">Contacto</a>
+           </li>
+             <%if (locals.usuarioSesion) { %>
+             <li class="nav-item">
+              <% if (locals.usuarioSesion.typeuser_id>1){%><a class="nav-link" href="/dash">Dashboard</a> <%}%>
+             </li>
+             <li class="nav-item"><a class="nav-link" href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li></li> 
+             <li class="nav-item"> <a class="nav-link" href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li></li>
+             
+             <% }  else { %>
+                   
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/products" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Productos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Desktop</a>
+                  <a class="dropdown-item" href="#">Notebooks</a>
+                  <a class="dropdown-item" href="#">Accesorios</a>
+                </div>
+              </li>
+        
+           
+            <li class="nav-item"><a class="nav-link" href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li></li>
+          
+          <% } %> 
       
-        <a href="/products">Productos</a>
-  
-     
-      <a href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a> </li>  
     
-    <% } %> 
-
-<a href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
-</div>
+         
+      
+    </ul>
+  </div>
 </nav>
-</nav-container>
+
+ 
+ 
+
+
+
+
+
+
