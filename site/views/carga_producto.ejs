@@ -10,6 +10,14 @@
     <main>
         <section class=form_login>
             <h5>Registrar Producto</h5>
+
+            <% if (typeof errors != "undefined") { %>
+						 
+                <% errors.forEach(error => { %>     
+                    <p><%= error.msg %> </p>
+                <% }) 
+            } %>
+
             <form action="create" method="POST" enctype="multipart/form-data">
                         <input class="controls" type="text" name="marca" id="marca" placeholder="Marca">
                         <input class="controls" type="text" name="cod_prod" id="cod_prod" placeholder="Codigo Producto">

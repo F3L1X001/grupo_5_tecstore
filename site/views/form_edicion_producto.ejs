@@ -12,6 +12,14 @@
         <section class=form_registro>
             <div>
                 <h2 class=titulo>Editando: <%= producto.name %>   </h2>
+
+                <% if (typeof errors != "undefined") { %>
+						 
+                    <% errors.forEach(error => { %>     
+                        <p><%= error.msg %> </p>
+                    <% }) 
+                } %>
+
             </div>
             <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> 
                 <div class=container>
@@ -54,7 +62,7 @@
                 </div>  
                 
                 <div class=boton_enviar>
-                    <button type="submit" id="guardar_producto" name="guardar_producto" class="boton">Guardar fProducto</button>  
+                    <button type="submit" id="editar_producto" name="editar_producto" value="editar_producto" class="boton">Guardar fProducto</button>  
                 </div>     
             </form>
 

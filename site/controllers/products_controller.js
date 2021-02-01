@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 
 
 const productsController = {
@@ -48,6 +49,16 @@ const productsController = {
     },
 
     crear_post: async (req, res, next) => {
+
+        const results = validationResult(req);
+
+        if(!results.isEmpty()){
+            return res.render('carga_producto', {
+                errors: results.errors,
+                oldInfo: req.body
+            });
+        };
+
         const nuevo_producto = {
             //id: generar_id_producto(),
             name: req.body.marca,
@@ -70,7 +81,7 @@ const productsController = {
     },
 
     editar: async (req, res) => {
-        
+       
         const resultado = await db.Product.findByPk(req.params.id);
 
         const categorias = await db.Category.findAll();
@@ -83,39 +94,36 @@ const productsController = {
         
 
           res.render('form_edicion_producto', {
-               producto: resultado,
+              producto: resultado,
               categoria: categorias
             })
         //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
     },
 
-    editar_put: (req, res) => {
-     /*    const productos = todo_los_productos();
-        const id = req.params.id;
-        const producto_editado = productos.map((producto) =>{
+    editar_put: async (req, res) => {
 
-            if (id == producto.id){
-                
-                producto.name = req.body.marca,
-                producto.price = req.body.precio,
-                producto.discount = req.body.descuento,
-                producto.category = req.body.categoria,
-                producto.description = req.body.descripcion,
-                producto.code = req.body.cod_prod,
-                producto.image = req.files[0] ? req.files[0].filename : producto.image
-            }
+        const producto = await db.Product.findOne({
+			where: {
+				id: req.params.id
+			}
+		});
 
-            return producto
-        }) 
+        const results = validationResult(req);
 
-        guardar_productos(producto_editado);*/
-
-        db.Product.update ({
+        if(!results.isEmpty()){
+            return res.render('form_edicion_producto', {
+                errors: results.errors,
+                producto: producto
+            });
+        };
+       
+     
+        await db.Product.update ({
                 
             name: req.body.marca,
             price: req.body.precio,
             discount: req.body.descuento,
-            category_id: req.body.categoria,
+            //category_id: req.body.categoria,
             description: req.body.descripcion,
             code: req.body.cod_prod,
             image: req.files[0] ? req.files[0].filename : producto.image

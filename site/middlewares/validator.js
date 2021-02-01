@@ -71,7 +71,38 @@ module.exports = {
         .notEmpty()
             .withMessage('La contraseña no puede estar vacia') // validado y existir en la BD
     ],
-    createProduct: [
+    modifyProduct: [
+        body('marca')
+            .notEmpty()
+                .withMessage('La marca no puede estar vacia')
+                .bail()
+            .isLength({min:5})
+                .withMessage('El nombre debe tener minimo 5 caracteres'), 
+        body('precio')
+            .notEmpty()
+                .withMessage('El precio no puede estar vacio'),
+        body('descripcion')
+            .notEmpty()
+                .withMessage('La descripcion no puede estar vacia')
+                .bail()
+            .isLength({min: 20})
+                .withMessage('La descripcion debe contener al menos 20 caracteres'),
+        body('imagen')
+            .custom(function (value, { req }){
+                return req.files[0];
+            })
+                .withMessage('Debe cargar una imagen')
+                .bail()
+            .custom(function(value, { req }){
+            const ext = path.extname(req.files[0].originalname);
+            if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
+                return true;
+            }
+                return false;
+            })
+                .withMessage('El archivo de imagen debe ser .jpg/.png/.jpeg/.gif')
+        
+                
         /* Validar nombre obligatorio, minimo 5 caracteres.
         Descripcion validar con min 20 caracteres.
         Imagen validar con extensiones.*/
