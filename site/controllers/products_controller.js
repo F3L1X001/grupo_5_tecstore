@@ -133,7 +133,7 @@ const productsController = {
             }
         });
 
-        res.redirect('/') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
+        res.redirect('/products/listar_admin') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
 
 
     },

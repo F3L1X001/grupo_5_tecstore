@@ -13,7 +13,7 @@ router. get('/listar_admin',autenticacion,productsController.listar_admin )
 
 router.get('/detail/:id', productsController.mostrar);
 
-router.get('/create', productsController.crear); 
+router.get('/create', autenticacion, productsController.crear); 
 router.post('/create', images.any(), validator.modifyProduct, productsController.crear_post);
 
 router.get('/edit/:id',autenticacion, productsController.editar);
