@@ -81,7 +81,7 @@ const usersControllers = {
 
         guardar_usuarios(usuarios_a_guardar); */
 
-        res.redirect('/')
+        res.redirect('/users/login')
     },
 
     recup_pass: (req, res) => {

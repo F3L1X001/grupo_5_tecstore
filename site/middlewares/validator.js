@@ -37,7 +37,7 @@ module.exports = {
                 .withMessage('La contraseña debe tener minimo 8 caracteres.') 
                 .bail()
             .custom(function(value, { req }){
-                if(value == req.body.password1){
+                if(value == req.body.retype){
                     return true;
                 } else { return false;}
                 })

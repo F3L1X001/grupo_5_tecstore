@@ -87,24 +87,16 @@ inputs.forEach((input) => {
 });
 
 formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
-
+	
 	const terminos = document.getElementById('terminos');
-	if(campos.nombre && campos.email && campos.tel && campos.dni && campos.password && terminos.checked ){
-		formulario.reset();
+	if(!campos.nombre || !campos.email || !campos.tel || !campos.dni || !campos.password || !terminos.checked ){
+		e.preventDefault();
 
-		document.getElementById('formulario_mensaje-exito').classList.add('formulario_mensaje-exito-activo');
-		setTimeout(() => {
-			document.getElementById('formulario_mensaje-exito').classList.remove('formulario_mensaje-exito-activo');
-		}, 5000);
-
-		document.querySelectorAll('.formulario_grupo-correcto').forEach((icono) => {
-			icono.classList.remove('formulario_grupo-correcto');
-		});
-	} else {
 		document.getElementById('formulario_mensaje').classList.add('formulario_mensaje-activo');
-	}
+
+		};
 });
+
 
 
 
