@@ -74,7 +74,8 @@ const productsController = {
         const resultado = await db.Product.findByPk(req.params.id);
 
         const categorias = await db.Category.findAll();
-       
+         
+     
    
        /*  const id = req.params.id;
 
@@ -85,7 +86,7 @@ const productsController = {
           res.render('form_edicion_producto', {
                producto: resultado,
               categoria: categorias
-            })
+            });
         //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
     },
 
