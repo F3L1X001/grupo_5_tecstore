@@ -101,16 +101,23 @@ module.exports = {
                 .bail()
             .custom(function(value, { req }){
 
-                if (req.method == 'POST'){
+                if (!req.files[0]){
+
+                    return true
+                    
+                } else if (req.files[0]){
 
                     const ext = path.extname(req.files[0].originalname);
+
+                
                     if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
                         return true;
-                    }
+                    }     
 
-                }
-          
+                }  
+                          
                 return false;
+
             })
                 .withMessage('El archivo de imagen debe ser .jpg/.png/.jpeg/.gif')
         

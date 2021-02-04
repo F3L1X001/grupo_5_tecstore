@@ -98,22 +98,14 @@ const productsController = {
 
     editar_put: async (req, res) => {
 
+        const categorias = await db.Category.findAll();        
+
         const producto = await db.Product.findOne({
 			where: {
 				id: req.params.id
 			}
-		});
-
-        const results = validationResult(req);
-
-        if(!results.isEmpty()){
-            return res.render('form_edicion_producto', {
-                errors: results.errors,
-                producto: producto
-            });
-        };
-       
-     
+        });
+        
         await db.Product.update ({
                 
             name: req.body.marca,
@@ -128,6 +120,16 @@ const productsController = {
                 id: req.params.id
             }
         });
+
+        const results = validationResult(req);
+
+        if(!results.isEmpty()){
+            return res.render('form_edicion_producto', {
+                errors: results.errors,
+                producto: producto,
+                categorias: categorias
+            });
+        };
 
         res.redirect('/products/listar_admin') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
 
