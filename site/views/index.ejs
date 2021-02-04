@@ -47,31 +47,40 @@
         </form>
     </div>
     <div class="row-products">
-        <% for (product of productosDestacados) { %>
-        <div class="col-4-products">
-            <a href="/products/detail/<%= product.id %> ">
-                <img class= "sale-box-image" src="/images/product_details/<%=product.image%>" alt="">
-                <div class="sale-box-title"><%=product.name%></div>
-                <div class="sale-box-price">$ <%=product.price%></div> 
-            </a>
-        </div>
-
-
+        <% for (categoria of categorias) { %>
+            
+            <% categoria.products.forEach(product => { %>
+             
+                <div class="col-4-products">
+                    <a href="/products/detail/<%= product.id %> ">
+                        <img class= "sale-box-image" src="/images/product_details/<%=product.image%>" alt="">
+                        <div class="sale-box-title"><%=product.name%></div>
+                        <div class="sale-box-price">$ <%=product.price%></div> 
+                    </a>
+                </div>
+         
+            <% }) %>
+  
         <%}%>
         
         <div class="small-container">
-            <h2 class="title">Ultimos Productos</h2> 
+            <h2 class="title">Ofertas</h2> 
             <div>
     <div class="row-products">
-        <% for (product of ultimosProductos) { %>
-        <div class="col-4-products">
-            <a href="/product/<%= product.id %> "></a>
-                <img class= "sale-box-image" src="/images/product_details/<%=product.image%>" alt="">
-                <div class="sale-box-title"><%=product.name%></div>
-                <div class="sale-box-price">$ <%=product.price%></div> 
-            </a>
-        </div>
-    
+        <% for (categoria of categoriasOfertas) { %>
+            
+            <% categoria.products.forEach(product => { %>
+             
+                <div class="col-4-products">
+                    <a href="/products/detail/<%= product.id %> ">
+                        <img class= "sale-box-image" src="/images/product_details/<%=product.image%>" alt="">
+                        <div class="sale-box-title"><%=product.name%></div>
+                        <div class="sale-box-price">$ <%=product.price%></div> 
+                    </a>
+                </div>
+         
+            <% }) %>
+  
         <%}%>
 
         </main>

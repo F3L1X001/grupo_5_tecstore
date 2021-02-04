@@ -89,15 +89,27 @@ module.exports = {
                 .withMessage('La descripcion debe contener al menos 20 caracteres'),
         body('imagen')
             .custom(function (value, { req }){
+
+                if (req.method == 'PUT') {
+
+                    return true
+
+                }
                 return req.files[0];
             })
                 .withMessage('Debe cargar una imagen')
                 .bail()
             .custom(function(value, { req }){
-            const ext = path.extname(req.files[0].originalname);
-            if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
-                return true;
-            }
+
+                if (req.method == 'POST'){
+
+                    const ext = path.extname(req.files[0].originalname);
+                    if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
+                        return true;
+                    }
+
+                }
+          
                 return false;
             })
                 .withMessage('El archivo de imagen debe ser .jpg/.png/.jpeg/.gif')

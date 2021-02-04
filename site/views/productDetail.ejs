@@ -16,13 +16,13 @@
                 <span class="marco-1"> <h1><%= product.name %> </h1></span>
                 <h4>-Descripcion</h4>
                 <div class="marco">   
-                <p> <%= product.description %> 
-                    <br>
-                   
-                    
+                    <p> <%= product.description %></p><br>
+
                     <b><h2><%= product.price %> </h2></b><br>
+
+                    <h3><%= product.category.name %> </h3>
                    
-                </p></div>
+                </div>
                 <div>
                 <ul class="actions-list">
                     <li>
@@ -38,10 +38,10 @@
             </div>
                 <div class="botons">
                 <a href="" class="fas fa-shopping-cart btn-comprar" ><bold>Comprar</bold></a>          
-                <a href="/products/edit/<%= product.id %> "class="fa fa-pencil-square btn-edit"><bold>Editar Producto</bold></a>  
+                <!-- <a href="/products/edit/<%= product.id %> "class="fa fa-pencil-square btn-edit"><bold>Editar Producto</bold></a>  
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
                     <button type="submit" id="borrar_producto" name="borrar_producto" class="fas fa-trash-alt btn-delete">Borrar Producto</button>
-                </form>
+                </form> -->
                 <!--<a href="" class="fas fa-trash-alt btn-delete"><bold>Eliminar</bold></a>  --> 
             </div>
         </div> 

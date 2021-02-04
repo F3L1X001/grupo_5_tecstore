@@ -30,7 +30,7 @@ const productsController = {
     },
     mostrar: async (req, res)=>{
        
-        const todosProductos = await db.Product.findAll()
+        const todosProductos = await db.Product.findAll({include:[{association: "category"}]})
 
         const id = req.params.id;
 		//const productos = todo_los_productos();
@@ -43,8 +43,11 @@ const productsController = {
         });
     },
 
-    crear: (req, res)=>{
-        res.render('carga_producto')
+    crear: async (req, res)=>{
+
+        const categorias = await db.Category.findAll()
+
+        res.render('carga_producto', {categorias: categorias})
         //res.sendFile(path.join(__dirname, '../views', '/login.html'));
     },
 
@@ -64,7 +67,7 @@ const productsController = {
             name: req.body.marca,
             price: req.body.precio,
             discount: req.body.descuento,
-            category: req.body.categoria,
+            category_id: req.body.categoria,
             description: req.body.descripcion,
             code: req.body.cod_prod,
             image: req.files[0].filename
@@ -86,16 +89,9 @@ const productsController = {
 
         const categorias = await db.Category.findAll();
        
-   
-       /*  const id = req.params.id;
-
-        
-        const resultado = productos.find((producto) => producto.id == id); */
-        
-
           res.render('form_edicion_producto', {
               producto: resultado,
-              categoria: categorias
+              categorias: categorias
             })
         //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
     },
@@ -123,7 +119,7 @@ const productsController = {
             name: req.body.marca,
             price: req.body.precio,
             discount: req.body.descuento,
-            //category_id: req.body.categoria,
+            category_id: req.body.categoria,
             description: req.body.descripcion,
             code: req.body.cod_prod,
             image: req.files[0] ? req.files[0].filename : producto.image
