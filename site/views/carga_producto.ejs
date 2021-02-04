@@ -2,14 +2,14 @@
 <html lang="es">
 
     <%- include('./partials/head') %>
-
+     
     <body style="background-color: #27293b;">
 
     <%- include('./partials/header',{title:"Creacion de Producto"}) %> 
 
     <main>
         <section class=form_login>
-            <h5>Registrar Producto</h5>
+            <h5>Producto </h5>
 
             <% if (typeof errors != "undefined") { %>
 						 
@@ -18,11 +18,39 @@
                 <% }) 
             } %>
 
-            <form action="create" method="POST" enctype="multipart/form-data">
-                        <input class="controls" type="text" name="marca" id="marca" placeholder="Marca">
-                        <input class="controls" type="text" name="cod_prod" id="cod_prod" placeholder="Codigo Producto">
-                        <input class="controls" type="number" name="precio" id="precio" placeholder="Precio">
-                        <input class="controls" type="number" name="descuento" id="descuento" placeholder="Descuento">
+            <form action="create" class="formulario" id="formulario" method="POST" enctype="multipart/form-data">
+                    <div class="formulario_grupo" id="grupo_marca">
+                        <div class="formulario_grupo-input">
+                            <input class="controls" class="formulario_input"type="text" name="marca" id="marca" >
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">el nombre debe tal menos 5 caracteres</p>
+                    </div>
+
+                    <div class="formulario_grupo" id="grupo_cod_prod">
+                        <div class="formulario_grupo-input">
+                            <input class="controls" type="text" name="cod_prod" id="cod_prod" placeholder="Codigo Producto">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">no puede estar vacío</p>
+                    </div>
+                       
+                    <div class="formulario_grupo" id="grupo_precio" > 
+                        <div class="formulario_grupo-input">
+                            <input class="controls" type="number" name="precio" id="precio" placeholder="Precio">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">no puede estar vacío </p>
+                    </div>
+                    
+                    <div class="formulario_grupo" id="grupo_descuento">
+                        <div class="formulario_grupo-input">
+                            <input class="controls" type="number" name="descuento" id="descuento" placeholder="Descuento">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">no puede estar vacío </p>
+                    </div>
+        
                         <label for="categoria">Categoria</label>
                        <div>
                         <select name="categoria" id="categoria">
@@ -35,8 +63,17 @@
                             <input type="file" name="imagen" id="imagen">
                         </div>
                         <div><br>
+                        
+                        <div class="formulario_grupo" id="grupo_descripcion">
                             <label for="descripcion">Descripcion Producto</label>
-                            <textarea name="descripcion" id="descripcion" cols="60" rows="15"></textarea>
+                            <div class="formulario_grupo-textarea">
+                                <textarea class="controls" name="descripcion" id="descripcion" cols="60" rows="15"></textarea>
+
+                            </div>
+                            <p class="formulario_input-error">no puede estar vacío </p>
+
+                        </div>
+                            
                         </div>
                     
                           <br>
@@ -49,5 +86,7 @@
 
     <%- include('./partials/footer') %> 
 
+    <script src="../javascript/carga_producto.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 </html>
