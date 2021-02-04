@@ -31,6 +31,15 @@ body{
     font-size: 20px;
 }
 
+.border {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+}
+
 .controls {
     width: 100%;
     border: 1px solid #017baB;
@@ -52,12 +61,26 @@ body{
     height: 35px;
 	line-height: 35px;
 	width: 40%;
-    background: #017bab;
+    background: #119200;
     border: none;
     color: white;
     margin-bottom: 16px;
     cursor: pointer;
     border-radius: 3px;
+    transition: .1s ease all;
+    font-weight: bold;
+   
+}
+
+.button_registro {
+    line-height: 38px;
+    width: 68%;
+    background: #017bab;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    cursor: pointer;
+    border-radius: 14px;
     transition: .1s ease all;
     font-weight: bold;
    

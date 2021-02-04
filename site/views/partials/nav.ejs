@@ -1,28 +1,26 @@
 
-
-
-<nav-container class="nav-containter">
-<nav class="nav">
-<a href="/">Home</a>
-<a href="#">Contacto</a>
-
-<% if (locals.usuarioSesion) { %>
-     
-   
-    <% if (locals.usuarioSesion.typeuser_id>1) { %><a href="/dash">Dashboard</a> <%}%>
-    <a href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
-    <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
-    
-    <% }  else { %>
-      
-        <a href="/products">Productos</a>
+<!-- <nav-container class="nav-containter">
+  <nav class="nav">
+  <a href="/">Home</a>
+  <a href="#">Contacto</a>
   
+  <% if (locals.usuarioSesion) { %>
+       
      
-      <a href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
+      <% if (locals.usuarioSesion.typeuser_id>1) { %><a href="/dash">Dashboard</a> <%}%>
+      <a href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
+      <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
+      
+      <% }  else { %>
+        
+          <a href="/products">Productos</a>
     
-    <% } %> 
-
-<a href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
-</div>
-</nav>
-</nav-container>
+       
+        <a href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
+      
+      <% } %> 
+  
+  <a href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
+  </div>
+  </nav>
+  </nav-container> -->
