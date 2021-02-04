@@ -1,9 +1,11 @@
 
 -- Base de datos: `tec_store`
 --
+
 CREATE SCHEMA TEC_STORE;
 
 USE TEC_STORE;
+
 -- --------------------------------------------------------
 
 --
@@ -19,6 +21,19 @@ CREATE TABLE `categories` (
   `updated_at` datetime DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `active`, `category_offer`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Desktop', 1, 1, '2021-02-01 21:32:21', '2021-02-01 21:32:21', NULL),
+(2, 'Laptop', 1, 1, '2021-02-01 21:32:21', '2021-02-01 21:32:21', NULL),
+(3, 'Consola', 1, 0, '2021-02-01 21:32:21', '2021-02-01 21:32:21', NULL),
+(4, 'Accesorios', 1, 0, '2021-02-01 21:32:21', '2021-02-01 21:32:21', NULL),
+(5, 'Monitores', 1, 0, '2021-02-01 21:32:21', '2021-02-01 21:32:21', NULL),
+(6, 'TVs', 0, 0, '2021-02-01 21:32:21', '2021-02-01 21:32:21', NULL),
+(7, 'Celulares', 0, 0, '2021-02-01 21:32:21', '2021-02-01 21:32:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -98,13 +113,17 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `discount`, `description`, `code`, `image`, `stock`, `category_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'APPLE WATCH SERIE 3', 44000, 12, '\"El Apple Watch es, en esencia, un dispositivo preparado para recibir notificaciones y contestar bien dictando la respuesta, bien usando scribble, la escritura letra a letra dibujada del Apple Watch o con alguna de las contestaciones predeterminadas.\",', '0001', 'productoD1.jpg', 3, NULL, '2021-01-22 04:16:56', '2021-01-22 04:16:56', NULL),
-(2, 'NOTEBOOK LENOVO 15.6', 129000, 8, 'Ideal para impulsar tu empresa\\r\\n- Procesador, memoria y almacenamiento mejorados\\r\\n- Tarjeta gráfica discreta hasta AMD Radeon RX 640\\r\\n- Pantalla FHD de 15.6” hasta IPS, antirreflejos y 250 nits\\r\\n- Altavoces y sonido de vanguardia\\r\\n- Funciones de', '0002', 'productoD2.jpg', 4, NULL, '2021-01-23 00:43:00', '2021-01-23 00:43:00', NULL),
-(3, 'Monitor Viewsonic 32\\\" 4K', 87000, 4, 'VX3276-4K-mhd - Pantalla de 32 \\\", panel MVA, resolución 3840 x 2160\\r\\nEl ViewSonic® VX3276-4K-mhd es un elegante monitor 4K UHD de 32 ”(31.5\\\" visible) con un estilo moderno y minimalista perfecto para uso doméstico. Con tecnología de panel SuperClear® ', '0003', 'productoD3.jpg', 7, NULL, '2021-01-23 14:54:24', '2021-01-23 14:54:24', NULL),
-(4, 'Webcam Logitech Meetup', 29000, 10, 'MeetUp + Micrófono de expansión Logitech\\r\\nCámara para conferencias todo en uno con lente ultra gran angular para salas pequeñas.\\r\\nDIMENSIONES\\r\\nUnidad principal	\\r\\nAltura x Ancho x Profundidad\\r\\n104 mm x 400 mm x 85 mm\\r\\nPeso 1,04 kg\\r\\nRemoto\\r\\n', '0004', 'productoD4.jpg', 5, NULL, '2021-01-23 14:57:14', '2021-01-23 14:57:14', NULL),
-(5, 'Auriculares Inalambricos Logitech', 26000, 12, 'JUEGA A TU MANERA\\r\\nPor fin, unos audífonos que pueden ser tan expresivos como tú. Los audífonos G733 son inalámbricos y se diseñaron pensando en el confort. Y están equipados con todo el sonido envolvente, los filtros de voz y la iluminación avanzada qu', '0005', 'productoD5.jpg', 10, NULL, '2021-01-23 14:59:45', '2021-01-23 14:59:45', NULL),
-(6, 'Mouse Glorious Model D', 9000, 5, 'TAMAÑO Y AMPLIFICACIÓN ESTILO Ratón ambidiestro ultraligero para juegos ideal para manos . Construido para velocidad, control y comodidad.\\r\\nCABLE ULTRA FLEXIBLE Nuestro cable trenzado ascendido es tan ligero que produce una sensación inalámbrica sin arr', '0006', 'productoD6.jpg', 15, NULL, '2021-01-23 15:00:59', '2021-01-23 15:00:59', NULL),
-(7, 'Play Station 5', 95000, 0, 'Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptativos y audio 3D, además de una generación completamente nueva de juegos de PlayStation.\\r\\nLa PS5 ', '0007', 'productoD7.jpg', 2, NULL, '2021-01-23 15:03:41', '2021-01-23 15:03:41', NULL);
+(1, 'APPLE WATCH SERIE 3', 44000, 12, '\"El Apple Watch es, en esencia, un dispositivo preparado para recibir notificaciones y contestar bien dictando la respuesta, bien usando scribble, la escritura letra a letra dibujada del Apple Watch o con alguna de las contestaciones predeterminadas.\",', '0001', 'productoD1.jpg', 3, 4, '2021-01-22 04:16:56', '2021-02-02 21:56:57', NULL),
+(2, 'NOTEBOOK LENOVO 15.6', 129000, 8, 'Ideal para impulsar tu empresa\\r\\n- Procesador, memoria y almacenamiento mejorados\\r\\n- Tarjeta gráfica discreta hasta AMD Radeon RX 640\\r\\n- Pantalla FHD de 15.6” hasta IPS, antirreflejos y 250 nits\\r\\n- Altavoces y sonido de vanguardia\\r\\n- Funciones de', '0002', 'productoD2.jpg', 4, 2, '2021-01-23 00:43:00', '2021-02-02 21:56:57', NULL),
+(3, 'Monitor Viewsonic 32\\\" 4K', 87000, 4, 'VX3276-4K-mhd - Pantalla de 32 \\\", panel MVA, resolución 3840 x 2160\\r\\nEl ViewSonic® VX3276-4K-mhd es un elegante monitor 4K UHD de 32 ”(31.5\\\" visible) con un estilo moderno y minimalista perfecto para uso doméstico. Con tecnología de panel SuperClear® ', '0003', 'productoD3.jpg', 7, 5, '2021-01-23 14:54:24', '2021-02-02 21:56:57', NULL),
+(4, 'Webcam Logitech Meetup', 29000, 10, 'MeetUp + Micrófono de expansión Logitech\\r\\nCámara para conferencias todo en uno con lente ultra gran angular para salas pequeñas.\\r\\nDIMENSIONES\\r\\nUnidad principal	\\r\\nAltura x Ancho x Profundidad\\r\\n104 mm x 400 mm x 85 mm\\r\\nPeso 1,04 kg\\r\\nRemoto\\r\\n', '0004', 'productoD4.jpg', 5, 4, '2021-01-23 14:57:14', '2021-02-02 21:56:57', NULL),
+(5, 'Auriculares Inalambricos Logitech', 26000, 12, 'JUEGA A TU MANERA\\r\\nPor fin, unos audífonos que pueden ser tan expresivos como tú. Los audífonos G733 son inalámbricos y se diseñaron pensando en el confort. Y están equipados con todo el sonido envolvente, los filtros de voz y la iluminación avanzada qu', '0005', 'productoD5.jpg', 10, 4, '2021-01-23 14:59:45', '2021-02-02 21:56:57', NULL),
+(6, 'Mouse Glorious Model D', 9000, 5, 'TAMAÑO Y AMPLIFICACIÓN ESTILO Ratón ambidiestro ultraligero para juegos ideal para manos . Construido para velocidad, control y comodidad.\\r\\nCABLE ULTRA FLEXIBLE Nuestro cable trenzado ascendido es tan ligero que produce una sensación inalámbrica sin arr', '0006', 'productoD6.jpg', 15, 4, '2021-01-23 15:00:59', '2021-02-02 21:56:57', NULL),
+(7, 'Play Station 5', 95000, 0, 'Experimenta una velocidad sorprendente con una SSD de velocidad ultrarrápida, una inmersión más profunda con soporte para respuesta háptica, gatillos adaptativos y audio 3D, además de una generación completamente nueva de juegos de PlayStation.\\r\\nLa PS5 ', '0007', 'productoD7.jpg', 2, 3, '2021-01-23 15:03:41', '2021-02-02 21:56:57', NULL),
+(8, 'acme123456', 123, 12, 'Este texto es de prueba y tiene al menos 20 caracteres.', 'tntACME', 'imagen-1612221779041.jpg', 0, 4, '2021-02-01 00:12:14', '2021-02-02 21:56:57', NULL),
+(10, 'acme147', 123, 12, 'fgafasdfsdgsdgsdgsdgsdgsdgsdg sdgsdg sdg sd sd', 'tntACME', 'imagen-1612323212170.jpg', 0, 4, '2021-02-03 03:33:35', '2021-02-03 03:33:35', NULL),
+(11, 'acme1233q45325', 123, 0, 'sladñjfasljaslñfjasñlfajsflñakjflñasdf', 'tntACME123', 'imagen-1612411901713.jpg', 0, 6, '2021-02-04 02:05:29', '2021-02-04 04:11:41', NULL),
+(12, 'acme12345566', 123123, 1231231, 'dfasfwwqrqwrqwrqwrqwrqwraswafrw', '12313', 'imagen-1612413326084.jpg', 0, 7, '2021-02-04 04:35:26', '2021-02-04 04:35:26', NULL);
 
 -- --------------------------------------------------------
 
@@ -173,7 +192,11 @@ INSERT INTO `users` (`id`, `name`, `password`, `dni`, `email`, `sex`, `image`, `
 (1, 'asdfa', '$2b$10$SwfBcTJraljE64QTd1FZkOa5FxZ9fvaklfTm9NB2G3qYVSFnGbWYu', 12345678, '123@123123123.com', NULL, 'imagen-1610511453762.jpg', NULL, NULL, '2021-01-13 04:17:33', '2021-01-13 04:17:33', NULL),
 (2, 'asdfa', '$2b$10$5KhNQOLiw2atb9VuZLBoEuyokyacrVVtU50DyreH4GCvtBE.f5G26', 123123, '123@123123.com', NULL, 'imagen-1610511617025.jpg', NULL, NULL, '2021-01-13 04:20:20', '2021-01-13 04:20:20', NULL),
 (3, 'felix', '$2b$10$pC5jZW2y.O3mtGUcTXujqOo/HQfiBGzZNHS5vPOPVvIgzxABOmmjy', 12345678, 'felix@felix.com', NULL, 'imagen-1611099414790.jpg', NULL, NULL, '2021-01-19 23:36:57', '2021-01-19 23:36:57', NULL),
-(4, 'felix', '$2b$10$no7XJjqG8pMYbN467TjxgOLZkAgdNuuIf6MEY8mt24pQhiHGX.Wt6', 12345678, 'jos@jos.com', NULL, 'imagen-1611358506349.jpg', NULL, NULL, '2021-01-22 23:35:06', '2021-01-22 23:35:06', NULL);
+(4, 'felix', '$2b$10$no7XJjqG8pMYbN467TjxgOLZkAgdNuuIf6MEY8mt24pQhiHGX.Wt6', 12345678, 'jos@jos.com', NULL, 'imagen-1611358506349.jpg', NULL, NULL, '2021-01-22 23:35:06', '2021-01-22 23:35:06', NULL),
+(5, 'felix', '$2b$10$9Om5SAr7XDubZIm1VI0WAukqJE0QwP7.1sOR.Jo6ST6NEWyEOWszW', 12345678, 'felix@andres.com', NULL, 'imagen-1612135694475.jpg', NULL, 3, '2021-01-31 23:28:14', '2021-01-31 20:35:55', NULL),
+(6, 'pepe hongo', '$2b$10$ia9i6WtvKCI5PSjB2uBa6uMLxJ2RPoDmER1pn1NsTn8s7TNvdXoMO', 12345678, 'pepe@hongo.com', NULL, 'imagen-1612137177485.jpg', NULL, 2, '2021-01-31 23:53:00', '2021-01-31 20:53:29', NULL),
+(7, 'pepe hongo', '$2b$10$UhCixkHz0R2TO8nalGICY.VM4iFUmUQ9AorDshx/Mt1x74KjX5Mym', 12345678, 'yono@yono.com', NULL, 'imagen-1612225093759.jpg', NULL, NULL, '2021-02-02 00:18:13', '2021-02-02 00:18:13', NULL),
+(8, 'asdfa', '$2b$10$GFFdShs2D40W44Tg0Cas2Oz3yUOTJ48kYpssg4ew7x28g.MVm80he', 12345678, 'aaaa@aaaa.com', NULL, 'imagen-1612229145471.jpg', NULL, NULL, '2021-02-02 01:25:45', '2021-02-02 01:25:45', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -244,7 +267,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `items`
@@ -268,7 +291,7 @@ ALTER TABLE `order_shipment`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `shipments`
@@ -286,7 +309,7 @@ ALTER TABLE `typeusers`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
