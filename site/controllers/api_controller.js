@@ -5,27 +5,45 @@ module.exports={
  
     async list (req,res){
        
-       const {email}=req.query;
-       console.log('soy el LOG '+ email);
-         const user =await User.findAll({
-             attributes:['email', 'id', 'name']
-/*               where: {
 
-                     email:email
+       
+        const users =await User.findAll({
+            attributes:['email', 'id', 'name']
 
-              } */
-         })
-         res.json({
-             meta:{
-                 status:'ok!!!'
-             },
+        })
 
-             data :{
+        for (const user of users) {
+            user.setDataValue('endpoint', 'https://localhost:3000/api/users/' + user.id)
+        }   
+        res.json({
+            meta:{
+                status:'ok!!!',
+                count: users.length
+            },
+
+            data :{
+                users
+            }
+
+        })
+
+    },
+
+    async detail(req, res){
+
+        const id =req.params.id;
+        const user = await User.findByPk(id, {
+            attributes:['email','name', 'image']
+        })
+        res.json({
+            meta:{
+                status:'ok!!!'
+            },
+
+            data:{
                 user
-             }
-
-         })
-
+            }
+        })
 
     }
 
