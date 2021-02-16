@@ -5,12 +5,21 @@
 
 <body>
 
-    <%- include('./partials/header') %> 
+    <%- include('./partials/header',{title:'Edicion Producto'}) %> 
+    <%- include('./partials/nav') %>
 
     <main>
         <section class=form_registro>
             <div>
                 <h2 class=titulo>Editando: <%= producto.name %>   </h2>
+
+                <% if (typeof errors != "undefined") { %>
+						 
+                    <% errors.forEach(error => { %>     
+                        <p><%= error.msg %> </p>
+                    <% }) 
+                } %>
+
             </div>
             <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> 
                 <div class=container>
@@ -32,10 +41,24 @@
                     </div>
                     <div class="detalle_form_registro">
                         <label for="categoria">Categoria</label>
-                        <select name="categoria" id="categoria" value="<%= producto.category %> ">
-                            <option value="pc-notebook"<%= producto.category == 'pc-notebook' ? "selected" : "" %>>PC/Notebook</option>
-                            <option value="consolas" <%= producto.category == 'consolas' ? "selected" : "" %>>Consolas</option>
-                            <option value="accesorios" <%= producto.category == 'accesorios' ? "selected" : "" %>>Accesorios</option>
+                        <select name="categoria" id="categoria">
+                            
+                            <% for( let i = 0; i < categorias.length; i++ ) { %>
+
+                                <% if (categorias[i].id == producto.category_id) { %>
+                                 
+                                <option value="<%=categorias[i].id%>" selected>
+                                    <%= categorias[i].name %> 
+                                </option>
+                                <% } else { %>
+                            
+                                <option value="<%=categorias[i].id%> ">
+                                    <%= categorias[i].name %> 
+                                </option>
+                                <% } %> 
+
+                            <% } %> 
+                            
                         </select>
                 </div>
                 <div class="container">
@@ -53,12 +76,14 @@
                 </div>  
                 
                 <div class=boton_enviar>
-                    <button type="submit" id="guardar_producto" name="guardar_producto" class="boton">Guardar Producto</button>  
+                    <button type="submit" id="editar_producto" name="editar_producto" value="editar_producto" class="boton">Guardar Producto</button>  
                 </div>     
             </form>
-            <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+
+            <% if (locals.usuarioSesion.typeuser_id==3) { %> <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
                 <button type="submit" id="borrar_producto" name="borrar_producto" class="boton">Borrar Producto</button>
             </form>
+             <% } %> 
             
         </section>
     </main>

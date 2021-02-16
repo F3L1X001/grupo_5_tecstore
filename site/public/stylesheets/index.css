@@ -19,7 +19,7 @@ body{
   float: left;
   color: white;
   text-align: center;
-  padding: 16px;
+  padding: 14px;
   text-decoration: none;
   font-size: 17px;
   line-height: 2px;
@@ -41,14 +41,18 @@ body{
 
 .header-right {
   float: right;
-  margin: 22px;
+  margin: 48px;
+  padding: 0px;
+  margin-bottom: 0;
+
+
 }
 
 .container {
     max-width: 1300px;
     margin: auto;
     padding-left: 25px;
-    padding-right: 25px;
+    
 }
 
 

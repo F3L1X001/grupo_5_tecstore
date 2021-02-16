@@ -2,32 +2,40 @@ const path = require('path');
 const fs = require('fs');
 const { json } = require('express');
 const { search } = require('../routes');
+const db = require('../database/models');
 
-function todo_los_productos() {
-    const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
-    const productos_BD = JSON.parse(fs.readFileSync(productos_ubicacion_BD, 'utf-8'));
-    return productos_BD;
-};
+
 
 
 const indexController = {
-    home: function (req, res){
+    home: async function (req, res){
 
-        const destacProduct = todo_los_productos().filter ((product) => {
-            return product.category == 'destacados';
+        const todos_los_productos = await db.Product.findAll({associate:[{include:"category"}]})
+
+        const todasCategorias = await db.Category.findAll({ include: ['products'] });
+
+        const categorias = todasCategorias.filter ((categoria) => {
+            return categoria.category_offer == 0;
         });
 
-        const ultProduct = todo_los_productos().filter ((product) => {
-            return product.category == 'ultimos';
-        });
+        const categoriasOfertas = todasCategorias.filter ((categoria) => {
+            return categoria.category_offer == 1;
+        }); 
 
         res.render('index',{
-            productosDestacados:destacProduct,
-            ultimosProductos: ultProduct
-            
+            categoriasOfertas: categoriasOfertas,
+            categorias: categorias
+                        
         });
 
-    }
+    },
+   dash: function (req,res){
+       res.render('dash')
+
+   }
+
+
+    
    
 };
 

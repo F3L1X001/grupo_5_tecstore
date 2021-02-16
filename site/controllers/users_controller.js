@@ -27,7 +27,7 @@ const usersControllers = {
         };
 
         const usuarioEncontrado = usuarios.find((usuario) => (usuario.email == req.body.email));
-        
+ 
         if(usuarioEncontrado.email == req.body.email && bcrypt.compareSync(req.body.password, usuarioEncontrado.password)){
             
             req.session.usuarioALogear = usuarioEncontrado;
@@ -81,7 +81,7 @@ const usersControllers = {
 
         guardar_usuarios(usuarios_a_guardar); */
 
-        res.redirect('/')
+        res.redirect('/users/login')
     },
 
     recup_pass: (req, res) => {

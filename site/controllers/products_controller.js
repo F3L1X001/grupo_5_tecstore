@@ -2,30 +2,35 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const db = require('../database/models');
+const { validationResult } = require('express-validator');
 
-function todo_los_productos() {
-    const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
-    const productos_BD = JSON.parse(fs.readFileSync(productos_ubicacion_BD, 'utf-8'));
-    return productos_BD;
-};
-
-function generar_id_producto(){
-    const productos = todo_los_productos();
-    const nueva_id_producto = productos.pop().id + 1;
-    return nueva_id_producto;
-}
-
-function guardar_productos(ProductosAGuardar){
-    const productos_ubicacion_BD = path.join(__dirname, '../data', 'datos-productos.json');
-    const productosJson = JSON.stringify(ProductosAGuardar, null, " ");
-    
-    fs.writeFileSync(productos_ubicacion_BD, productosJson);
-}
 
 const productsController = {
+    
+    listar: (req, res)=> {
+
+        db.Product.findAll()
+            .then(productos=>{
+
+                res.render('productList', { products: productos })
+
+            })   
+
+    },
+
+     listar_admin : (req, res)=> {
+
+        db.Product.findAll()
+            .then(productos=>{
+
+                res.render('admin_products', { products: productos })
+
+            })   
+
+    },
     mostrar: async (req, res)=>{
        
-        const todosProductos = await db.Product.findAll()
+        const todosProductos = await db.Product.findAll({include:[{association: "category"}]})
 
         const id = req.params.id;
 		//const productos = todo_los_productos();
@@ -38,18 +43,31 @@ const productsController = {
         });
     },
 
-    crear: (req, res)=>{
-        res.render('carga_producto')
+    crear: async (req, res)=>{
+
+        const categorias = await db.Category.findAll()
+
+        res.render('carga_producto', {categorias: categorias})
         //res.sendFile(path.join(__dirname, '../views', '/login.html'));
     },
 
     crear_post: async (req, res, next) => {
+
+        const results = validationResult(req);
+
+        if(!results.isEmpty()){
+            return res.render('carga_producto', {
+                errors: results.errors,
+                oldInfo: req.body
+            });
+        };
+
         const nuevo_producto = {
             //id: generar_id_producto(),
             name: req.body.marca,
             price: req.body.precio,
             discount: req.body.descuento,
-            category: req.body.categoria,
+            category_id: req.body.categoria,
             description: req.body.descripcion,
             code: req.body.cod_prod,
             image: req.files[0].filename
@@ -62,50 +80,33 @@ const productsController = {
 
         guardar_productos(Productos_guardar); */
 
-        res.redirect('/products/create');
+        res.redirect('/products/listar_admin');
     },
 
     editar: async (req, res) => {
-        
+       
         const resultado = await db.Product.findByPk(req.params.id);
 
         const categorias = await db.Category.findAll();
-        
-       /*  const id = req.params.id;
-
-        
-        const resultado = productos.find((producto) => producto.id == id); */
-        
-
-        res.render('form_edicion_producto', {
-            producto: resultado,
-            categoria: categorias
-        })
+       
+          res.render('form_edicion_producto', {
+              producto: resultado,
+              categorias: categorias
+            })
         //res.sendFile(path.join(__dirname, '../views', '/form_registro.html'));
     },
 
-    editar_put: (req, res) => {
-     /*    const productos = todo_los_productos();
-        const id = req.params.id;
-        const producto_editado = productos.map((producto) =>{
+    editar_put: async (req, res) => {
 
-            if (id == producto.id){
-                
-                producto.name = req.body.marca,
-                producto.price = req.body.precio,
-                producto.discount = req.body.descuento,
-                producto.category = req.body.categoria,
-                producto.description = req.body.descripcion,
-                producto.code = req.body.cod_prod,
-                producto.image = req.files[0] ? req.files[0].filename : producto.image
-            }
+        const categorias = await db.Category.findAll();        
 
-            return producto
-        }) 
-
-        guardar_productos(producto_editado);*/
-
-        db.Product.update ({
+        const producto = await db.Product.findOne({
+			where: {
+				id: req.params.id
+			}
+        });
+        
+        await db.Product.update ({
                 
             name: req.body.marca,
             price: req.body.precio,
@@ -120,21 +121,40 @@ const productsController = {
             }
         });
 
-        res.redirect('/') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
+        const results = validationResult(req);
+
+        if(!results.isEmpty()){
+            return res.render('form_edicion_producto', {
+                errors: results.errors,
+                producto: producto,
+                categorias: categorias
+            });
+        };
+
+        res.redirect('/products/listar_admin') // hay que modificar el redirect cuando sea dinamica la seleccion de productos
 
 
     },
 
     borrar_producto: (req, res)=>{
-        const productos =todo_los_productos();
+        /*const productos =todo_los_productos();
         const id_producto_borrar = req.params.id;
         const producto_a_borrar = productos.find((product)=>{return product.id==id_producto_borrar});
         const ubicacion_producto = productos.indexOf(producto_a_borrar);
         productos.splice(ubicacion_producto, 1)
-        
-        guardar_productos(productos);
+        guardar_productos(productos);*/
+              db.Product.destroy({
+                where :{
 
-        res.redirect('/');
+                      id:req.params.id
+
+                }
+
+
+              });
+
+
+        res.redirect('/products/listar_admin');
     },
 
     carrito_compras: (req, res) =>{

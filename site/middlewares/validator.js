@@ -37,7 +37,7 @@ module.exports = {
                 .withMessage('La contraseña debe tener minimo 8 caracteres.') 
                 .bail()
             .custom(function(value, { req }){
-                if(value == req.body.password1){
+                if(value == req.body.retype){
                     return true;
                 } else { return false;}
                 })
@@ -71,7 +71,57 @@ module.exports = {
         .notEmpty()
             .withMessage('La contraseña no puede estar vacia') // validado y existir en la BD
     ],
-    createProduct: [
+    modifyProduct: [
+        body('marca')
+            .notEmpty()
+                .withMessage('La marca no puede estar vacia')
+                .bail()
+            .isLength({min:5})
+                .withMessage('El nombre debe tener minimo 5 caracteres'), 
+        body('precio')
+            .notEmpty()
+                .withMessage('El precio no puede estar vacio'),
+        body('descripcion')
+            .notEmpty()
+                .withMessage('La descripcion no puede estar vacia')
+                .bail()
+            .isLength({min: 20})
+                .withMessage('La descripcion debe contener al menos 20 caracteres'),
+        body('imagen')
+            .custom(function (value, { req }){
+
+                if (req.method == 'PUT') {
+
+                    return true
+
+                }
+                return req.files[0];
+            })
+                .withMessage('Debe cargar una imagen')
+                .bail()
+            .custom(function(value, { req }){
+
+                if (!req.files[0]){
+
+                    return true
+                    
+                } else if (req.files[0]){
+
+                    const ext = path.extname(req.files[0].originalname);
+
+                
+                    if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
+                        return true;
+                    }     
+
+                }  
+                          
+                return false;
+
+            })
+                .withMessage('El archivo de imagen debe ser .jpg/.png/.jpeg/.gif')
+        
+                
         /* Validar nombre obligatorio, minimo 5 caracteres.
         Descripcion validar con min 20 caracteres.
         Imagen validar con extensiones.*/

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/admin_list.css">
+    <link rel="stylesheet" href="../stylesheets/index.css">
+</head>
+<body>
+ 
+    <%- include('./partials/header',{title:'Dashboard '}) %> 
+   
+  <main class="admin_list">
+      <div>  <ul>
+                 <li><a href="/products/create"> Nuevo Producto </a></li>
+                 <li><a href="/dash">Dashboard</a></li>
+            </ul>
+             
+      </div>
+    <% for (product of products){%>
+    <hr>
+     <article class="admin_list_article">
+               <a href="/products/detail/<%=product.id%>"> <img src="/images/product_details/<%=product.image%>" alt=""></li></a>
+              <a href="/products/detail/<%=product.id%>"> <p> <strong><%=product.name%></strong> </p> </li> </a> 
+                 <ul>
+                       <li> <a href="/products/edit/<%=product.id%>">Editar</a></li>
+                       
+               </ul>
+      
+     </article>
+
+
+       
+      <%}%>
+
+  </main>
+
+
+
+
+
+ <%- include('./partials/footer') %> 
+
+    
+</body>
+</html>

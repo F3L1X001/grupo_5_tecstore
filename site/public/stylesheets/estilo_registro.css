@@ -31,6 +31,15 @@ body{
     font-size: 20px;
 }
 
+.border {
+    margin: 0;
+    text-align: center;
+    height: 40px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid;
+    font-size: 20px;
+}
+
 .controls {
     width: 100%;
     border: 1px solid #017baB;
@@ -42,19 +51,46 @@ body{
     color: white;
 }
 
+.formulario_grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .buttons {
-    width: 100%;
-    height: 40px;
+    height: 35px;
+	line-height: 35px;
+	width: 40%;
+    background: #119200;
+    border: none;
+    color: white;
+    margin-bottom: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: .1s ease all;
+    font-weight: bold;
+   
+}
+
+.button_registro {
+    line-height: 38px;
+    width: 68%;
     background: #017bab;
     border: none;
     color: white;
     margin-bottom: 16px;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: .1s ease all;
+    font-weight: bold;
+   
 }
+
 
 .form_login p {
     height: 40px;
     text-align: center;
-    border-bottom: 1px solid;
+    /*border-bottom: 1px solid;*/
 }
 
 .form_login a {
@@ -67,5 +103,84 @@ body{
 .form_login a:hover {
     text-decoration: underline;
 }
+
+.formulario_grupo-input{
+
+    position: relative;
+}
+
+.formulario_input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+.formulario_input-error-activo {
+	display: block;
+}
+
+.formulario_validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 28px;
+	z-index: 100;
+    font-size: 16px;
+    opacity: 0;	
+}
+
+.formulario_checkbox {
+	margin-right: 3px;
+}
+
+ 
+.formulario_mensaje,
+.formulario_grupo-btn-enviar {
+	grid-column: span 2;
+}
+
+.formulario_mensaje {
+	height: 35px;
+	line-height: 35px;
+	background: #F66060;
+	padding: 0 10px;
+	border-radius: 20px;
+    margin: 10px;
+    display: none;
+    
+}
+
+.formulario_mensaje-activo {
+	display: block;
+}
+
+.formulario_mensaje-exito {
+	font-size: 14px;
+	color: #119200;
+	display: none;
+}
+
+.formulario_mensaje-exito-activo {
+	display: block;
+}
+
+
+
+/*  Estilos para Validacion */
+.formulario_grupo-correcto .formulario_validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+
+.formulario_grupo-incorrecto .formulario_validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario_grupo-incorrecto .controls {
+	border: 2px solid #bb2929;
+}
+
+
 /*fin login*/
 

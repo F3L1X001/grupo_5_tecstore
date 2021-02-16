@@ -2,7 +2,7 @@ function autenticacion(req, res, next){
     if(req.session.usuarioALogear != undefined){
         next()
     } else{
-        res.redirect('./login');
+        res.redirect('/users/login');
     }
 
 };

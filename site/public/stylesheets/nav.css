@@ -1,0 +1,26 @@
+.nav-containter {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: flex-end;
+ 
+ background-color: gray;
+ color:whitesmoke;
+ 
+}
+
+.nav-containter a:link{
+    color:whitesmoke; 
+
+}
+
+.nav-containter a:visited{
+    color:whitesmoke; 
+
+}
+
+
+.nav{
+
+
+
+}
