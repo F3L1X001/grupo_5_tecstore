@@ -6,10 +6,17 @@
     <%- include('./partials/header',{title:'Lista-Productos'}) %>
     <%- include('./partials/nav') %>
     <main>
-
+      
 
     <div class="row-products">
-        <% for (product of products) { %>
+        <% 
+        
+        if (products.length<1) {%>
+            
+            <h1>No Hemos encontrardo tu producto ...</h1>
+       <% } else {
+        
+            for (product of products) { %>
         <div class="col-4-products">
             <a href="/products/detail/<%= product.id %> ">
                 <img class= "sale-box-image" src="/images/product_details/<%=product.image%>" alt="">
@@ -19,8 +26,12 @@
         </div>
 
 
-        <%}%>
+        <%}
         
+            
+        }%>
+        
+       
        
 
         </main>
