@@ -37,7 +37,13 @@
                 </ul>
             </div>
                 <div class="botons">
-                <a href="" class="fas fa-shopping-cart btn-comprar" ><bold>Comprar</bold></a>          
+                    <form action="/cart/addToCart/<%= product.id %> " method="POST">
+                        
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" name="cantidad" id="cantidad" value="1">
+                        <button type="submit" class="fas fa-shopping-cart btn-comprar"><bold>Agregar al carrito</bold></button>
+
+                    </form>
                 <!-- <a href="/products/edit/<%= product.id %> "class="fa fa-pencil-square btn-edit"><bold>Editar Producto</bold></a>  
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
                     <button type="submit" id="borrar_producto" name="borrar_producto" class="fas fa-trash-alt btn-delete">Borrar Producto</button>

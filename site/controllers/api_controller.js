@@ -1,5 +1,5 @@
 const e = require('express');
-const {User, Product}= require('../database/models');
+const {User, Product, Category}= require('../database/models');
 
 module.exports={
  
@@ -55,8 +55,20 @@ module.exports={
 
         
         const products =await Product.findAll({
-            attributes:['name', 'id', 'description', 'code', 'image', 'category_id', 'price']
+            attributes:['name', 'id', 'description', 'code', 'image', 'category_id', 'price'],
+            include:["category"]})
 
+        const categories = await Category.findAll({
+            attributes:['name'],
+            include:["products"]
+        })
+
+        const categoriesMaped = categories.map(category =>{
+           return {
+                name: category.name,
+                count: category.products.length,
+                id: category.id
+            }
         })
 
         for (const product of products) {
@@ -67,7 +79,7 @@ module.exports={
             meta:{
                 status:'ok!!!',
                 count: products.length,
-             /*    coutByCategory: category_id.length */
+                countByCategory: categoriesMaped  
             },
 
             data :{
