@@ -10,33 +10,30 @@
     
         <div class="conten">
             <div class="img-box">
-                <img src="/images/product_details/<%= product.image %>" alt="Imagen Apple Watch">
+                <img src="/images/product_details/<%= product.image %>" alt="Imagen Apple Watch" style="width: 450px; height:400px" >
             </div>
             <div class="text-box">
                 <span class="marco-1"> <h1><%= product.name %> </h1></span>
-                <h4>-Descripcion</h4>
+                <h4 class="description-products">-Descripcion</h4>
                 <div class="marco">   
-                    <p> <%= product.description %></p><br>
+                    <p class="detail-products"> <%= product.description %></p><br>
 
                     <b><h2><%= product.price %> </h2></b><br>
 
                     <h3><%= product.category.name %> </h3>
-                   
-                </div>
-                <div>
-                <ul class="actions-list">
-                    <li>
-                        <i class="fas fa-credit-card" style="color: green;"></i>
-                        <p>Pagá hasta 12 cuotas sin interes</p>
-                    </li>
-                    <li>
-                        <i class="fa fa-truck" style="color: green;" aria-hidden="true"></i>
-
-                        <p>Envios a toda la Argentina</p>
-                    </li>
-                </ul>
-            </div>
-                <div class="botons">
+                    
+                    <ul class="actions-list">
+                        <li>
+                            <i class="fas fa-credit-card" style="color: green;"></i>
+                            <p>Pagá hasta 12 cuotas sin interes</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-truck" style="color: green;" aria-hidden="true"></i>
+    
+                            <p>Envios a toda la Argentina</p>
+                        </li>
+                    </ul>
+                               <div class="botons">
                 <a href="" class="fas fa-shopping-cart btn-comprar" ><bold>Comprar</bold></a>          
                 <!-- <a href="/products/edit/<%= product.id %> "class="fa fa-pencil-square btn-edit"><bold>Editar Producto</bold></a>  
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
@@ -46,6 +43,12 @@
             </div>
         </div> 
         </div>
+                       
+                </div>
+                <div>
+                
+            </div>
+             
 
         <div class="div-first-part">
             <div class="footer-container">
