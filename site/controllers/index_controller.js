@@ -3,7 +3,9 @@ const fs = require('fs');
 const { json } = require('express');
 const { search } = require('../routes');
 const db = require('../database/models');
+const { Sequelize } = require('../database/models');
 
+const Op=Sequelize.Op;
 
 
 
@@ -32,8 +34,21 @@ const indexController = {
    dash: function (req,res){
        res.render('dash')
 
-   }
-
+   },
+   
+  async search (req,res){
+  
+       let products=await db.Product.findAll({
+        where :{
+                name:{[Op.substring]:req.query.keywords
+                 
+                     }
+                    },
+            limit:10
+        })
+         
+    res.render('productList', { products: products })
+  } 
 
     
    

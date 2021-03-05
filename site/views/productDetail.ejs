@@ -10,17 +10,18 @@
     
         <div class="conten">
             <div class="img-box">
-                <img src="/images/product_details/<%= product.image %>" alt="Imagen Apple Watch">
+                <img src="/images/product_details/<%= product.image %>" alt="Imagen Apple Watch" style="width: 450px; height:400px" >
             </div>
             <div class="text-box">
                 <span class="marco-1"> <h1><%= product.name %> </h1></span>
-                <h4>-Descripcion</h4>
+                <h4 class="description-products">-Descripción</h4>
                 <div class="marco">   
-                    <p> <%= product.description %></p><br>
+                    <p class="detail-products"> <%= product.description %></p><br>
 
-                    <b><h2><%= product.price %> </h2></b><br>
+                    <b><h2>$<%= product.price %> </h2></b><br>
 
                     <h3><%= product.category.name %> </h3>
+<<<<<<< HEAD
                    
                 </div>
                 <div>
@@ -44,6 +45,22 @@
                         <button type="submit" class="fas fa-shopping-cart btn-comprar"><bold>Agregar al carrito</bold></button>
 
                     </form>
+=======
+                    
+                    <ul class="actions-list">
+                        <li>
+                            <i class="fas fa-credit-card" style="color: green;"></i>
+                            <p>Pagá hasta 12 cuotas sin interes</p>
+                        </li>
+                        <li>
+                            <i class="fa fa-truck" style="color: green;" aria-hidden="true"></i>
+    
+                            <p>Envios a toda la Argentina</p>
+                        </li>
+                    </ul>
+                               <div class="botons">
+                <a href="" class="fas fa-shopping-cart btn-comprar" ><bold>Comprar</bold></a>          
+>>>>>>> 0e8dad7eff2f16223badc552e6ae302184370ab8
                 <!-- <a href="/products/edit/<%= product.id %> "class="fa fa-pencil-square btn-edit"><bold>Editar Producto</bold></a>  
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
                     <button type="submit" id="borrar_producto" name="borrar_producto" class="fas fa-trash-alt btn-delete">Borrar Producto</button>
@@ -52,6 +69,12 @@
             </div>
         </div> 
         </div>
+                       
+                </div>
+                <div>
+                
+            </div>
+             
 
         <div class="div-first-part">
             <div class="footer-container">

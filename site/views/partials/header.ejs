@@ -2,29 +2,38 @@
     <title><%=title%></title>
     <div class="header">
         <div class="container">
-            <a href="/"> <img src="../../images/home/logo.png" alt="Logo del sitio" width="220px" > </a>
+            <a class="imgLogo" href="/"> <img src="../../images/home/logo.png" alt="Logo del sitio" width="220px" > </a>
             <div class="header-right">
             <nav>
-            <a href="/">Home</a>
-            <a href="#">Contacto</a>
+            <a class="hoverBlue" href="/">Home</a>
+            <a class="hoverBlue" href="#">Contacto</a>
             <% if (locals.usuarioSesion) { %>
      
    
               <% if (locals.usuarioSesion.typeuser_id>1) { %><a href="/dash">Dashboard</a> <%}%>
+<<<<<<< HEAD
               <a href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
               <a href="/users/profile/edit/<%= locals.usuarioSesion.id %>  ">Editar perfil<i class="fas fa-user-edit"></i></a></li>
               <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
+=======
+              <a class="hoverBlue" href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
+              <a class="hoverBlue" href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
+>>>>>>> 0e8dad7eff2f16223badc552e6ae302184370ab8
               
               <% }  else { %>
                 
-                  <a href="/products">Productos</a>
+                  <a class="hoverBlue" href="/products">Productos</a>
             
                
-                <a href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
+                <a class="hoverBlue" href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
               
               <% } %> 
           
+<<<<<<< HEAD
           <a href="/cart"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
+=======
+          <a class="hoverBlue" href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
+>>>>>>> 0e8dad7eff2f16223badc552e6ae302184370ab8
 
              
             </div>
