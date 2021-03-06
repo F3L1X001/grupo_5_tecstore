@@ -157,7 +157,7 @@ const usersControllers = {
     
     profile_pwd_edited: async (req, res) =>{  
         const results = validationResult(req);
-
+        
         const user = await db.User.findOne({
 			where: {
 				id: req.params.id
@@ -183,7 +183,7 @@ const usersControllers = {
 
 
 
-        res.redirect('profile')
+        res.redirect('/user/profile/edit/'+req.params.id)
 
     },
 

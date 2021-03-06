@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('./partials/head'), {title: 'Productos' } %>
+    <%- include('./partials/head') %>
 <body>
-    
     <%- include('./partials/header',{title:'Lista-Productos'}) %>
     <%- include('./partials/nav') %>
     <main>
       
 
-    <div class="row-products">
-        <% 
-        
-        if (products.length<1) {%>
+        <div class="row-products">
             
-            <h1>No Hemos encontrardo tu producto ...</h1>
-       <% } else {
-        
-            for (product of products) { %>
-        <div class="col-4-products" >
-            <a href="/products/detail/<%= product.id %> ">
-                <img class= "sale-box-image" src="/images/product_details/<%=product.image%>" alt="">
-                <div class="sale-box-title"><%=product.name%></div>
-                <div class="sale-box-price">$ <%=product.price%></div> 
-            </a>
+            
+            <% if (products.length<1) {%>
+                
+                <h1>No Hemos encontrardo tu producto ...</h1>
+            <% } else {
+            
+                for (product of products) { %>
+            <div class="col-4-products" >
+                <a href="/products/detail/<%= product.id %> ">
+                    <img class= "sale-box-image" src="/images/product_details/<%=product.image%>" alt="">
+                    <div class="sale-box-title"><%=product.name%></div>
+                    <div class="sale-box-price">$ <%=product.price%></div> 
+                </a>
+            </div>
+
+
+            <%}
+            
+                
+            }%>
         </div>
-
-
-        <%}
-        
-            
-        }%>
-        
        
        
 
-        </main>
+    </main>
 
 
-    <%- include('./partials/footer') %>
+        <%- include('./partials/footer') %>
 </body>
 
 </html>

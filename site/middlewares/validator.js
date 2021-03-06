@@ -3,6 +3,7 @@ const path = require('path');
 const { check, validationResult, body } = require('express-validator');
 const fs = require('fs');
 const db = require('../database/models');
+const bcrypt = require('bcrypt')
 
 
 module.exports = {
@@ -158,7 +159,7 @@ module.exports = {
 
                 return db.User.findOne({
                     where:{
-                        id:req.usuarioSesion.id
+                        id:req.session.usuarioALogear.id
                 }})
                     .then(user => {
                         if(!bcrypt.compareSync(req.body.oldPassword, user.password)) {

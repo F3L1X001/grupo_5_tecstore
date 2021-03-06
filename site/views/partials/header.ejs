@@ -10,15 +10,10 @@
             <% if (locals.usuarioSesion) { %>
      
    
-              <% if (locals.usuarioSesion.typeuser_id>1) { %><a href="/dash">Dashboard</a> <%}%>
-<<<<<<< HEAD
-              <a href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
-              <a href="/users/profile/edit/<%= locals.usuarioSesion.id %>  ">Editar perfil<i class="fas fa-user-edit"></i></a></li>
-              <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
-=======
+              <% if (locals.usuarioSesion.typeuser_id>1) { %><a class="hoverBlue" href="/dash">Dashboard</a> <%}%>
               <a class="hoverBlue" href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
+              <a class="hoverBlue" href="/users/profile/edit/<%= locals.usuarioSesion.id %>  ">Editar perfil<i class="fas fa-user-edit"></i></a></li>
               <a class="hoverBlue" href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
->>>>>>> 0e8dad7eff2f16223badc552e6ae302184370ab8
               
               <% }  else { %>
                 
@@ -29,11 +24,7 @@
               
               <% } %> 
           
-<<<<<<< HEAD
-          <a href="/cart"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
-=======
-          <a class="hoverBlue" href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
->>>>>>> 0e8dad7eff2f16223badc552e6ae302184370ab8
+          <a class="hoverBlue" href="/cart"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
 
              
             </div>
