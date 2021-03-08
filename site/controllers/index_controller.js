@@ -48,7 +48,10 @@ const indexController = {
         })
          
     res.render('productList', { products: products })
-  } 
+  } ,
+  contactPage: function (req,res){
+    res.render('contact')
+},
 
     
    
