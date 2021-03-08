@@ -31,7 +31,9 @@ url("../../media/examples/lizard.png");">
 
                         </form>
 
-                        
+                        <form action="/users/profile/edit/<%= locals.usuarioSesion.id %>  ">
+                            <button class="buttons-style profile-edit-button"><i class="fas fa-edit profile-icons"></i>Editar perfil</button>
+                        </form>
 
                         <form action="/users/logout">
                             <button class="buttons-style profile-logout-button"><i class="fas fa-sign-out-alt profile-icons"></i>Salir de la cuenta</button>
@@ -40,7 +42,6 @@ url("../../media/examples/lizard.png");">
                 </div>
             </div>
         </article>
-    
 </main>
 
 
