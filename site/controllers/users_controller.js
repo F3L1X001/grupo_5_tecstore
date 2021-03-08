@@ -32,9 +32,6 @@ const usersControllers = {
             
             req.session.usuarioALogear = usuarioEncontrado;
             
-            console.log('Estos es el console LOGGGGGGG' + usuarioEncontrado.id)
-            console.log('esot es otro consoleloggggggg ' + req.session.usuarioALogear.id)
-
             if(req.body.recordame){
                 res.cookie('Usuario', usuarioEncontrado.id ,{ maxAge: 6000000});
             }
@@ -101,7 +98,9 @@ const usersControllers = {
     profile_edit: async (req, res) => {
        
         const resultado = await db.User.findByPk(req.params.id);
-       
+
+        console.log(resultado.name);
+
           res.render('profile-edit', {
               user: resultado,
             })
@@ -120,13 +119,14 @@ const usersControllers = {
             name: req.body.nombre, 
             dni: req.body.dni,
             sex: req.body.sexo, 
-            image: req.files[0] ? req.files[0].filename : req.session.usuarioALogear.image
+            image: req.files[0] ? req.files[0].filename : user.image
         }, {
             where: {
                 id: req.params.id
             }
         });
 
+        console.log(user.image)
         const results = validationResult(req);
 
         if(!results.isEmpty()){
@@ -136,7 +136,7 @@ const usersControllers = {
             });
         };
         
-        res.redirect('profile')
+        res.redirect('/')
 
 
     },

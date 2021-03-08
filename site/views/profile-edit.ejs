@@ -10,11 +10,19 @@
         <div class="form_perfil">
             
             <div class="profile-information-container" >
-                <h2  style="color: aquamarine;" class="products-title"><%= locals.user.name %></h2>
-                <h2  style="color: aquamarine;" class="products-title"><%= locals.usuarioSesion.email %></h2>
+                <h2  style="color: aquamarine;" class="products-title"><%= user.name %></h2>
+                <h2  style="color: aquamarine;" class="products-title"><%= user.email %></h2>
+            </div>
+            <div>
+                <% if (typeof errors != "undefined") { %>
+						 
+                    <% errors.forEach(error => { %>     
+                        <p><%= error.msg %> </p>
+                    <% }) 
+                } %>
             </div>
             <div class="profile-avatar-container">
-                <img style="width:500px;height:700px" src="/images/users_details/<%= locals.usuarioSesion.image %>" alt="">
+                <img style="width:500px;height:700px" src="/images/users_details/<%= user.image %>" alt="">
             </div>
             
         </div>
@@ -35,8 +43,13 @@
                 
                 <div class="formulario_grupo" id="grupo_genero"> 
                     <div class="div">Sexo:
+                        <% if (user.sex == "h") { %>
+                            <input type="radio" name="sexo" value="h" id="sexo" checked> <label for="hombre">Hombre</label>
+                            <input type="radio" name="sexo" value="m" id="sexo"> <label for="mujer">Mujer</label>
+                        <% } else {%>
                         <input type="radio" name="sexo" value="h" id="sexo"> <label for="hombre">Hombre</label>
-                        <input type="radio" name="sexo" value="m" id="sexo"> <label for="mujer">Mujer</label>
+                        <input type="radio" name="sexo" value="m" id="sexo" checked> <label for="mujer">Mujer</label>
+                        <% } %> 
                     </div>
                 </div>
                             

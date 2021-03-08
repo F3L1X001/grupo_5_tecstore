@@ -110,5 +110,26 @@ module.exports={
 
     },
 
+    async categoryList(req, res){
+
+        
+        const categories =await Category.findAll({
+            attributes:['name', 'id', 'active'],
+            include:["products"]})
+
+        res.json({
+            meta:{
+                status:'ok!!!',
+                count: categories.length, 
+            },
+
+            data :{
+                categories
+            }
+
+        })
+
+    },
+
 
 }

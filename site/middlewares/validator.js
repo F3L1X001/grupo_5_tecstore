@@ -132,18 +132,37 @@ module.exports = {
                 .bail()
             .isLength({min:2})
                 .withMessage('El nombre debe tener minimo 2 caracteres'),
-        body('avatar')
+                body('imagen')
             .custom(function (value, { req }){
+
+                if (req.method == 'PUT') {
+
+                    return true
+
+                }
                 return req.files[0];
             })
                 .withMessage('Debe cargar una imagen')
                 .bail()
             .custom(function(value, { req }){
-            const ext = path.extname(req.files[0].originalname);
-            if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
-                return true;
-            }
+
+                if (!req.files[0]){
+
+                    return true
+                    
+                } else if (req.files[0]){
+
+                    const ext = path.extname(req.files[0].originalname);
+
+                
+                    if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
+                        return true;
+                    }     
+
+                }  
+                          
                 return false;
+
             })
                 .withMessage('El archivo de imagen debe ser .jpg/.png/.jpeg/.gif')
     
