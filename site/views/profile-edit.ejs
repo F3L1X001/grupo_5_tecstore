@@ -7,21 +7,13 @@
     <%- include('./partials/nav') %>
 
     <main>
-        <div class="portada">
+        <div class="form_perfil">
             
-            <div class="col-2" >
+            <div class="profile-information-container" >
                 <h2  style="color: aquamarine;" class="products-title"><%= locals.user.name %></h2>
                 <h2  style="color: aquamarine;" class="products-title"><%= locals.usuarioSesion.email %></h2>
             </div>
-            <div>
-            <% if (typeof errors != "undefined") { %>
-						 
-                <% errors.forEach(error => { %>     
-                    <p><%= error.msg %> </p>
-                <% }) 
-            } %>
-            </div>
-            <div class="col-2">
+            <div class="profile-avatar-container">
                 <img style="width:500px;height:700px" src="/images/users_details/<%= locals.usuarioSesion.image %>" alt="">
             </div>
             
@@ -42,18 +34,10 @@
                         </div>
                 
                 <div class="formulario_grupo" id="grupo_genero"> 
-                    <% if (user.sex == "h") { %>
-                        
-                        <div class="div">Sexo:
-                            <input type="radio" name="sexo" value="h" id="sexo" checked> <label for="hombre" >Hombre</label>
-                            <input type="radio" name="sexo" value="m" id="sexo"> <label for="mujer">Mujer</label>
-                        </div>
-                    <% } else {%>
-                        <div class="div">Sexo:
-                            <input type="radio" name="sexo" value="h" id="sexo"> <label for="hombre" >Hombre</label>
-                            <input type="radio" name="sexo" value="m" id="sexo" checked> <label for="mujer" >Mujer</label>
-                        </div>
-                    <% } %> 
+                    <div class="div">Sexo:
+                        <input type="radio" name="sexo" value="h" id="sexo"> <label for="hombre">Hombre</label>
+                        <input type="radio" name="sexo" value="m" id="sexo"> <label for="mujer">Mujer</label>
+                    </div>
                 </div>
                             
                 <div class="formulario_grupo" id="grupo_img"> 
