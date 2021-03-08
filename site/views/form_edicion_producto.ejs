@@ -3,13 +3,13 @@
 
     <%- include('./partials/head', {title: 'Editando: ' + producto.name}) %>
 
-<body>
+<body style="background-color: #29273b;">
 
     <%- include('./partials/header',{title:'Edicion Producto'}) %> 
     <%- include('./partials/nav') %>
 
     <main>
-        <section class=form_registro>
+        <section class=form_login>
             <div>
                 <h2 class=titulo>Editando: <%= producto.name %>   </h2>
 
@@ -21,9 +21,14 @@
                 } %>
 
             </div>
-            <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"> 
+            <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario" id="formulario"> 
                 <div class=container>
-                    <div class="detalle_form_registro">
+                    <div class="profile-avatar-container">
+                        <img  src="/images/product_details/<%=  producto.image %>" alt="" class="profile-page-avatar">
+                       
+             </div>    
+
+                    <div class="detalle_form_registro"><br>
                         <label for="marca">Marca</label>
                         <input type="text" name="marca" id="marca" value="<%= producto.name %>">
                     </div>
@@ -71,12 +76,12 @@
                 <div class="container">
                     <div class="detalle_form_registro">
                         <label for="descripcion">Descripcion Producto</label>
-                        <textarea name="descripcion" id="descripcion" cols="80" rows="10"><%= producto.description %></textarea>
+                        <textarea name="descripcion" id="descripcion" cols="55" rows="10"><%= producto.description %></textarea>
                     </div>
                 </div>  
                 
                 <div class=boton_enviar>
-                    <button type="submit" id="editar_producto" name="editar_producto" value="editar_producto" class="boton">Guardar Producto</button>  
+                    <button type="submit" id="editar_producto" name="editar_producto" value="editar_producto" class="buttons">Guardar Producto</button>  
                 </div>     
             </form>
 
