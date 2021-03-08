@@ -14,87 +14,78 @@
   
 <div class="small-container cart-page"> 
 
+    <form action="/cart/buyCart" method="POST">
     <table>
         <tr>
             <th>Producto</th>
             <th>Cantidad</th>
             <th>Subtotal</th>
         </tr>
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="../images/product_cart/buy-notebook1.png">
-                    <div>
-                        <p><strong>Notebook Asus E495</strong></p>
-                        <small>Precio: $100,000</small>
-                        <br>
-                        <a href="">Eliminar</a>
-                    </div>
-            </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$100,000</td>
-        </tr>
 
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="../images/product_cart/auricular1.jpg">
+    <% if (items.length != 0) { %>
+        <% items.forEach(item => { %>
+         
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="../images/product_details/<%= item.image %> " class= "sale-box-image">
                     <div>
-                        <p><strong>Auriculares ASUS ROG STRIX Fusion</strong></p>
-                        <small>Precio: $20,000</small>
+                    <div>
+                        <p><strong><%= item.name %> </strong></p>
+                        <small><%= item.price %> </small>
                         <br>
-                        <a href="">Eliminar</a>
+                        <form action="/cart/delete/<%= item.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" >
+                            <button type="submit" class="far fa-trash-alt" name="eliminar" id="eliminar">Eliminar</button>
+                        </form>
                     </div>
             </div>
             </td>
-            <td><input type="number" value="1"></td>
-            <td>$20,000</td>
-        </tr>
-
-        <tr>
-            <td>
-                <div class="cart-info">
-                    <img src="../images/product_cart/teclado1.jpg">
-                    <div>
-                        <p><strong>Teclado Mecánico Logitech PRO X RGB Lightsync</strong></p>
-                        <small>Precio: $15,000</small>
-                        <br>
-                        <a href="">Eliminar</a>
-                    </div>
-            </div>
-            </td>
-            <td><input type="number" value="1"></td>
-            <td>$15,000</td>
-        </tr>
+                <td><%= item.quantity %></td>
+                <td>$<%= item.subtotal %> </td>
+            </tr>
         
+        <% }) %>
     </table>
+    
+ 
 
     <div class="total-price">
-
+        
         <table>
             <tr>
                 <td><strong>Subtotal</strong></td>
-                <td><strong>$135,000</strong></td>
+                <td><strong>$<%= total %> </strong></td>
             </tr>
             <tr>
                 <td><strong>Impuesto</strong></td>
-                <td><strong>$7,000</strong></td>
+                <td><strong>$<%= impuestos %> </strong></td>
             </tr>
             <tr>
                 <td><strong>Total</strong></td>
-                <td><strong>$142,000</strong></td>
+                <td><strong>$<%= totalEImpuestos %> </strong></td>
             </tr>
         </table>
-
+        
     </div>
-
-
-
-</div>
-
-    <%- include('./partials/footer') %> 
-
     
+    <button type="submit" class="buttons">Comprar</button>
+    
+
+    <% } else {%>
+        
+        <tr>
+            <td>No se agregaron items</td>
+        </tr>
+
+    </table>
+
+    <% } %> 
+
+
+    </form>
+</div>
+ 
+<%- include('./partials/footer') %> 
+
 </body>
 </html>

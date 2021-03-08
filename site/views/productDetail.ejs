@@ -15,31 +15,44 @@
             <div class="text-box">
                 <span class="marco-1"> <h1><%= product.name %> </h1></span>
                 <h4 class="description-products">-Descripción</h4>
+                <h5><%= product.category.name %> </h5>
                 <div class="marco">   
                     <p class="detail-products"> <%= product.description %></p><br>
 
-                    <b><h2>$<%= product.price %> </h2></b><br>
+                    <b><h2>$<%= product.price %> </h2></b>
 
-                    <h3><%= product.category.name %> </h3>
                     
-                    <ul class="actions-list">
-                        <li>
-                            <i class="fas fa-credit-card" style="color: green;"></i>
-                            <p>Pagá hasta 12 cuotas sin interes</p>
-                        </li>
-                        <li>
-                            <i class="fa fa-truck" style="color: green;" aria-hidden="true"></i>
-    
-                            <p>Envios a toda la Argentina</p>
-                        </li>
-                    </ul>
-                               <div class="botons">
-                <a href="" class="fas fa-shopping-cart btn-comprar" ><bold>Comprar</bold></a>          
-                <!-- <a href="/products/edit/<%= product.id %> "class="fa fa-pencil-square btn-edit"><bold>Editar Producto</bold></a>  
-                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
-                    <button type="submit" id="borrar_producto" name="borrar_producto" class="fas fa-trash-alt btn-delete">Borrar Producto</button>
-                </form> -->
-                <!--<a href="" class="fas fa-trash-alt btn-delete"><bold>Eliminar</bold></a>  --> 
+                   
+                </div>
+                <div>
+                <ul class="actions-list">
+                    <li>
+                        <i class="fas fa-credit-card" style="color: green;"></i>
+                        <p>Pagá hasta 12 cuotas sin interes</p>
+                    </li>
+                    <li>
+                        <i class="fa fa-truck" style="color: green;" aria-hidden="true"></i>
+
+                        <p>Envios a toda la Argentina</p>
+                    </li>
+                </ul>
+            </div>
+                <div class="botons">
+                    <form action="/cart/addToCart/<%= product.id %> " method="POST">
+                        
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" name="cantidad" id="cantidad" value="1">
+                        <button type="submit" class="fas fa-shopping-cart btn-comprar"><bold>Agregar al carrito</bold></button>
+
+                    </form>
+                    <div class="actions-list">
+                        <a href="/products/edit/<%= product.id %> "class="fa fa-pencil-square btn-edit"><bold>Editar Producto</bold></a>  
+                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+                            <button type="submit" id="borrar_producto" name="borrar_producto" class="fas fa-trash-alt btn-delete">Borrar Producto</button>
+                        </form>
+                        <a href="" class="fas fa-trash-alt btn-delete"><bold>Eliminar</bold></a>
+                    </div>
+                </div>
             </div>
         </div> 
         </div>

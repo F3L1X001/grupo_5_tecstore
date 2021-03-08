@@ -3,6 +3,7 @@ const path = require('path');
 const { check, validationResult, body } = require('express-validator');
 const fs = require('fs');
 const db = require('../database/models');
+const bcrypt = require('bcrypt')
 
 
 module.exports = {
@@ -121,14 +122,66 @@ module.exports = {
             })
                 .withMessage('El archivo de imagen debe ser .jpg/.png/.jpeg/.gif')
         
-                
-        /* Validar nombre obligatorio, minimo 5 caracteres.
-        Descripcion validar con min 20 caracteres.
-        Imagen validar con extensiones.*/
+
     ],
-    editProduct: [
-         /* Validar nombre obligatorio, minimo 5 caracteres.
-        Descripcion validar con min 20 caracteres.
-        Imagen validar con extensiones.*/
-    ]    
+
+    userDataEdit: [
+        body('nombre')
+            .notEmpty()
+                .withMessage('El nombre no puede estar vacio')
+                .bail()
+            .isLength({min:2})
+                .withMessage('El nombre debe tener minimo 2 caracteres'),
+        body('avatar')
+            .custom(function (value, { req }){
+                return req.files[0];
+            })
+                .withMessage('Debe cargar una imagen')
+                .bail()
+            .custom(function(value, { req }){
+            const ext = path.extname(req.files[0].originalname);
+            if( ext == '.jpg' || ext == '.png' || ext == '.jpeg' || ext == '.gif'){
+                return true;
+            }
+                return false;
+            })
+                .withMessage('El archivo de imagen debe ser .jpg/.png/.jpeg/.gif')
+    
+    ],
+    
+    userPwdEdit: [
+
+        body('oldPassword')
+            .notEmpty()
+                .withMessage('Tenes que ingresar tu contraseña actual')
+                .bail()
+            .custom((value, {req}) => {
+
+                return db.User.findOne({
+                    where:{
+                        id:req.session.usuarioALogear.id
+                }})
+                    .then(user => {
+                        if(!bcrypt.compareSync(req.body.oldPassword, user.password)) {
+                        return Promise.reject('La contraseña es incorrecta');
+                        }
+                        })
+            }),
+
+        body('newPassword')
+            .isLength({min:8})
+                .withMessage('La contraseña debe tener minimo 8 caracteres.') 
+                .bail()
+            .custom(function(value, { req }){
+                if(value == req.body.retypeNewPassword){
+                    return true;
+                } else { return false;}
+                })
+                .withMessage('Las passwords tiene que ser iguales')
+                .bail()
+            .isStrongPassword({minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1})
+                .withMessage('La contraseña debe tener min 8 caracteres, 1 Maysc, 1 Minsc, 1 numero y 1 caracter especial'),
+
+    ]
+    
 }

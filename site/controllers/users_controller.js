@@ -32,6 +32,9 @@ const usersControllers = {
             
             req.session.usuarioALogear = usuarioEncontrado;
             
+            console.log('Estos es el console LOGGGGGGG' + usuarioEncontrado.id)
+            console.log('esot es otro consoleloggggggg ' + req.session.usuarioALogear.id)
+
             if(req.body.recordame){
                 res.cookie('Usuario', usuarioEncontrado.id ,{ maxAge: 6000000});
             }
@@ -88,8 +91,86 @@ const usersControllers = {
         res.render('recuperar_pass')
     },
 
-    profile: (req, res) => {
-        res.render('profile');
+    profile: async(req, res) => {
+
+        const user = await db.User.findByPk(req.session.usuarioALogear.id)
+
+        res.render('profile', {usuario : user});
+    },
+
+    profile_edit: async (req, res) => {
+       
+        const resultado = await db.User.findByPk(req.params.id);
+       
+          res.render('profile-edit', {
+              user: resultado,
+            })
+    },
+
+    profile_data_edited: async (req, res) =>{  
+
+        const user = await db.User.findOne({
+			where: {
+				id: req.params.id
+			}
+        });        
+
+        await db.User.update ({
+                
+            name: req.body.nombre, 
+            dni: req.body.dni,
+            sex: req.body.sexo, 
+            image: req.files[0] ? req.files[0].filename : req.session.usuarioALogear.image
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        const results = validationResult(req);
+
+        if(!results.isEmpty()){
+            return res.render('profile-edit', {
+                errors: results.errors,
+                user: user
+            });
+        };
+        
+        res.redirect('profile')
+
+
+    },
+    
+    profile_pwd_edited: async (req, res) =>{  
+        const results = validationResult(req);
+        
+        const user = await db.User.findOne({
+			where: {
+				id: req.params.id
+			}
+        });        
+
+        if(!results.isEmpty()){
+            return res.render('profile-edit', {
+                errors: results.errors,
+                user: user
+            });
+        };
+            
+        await db.User.update ({
+            
+            password: bcrypt.hashSync(req.body.newPassword, 10),
+
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+
+
+        res.redirect('/user/profile/edit/'+req.params.id)
+
     },
 
     logout: (req, res) =>{
