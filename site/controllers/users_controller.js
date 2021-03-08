@@ -115,26 +115,12 @@ const usersControllers = {
 			}
         });        
 
-        console.log(req.files[0] + 'imagen!!!!!')
-/* 
-        const userImage = ""
-
-        if(req.files[0]){
-
-            userImage = req.files[0].filename
-
-        } else {
-
-            userImage = user.image
-
-        } */
-
         await db.User.update ({
                 
             name: req.body.nombre, 
             dni: req.body.dni,
-            sexo: req.body.sexo, 
-            image: req.files[0] ? req.files[0].filename : user.image
+            sex: req.body.sexo, 
+            image: req.files[0] ? req.files[0].filename : req.session.usuarioALogear.image
         }, {
             where: {
                 id: req.params.id
@@ -149,7 +135,7 @@ const usersControllers = {
                 user: user
             });
         };
-
+        
         res.redirect('profile')
 
 
