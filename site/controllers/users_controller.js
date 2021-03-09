@@ -92,7 +92,7 @@ const usersControllers = {
 
         const user = await db.User.findByPk(req.session.usuarioALogear.id)
 
-        res.render('profile', {usuario : user});
+        res.render('profile', {user : user});
     },
 
     profile_edit: async (req, res) => {
@@ -136,7 +136,7 @@ const usersControllers = {
             });
         };
         
-        res.redirect('/')
+        res.redirect('/users/profile')
 
 
     },

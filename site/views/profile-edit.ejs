@@ -10,20 +10,20 @@
         <div class="form_perfil">
 
             <div class="profile-avatar-container">
-                <img  class="profile-page-avatar" src="/images/users_details/<%= locals.usuarioSesion.image %>" alt="">
+                <img  class="profile-page-avatar" src="/images/users_details/<%= user.image %>" alt="">
             </div>
             
             <div class="profile-information-container">
                 <form action="">
                 <div class="profile-information">
                     <label for="name" class="profile-labels">Nombre</label>
-                    <input type="text" name="name" id="" value="<%=locals.usuarioSesion.name%>" class="inputs-fields profile-inputs" readonly>
+                    <input type="text" name="name" id="" value="<%=user.name%>" class="inputs-fields profile-inputs" readonly>
                 </div>
 
 
                 <div class="profile-information">
                     <label for="email" class="profile-labels">Correo</label>
-                    <input type="text" name="email" id="" value="<%=locals.usuarioSesion.email%>" class="inputs-fields profile-inputs" readonly>
+                    <input type="text" name="email" id="" value="<%=user.email%>" class="inputs-fields profile-inputs" readonly>
                 </div>
 
                 </form> 
