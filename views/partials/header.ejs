@@ -2,28 +2,27 @@
     <title><%=title%></title>
     <div class="header">
         <div class="container">
-            <a href="/"> <img src="../../images/home/logo.png" alt="Logo del sitio" width="220px" > </a>
+            <a class="imgLogo" href="/"> <img src="/images/home/logo.png" alt="Logo del sitio" width="220px" > </a>
             <div class="header-right">
             <nav>
-            <a href="/">Home</a>
-            <a href="#">Contacto</a>
+            <a class="hoverBlue" href="/">Home</a>
+            <a class="hoverBlue" href="/contact">Contacto</a>
+            <a class="hoverBlue" href="/products">Productos</a>
             <% if (locals.usuarioSesion) { %>
      
    
-              <% if (locals.usuarioSesion.typeuser_id>1) { %><a href="/dash">Dashboard</a> <%}%>
-              <a href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
-              <a href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
+              <% if (locals.usuarioSesion.typeuser_id>1) { %><a class="hoverBlue" href="/dash">Dashboard</a> <%}%>
+              <a class="hoverBlue" href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
+              
+              <a class="hoverBlue" href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
               
               <% }  else { %>
-                
-                  <a href="/products">Productos</a>
-            
-               
-                <a href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
+                                            
+                <a class="hoverBlue" href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
               
               <% } %> 
           
-          <a href="/products/sale"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
+          <a class="hoverBlue" href="/cart"><i class="fa fa-shopping-bag carrito-logo" aria-hidden="true"></i></a>
 
              
             </div>

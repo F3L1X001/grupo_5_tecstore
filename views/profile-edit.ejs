@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head') %>
+ <body style="background-color: #3e3c4e;">
+    
+    <%- include('./partials/header', {title:'Mi Perfil'}) %>
+    <%- include('./partials/nav') %>
+
+    <main>
+        <div class="form_perfil">
+
+            <div class="profile-avatar-container">
+                <img  class="profile-page-avatar" src="/images/users_details/<%= user.image %>" alt="">
+            </div>
+            
+            <div class="profile-information-container">
+                <form action="">
+                <div class="profile-information">
+                    <label for="name" class="profile-labels">Nombre</label>
+                    <input type="text" name="name" id="" value="<%=user.name%>" class="inputs-fields profile-inputs" readonly>
+                </div>
+
+
+                <div class="profile-information">
+                    <label for="email" class="profile-labels">Correo</label>
+                    <input type="text" name="email" id="" value="<%=user.email%>" class="inputs-fields profile-inputs" readonly>
+                </div>
+
+                </form> 
+            
+        </div>
+        <div>
+            <form action="/users/profile/edit/<%=usuarioSesion.id%>/data?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario" id="formulario">
+
+                    <div class="formulario_grupo" id="grupo_nombre">
+                    <div class="formulario_grupo-input">
+                        <input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre Completo" value="<%= user.name %>">
+                        <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                    
+                    <div class="formulario_grupo" id="grupo_dni">
+                        <div class="formulario_grupo-input">
+                        <input class="controls" type="number" name="dni" id="dni" placeholder="Dni" value="<%= user.dni %>">
+                        <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                            </div>
+                    
+                    <div class="formulario_grupo" id="grupo_genero"> 
+                        <div class="div">Sexo:
+                            <% if (user.sex == "h") { %>
+                                <input type="radio" name="sexo" value="h" id="sexo" checked> <label for="hombre">Hombre</label>
+                                <input type="radio" name="sexo" value="m" id="sexo"> <label for="mujer">Mujer</label>
+                            <% } else {%>
+                            <input type="radio" name="sexo" value="h" id="sexo"> <label for="hombre">Hombre</label>
+                            <input type="radio" name="sexo" value="m" id="sexo" checked> <label for="mujer">Mujer</label>
+                            <% } %> 
+                        </div>
+                    </div>
+                                
+                    <div class="formulario_grupo" id="grupo_img"> 
+                        <div>
+                            <input class="controls" type="file" name="imagen" id="imagen" value= "<%= user.image %> ">
+                        </div>
+                    </div>   
+
+                    <br> 
+                    <div class="formulario_grupo formulario_grupo-btn-enviar">
+                        <button type="submit" class="buttons">Editar</button>
+                    </div>
+
+                </form>
+
+            
+                <form action="/users/profile/edit/<%=usuarioSesion.id%>/pwd?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario" id="formulario">
+
+                
+                        <div class="formulario_grupo" id="grupo_password">
+                            <div class="formulario_grupo-input">
+                                <input class="controls" type="password" name="oldPassword" id="oldPassword" placeholder="Contraseña">
+                                <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                    </div>
+
+                        <div class="formulario_grupo" id="grupo_password">
+                                <div class="formulario_grupo-input">
+                                    <input class="controls" type="password" name="newPassword" id="newPassword" placeholder="Contraseña">
+                                    <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                        </div>
+
+                            <div class="formulario_grupo" id="grupo_password2">
+                                    <div class="formulario_grupo-input">
+                                        <input class="controls" type="password" name="retypeNewPassword" id="retypeNewPassword" placeholder="Confirmar contraseña">
+                                        <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                                            </div>                     
+
+                            <br> 
+                            <div class="formulario_grupo formulario_grupo-btn-enviar">
+                            <button type="submit" class="buttons">Editar</button>
+                        </div>
+                </form>
+
+            </div>
+        </article>
+    </main>
+
+    <%- include('./partials/footer') %>
+
+</body>
+
+</html>

@@ -11,13 +11,18 @@
             <h5>Ingresar</h5>
             
             <% if (typeof errors != "undefined") { %>
-						 
+					<%console.log(errors)%>	 
                 <% errors.forEach(error => { %>     
                     <p><%= error.msg %> </p>
                 <% }) 
                  } %>
+                 
+                 <% if ( typeof msgErrors != "undefined"){%>
+                        <p><%= msgErrors%></p>
+            
+                 <%}%>
 
-                <form action="login" method="POST" class="formulario" id="formulario">
+                <form action="/users/login" method="POST" class="formulario" id="formulario">
                    
                     <div class="formulario_grupo" id="grupo_email">
                         <div class="formulario_grupo-input">
@@ -44,8 +49,8 @@
                             <button type="submit" class="buttons" name="ingreso">Iniciar sesion</button>
  
                         </div>
-
-
+                </form>
+                    <div>
                         <p class="border"> <a href="/users/recup_pass">olvidaste tu contraseña?</a></p> 
                         <div class="formulario_grupo formulario_grupo-btn-enviar">
                         <p class="button_registro"> <a href="/users/registro">Registrate </a></p>

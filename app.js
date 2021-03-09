@@ -4,10 +4,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverrride = require('method-override');
+const cors =require("cors");
 
 const indexRouter = require('./routes/index.js');
 const productsRouter = require('./routes/products.js')
 const usersRouter = require('./routes/users.js');
+const apiRouter=require('./routes/api_router');
+const cartRouter = require('./routes/cart');
 const session = require('express-session');
 const rememberMiddleware = require('./middlewares/rememberMiddleware');
 const localsMiddleware = require('./middlewares/localsMiddleware');
@@ -30,10 +33,13 @@ app.use(methodOverrride('_method'));
 app.use(session ({secret: 'TECSTORE-SECRET'}));
 app.use(rememberMiddleware);
 app.use(localsMiddleware);
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
+app.use('/cart', cartRouter);
 
 
 /* // catch 404 and forward to error handler

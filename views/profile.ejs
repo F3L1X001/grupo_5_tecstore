@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %>
-<body>
+<body style="background-color: #3e3c4e;">
     
     <%- include('./partials/header', {title:'Mi Perfil'}) %>
     <%- include('./partials/nav') %>
-
+    
 <main>
-    <div class="portada">
-        
-        <div class="col-2" >
-            <h2  style="color: aquamarine;" class="products-title"><%= locals.usuarioSesion.email %></h2>
-        </div>
-        <div class="col-2">
-            <img style="width:500px;height:700px" src="/images/users_details/<%= locals.usuarioSesion.image %>" alt="">
-        </div>
-        
-    </div>
+        <article>
+            <div class="form_perfil">
+                  <h2 class="title-perfil">Perfil del usuario</h2>
+                        
+                    <div class="profile-avatar-container">
+                            <img  src="/images/users_details/<%= user.image %>" alt="" class="profile-page-avatar">
+                           
+                 </div>    
+                    <div class="profile-information-container">
+                        <form action="">
+                        <div class="profile-information">
+                            <label for="name" class="profile-labels">Nombre</label>
+                            <input type="text" name="name" id="" value="<%=user.name%>" class="inputs-fields profile-inputs" readonly>
+                        </div>
+
+
+                        <div class="profile-information">
+                            <label for="email" class="profile-labels">Correo</label>
+                            <input type="text" name="email" id="" value="<%=user.email%>" class="inputs-fields profile-inputs" readonly>
+                        </div>
+
+                        </form>
+
+                        <form action="/users/profile/edit/<%= locals.usuarioSesion.id %>  ">
+                            <button class="buttons-style profile-edit-button"><i class="fas fa-edit profile-icons"></i>Editar perfil</button>
+                        </form>
+
+                        <form action="/users/logout">
+                            <button class="buttons-style profile-logout-button"><i class="fas fa-sign-out-alt profile-icons"></i>Salir de la cuenta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </article>
 </main>
+
 
     <%- include('./partials/footer') %>
 

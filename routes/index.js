@@ -8,6 +8,8 @@ router.get('/', indexController.home);
 router.get('/dash',autenticacion, indexController.dash);
 router.get('/search', indexController.search);
 
+//ContactPage
+router.get('/contact', indexController.contactPage);
 
 
 module.exports = router;
