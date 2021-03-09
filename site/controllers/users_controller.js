@@ -36,12 +36,13 @@ const usersControllers = {
                 res.cookie('Usuario', usuarioEncontrado.id ,{ maxAge: 6000000});
             }
             
-        return res.redirect('/users/profile');
+               return res.redirect('/users/profile');
 
             } else {
-            return res.render('login', {
-                errors: {msg: 'Email o Contraseña invalidos'}
-        })};
+            
+                     return res.render('login', {
+                     msgErrors: 'Email o Contraseña invalidos'})
+                   };
         
     },
 

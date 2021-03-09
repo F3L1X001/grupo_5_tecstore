@@ -11,11 +11,16 @@
             <h5>Ingresar</h5>
             
             <% if (typeof errors != "undefined") { %>
-						 
+					<%console.log(errors)%>	 
                 <% errors.forEach(error => { %>     
                     <p><%= error.msg %> </p>
                 <% }) 
                  } %>
+                 
+                 <% if ( typeof msgErrors != "undefined"){%>
+                        <p><%= msgErrors%></p>
+            
+                 <%}%>
 
                 <form action="/users/login" method="POST" class="formulario" id="formulario">
                    
