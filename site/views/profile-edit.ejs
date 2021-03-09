@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %>
-<body>
+ <body style="background-color: #3e3c4e;">
     
     <%- include('./partials/header', {title:'Mi Perfil'}) %>
     <%- include('./partials/nav') %>
 
     <main>
         <div class="form_perfil">
-            
-            <div class="profile-information-container" >
-                <h2  style="color: aquamarine;" class="products-title"><%= locals.user.name %></h2>
-                <h2  style="color: aquamarine;" class="products-title"><%= locals.usuarioSesion.email %></h2>
-            </div>
+
             <div class="profile-avatar-container">
-                <img style="width:500px;height:700px" src="/images/users_details/<%= locals.usuarioSesion.image %>" alt="">
+                <img  class="profile-page-avatar" src="/images/users_details/<%= locals.usuarioSesion.image %>" alt="">
             </div>
+            
+            <div class="profile-information-container">
+                <form action="">
+                <div class="profile-information">
+                    <label for="name" class="profile-labels">Nombre</label>
+                    <input type="text" name="name" id="" value="<%=locals.usuarioSesion.name%>" class="inputs-fields profile-inputs" readonly>
+                </div>
+
+
+                <div class="profile-information">
+                    <label for="email" class="profile-labels">Correo</label>
+                    <input type="text" name="email" id="" value="<%=locals.usuarioSesion.email%>" class="inputs-fields profile-inputs" readonly>
+                </div>
+
+                </form> 
             
         </div>
         <div>
