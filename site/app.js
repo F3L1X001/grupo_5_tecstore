@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverrride = require('method-override');
+const cors =require("cors");
 
 const indexRouter = require('./routes/index.js');
 const productsRouter = require('./routes/products.js')
@@ -32,6 +33,7 @@ app.use(methodOverrride('_method'));
 app.use(session ({secret: 'TECSTORE-SECRET'}));
 app.use(rememberMiddleware);
 app.use(localsMiddleware);
+app.use(cors());
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
