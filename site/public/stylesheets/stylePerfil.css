@@ -44,8 +44,19 @@
 }
 
 
+.profile-edit-button{
+    width: 75%;
+    height: 30px;
+    position: relative;
+    left: 55px;
+    margin-bottom: 20px;
+    background-color:rgb(209, 135, 51);
+    color: white
+}
+
+
 .profile-logout-button{
-    width: 60%;
+    width: 75%;
     height: 30px;
     position: relative;
     left: 55px;
@@ -54,7 +65,7 @@
     color: white
 }
 
-.profile-logout-button:hover{
+.profile-logout-button:hover ,.profile-edit-button:hover{
     background-color: black;
 }
 

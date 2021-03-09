@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('./partials/head') %>
-<body style="background-image: linear-gradient(rgba(3, 3, 39, 0.5), rgba(9, 68, 63, 0.5)),
-url("../../media/examples/lizard.png");">
-
+ <body style="background-color: #3e3c4e;">
+    
     <%- include('./partials/header', {title:'Mi Perfil'}) %>
     <%- include('./partials/nav') %>
 
     <main>
-        <article>
-            <div class="form_perfil">
-                
-                <div class="profile-information-container" >
-                    <h2  style="color: aquamarine;" class="products-title"><%= user.name %></h2>
-                    <h2  style="color: aquamarine;" class="products-title"><%= user.email %></h2>
-                </div>
-                <div>
-                    <% if (typeof errors != "undefined") { %>
-                            
-                        <% errors.forEach(error => { %>     
-                            <p><%= error.msg %> </p>
-                        <% }) 
-                    } %>
-                </div>
-                <div class="profile-avatar-container">
-                    <img class="profile-page-avatar" src="/images/users_details/<%= user.image %>" alt="user image">
-                </div>
-                
+        <div class="form_perfil">
+
+            <div class="profile-avatar-container">
+                <img  class="profile-page-avatar" src="/images/users_details/<%= locals.usuarioSesion.image %>" alt="">
             </div>
-            <div>
-                <form action="/users/profile/edit/<%=usuarioSesion.id%>/data?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario" id="formulario">
+            
+            <div class="profile-information-container">
+                <form action="">
+                <div class="profile-information">
+                    <label for="name" class="profile-labels">Nombre</label>
+                    <input type="text" name="name" id="" value="<%=locals.usuarioSesion.name%>" class="inputs-fields profile-inputs" readonly>
+                </div>
+
+
+                <div class="profile-information">
+                    <label for="email" class="profile-labels">Correo</label>
+                    <input type="text" name="email" id="" value="<%=locals.usuarioSesion.email%>" class="inputs-fields profile-inputs" readonly>
+                </div>
+
+                </form> 
+            
+        </div>
+        <div>
+            <form action="/users/profile/edit/<%=usuarioSesion.id%>/data?_method=PUT" method="POST" enctype="multipart/form-data" class="formulario" id="formulario">
 
                     <div class="formulario_grupo" id="grupo_nombre">
                     <div class="formulario_grupo-input">
