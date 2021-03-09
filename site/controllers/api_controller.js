@@ -134,7 +134,8 @@ module.exports={
 
         
         const orders =await Order.findAll({
-            attributes:['date', 'total', 'id']})
+            attributes:['date', 'total', 'id'],
+             include:["items"]})
 
         res.json({
             meta:{
@@ -143,7 +144,8 @@ module.exports={
             },
 
             data :{
-                orders
+                orders,
+                
             }
 
         })
