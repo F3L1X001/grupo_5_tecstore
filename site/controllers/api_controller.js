@@ -1,5 +1,5 @@
 const e = require('express');
-const {User, Product, Category, Order}= require('../database/models');
+const {User, Product, Category, Order, Item}= require('../database/models');
 
 module.exports={
  
@@ -136,7 +136,13 @@ module.exports={
         const orders =await Order.findAll({
             attributes:['date', 'total', 'id'],
              include:["items"]})
-
+        const items = await Item.findAll({ 
+             attributes:['name', 'quantity', 'subtotal','createdAt' ],
+             order: [
+                       ['createdAt', 'DESC'],
+                    ],
+             include:["order"]
+        })
         res.json({
             meta:{
                 status:'ok!!!',
@@ -144,7 +150,7 @@ module.exports={
             },
 
             data :{
-                orders,
+                orders,items
                 
             }
 
