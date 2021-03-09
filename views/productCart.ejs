@@ -11,80 +11,80 @@
  
     <%- include('./partials/header',{title:'Carrito Compra'}) %> 
     <%- include('./partials/nav') %>
-  
-<div class="small-container cart-page"> 
+<main>
+    <div class="large-container cart-page"> 
 
-    <form action="/cart/buyCart" method="POST">
-    <table>
-        <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Subtotal</th>
-        </tr>
-
-    <% if (items.length != 0) { %>
-        <% items.forEach(item => { %>
-         
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="../images/product_details/<%= item.image %> " class= "sale-box-image">
-                    <div>
-                    <div>
-                        <p><strong><%= item.name %> </strong></p>
-                        <small><%= item.price %> </small>
-                        <br>
-                        <form action="/cart/delete/<%= item.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" >
-                            <button type="submit" class="far fa-trash-alt" name="eliminar" id="eliminar">Eliminar</button>
-                        </form>
-                    </div>
-            </div>
-            </td>
-                <td><%= item.quantity %></td>
-                <td>$<%= item.subtotal %> </td>
-            </tr>
-        
-        <% }) %>
-    </table>
-    
- 
-
-    <div class="total-price">
-        
+        <form action="/cart/buyCart" method="POST">
         <table>
             <tr>
-                <td><strong>Subtotal</strong></td>
-                <td><strong>$<%= total %> </strong></td>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
             </tr>
-            <tr>
-                <td><strong>Impuesto</strong></td>
-                <td><strong>$<%= impuestos %> </strong></td>
-            </tr>
-            <tr>
-                <td><strong>Total</strong></td>
-                <td><strong>$<%= totalEImpuestos %> </strong></td>
-            </tr>
+
+        <% if (items.length != 0) { %>
+            <% items.forEach(item => { %>
+            
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="../images/product_details/<%= item.image %> " class= "sale-box-image">
+                        <div>
+                        <div>
+                            <p><strong><%= item.name %> </strong></p>
+                            <small><%= item.price %> </small>
+                            <br>
+                            <form action="/cart/delete/<%= item.id %>?_method=DELETE" method="POST" enctype="multipart/form-data" >
+                                <button type="submit" class="far fa-trash-alt" name="eliminar" id="eliminar">Eliminar</button>
+                            </form>
+                        </div>
+                </div>
+                </td>
+                    <td><%= item.quantity %></td>
+                    <td>$<%= item.subtotal %> </td>
+                </tr>
+            
+            <% }) %>
         </table>
         
-    </div>
-    
-    <button type="submit" class="buttons">Comprar</button>
     
 
-    <% } else {%>
+        <div class="total-price">
+            
+            <table>
+                <tr>
+                    <td><strong>Subtotal</strong></td>
+                    <td><strong>$<%= total %> </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Impuesto</strong></td>
+                    <td><strong>$<%= impuestos %> </strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>$<%= totalEImpuestos %> </strong></td>
+                </tr>
+            </table>
+            
+        </div>
         
-        <tr>
-            <td>No se agregaron items</td>
-        </tr>
+        <button type="submit" class="buttons">Comprar</button>
+        
 
-    </table>
+        <% } else {%>
+            
+            <tr>
+                <td>No se agregaron items</td>
+            </tr>
 
-    <% } %> 
+        </table>
+
+        <% } %> 
 
 
-    </form>
-</div>
- 
+        </form>
+    </div>
+</main>   
 <%- include('./partials/footer') %> 
 
 </body>
