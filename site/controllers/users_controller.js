@@ -39,7 +39,7 @@ const usersControllers = {
         return res.redirect('/users/profile');
 
             } else {
-            return res.render('form_registro', {
+            return res.render('login', {
                 errors: {msg: 'Email o Contraseña invalidos'}
         })};
         
