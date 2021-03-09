@@ -12,8 +12,9 @@ router.get('/users/:id', api_controller.userDetail);
 
 router.get('/products', api_controller.productList);
 
+router.get('/categories', api_controller.categoryList);
+
 router.get('/products/:id', api_controller.productDetail);
 
-router.get('/products/categories', api_controller.categoryList);
 
 module.exports=router;

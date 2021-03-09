@@ -113,18 +113,17 @@ module.exports={
     async categoryList(req, res){
 
         
-        const categories =await Category.findAll({
-            attributes:['name', 'id', 'active'],
-            include:["products"]})
+        const category =await Category.findAll({
+            attributes:['name', 'id', 'active']})
 
         res.json({
             meta:{
                 status:'ok!!!',
-                count: categories.length, 
+                count: category.length, 
             },
 
             data :{
-                categories
+                category
             }
 
         })
