@@ -1,5 +1,5 @@
 const e = require('express');
-const {User, Product, Category}= require('../database/models');
+const {User, Product, Category, Order}= require('../database/models');
 
 module.exports={
  
@@ -124,6 +124,26 @@ module.exports={
 
             data :{
                 category
+            }
+
+        })
+
+    },
+
+    async ordersList(req, res){
+
+        
+        const orders =await Order.findAll({
+            attributes:['date', 'total', 'id']})
+
+        res.json({
+            meta:{
+                status:'ok!!!',
+                count: orders.length, 
+            },
+
+            data :{
+                orders
             }
 
         })

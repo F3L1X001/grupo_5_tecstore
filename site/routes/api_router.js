@@ -16,5 +16,7 @@ router.get('/categories', api_controller.categoryList);
 
 router.get('/products/:id', api_controller.productDetail);
 
+router.get('/orders', api_controller.ordersList);
+
 
 module.exports=router;
