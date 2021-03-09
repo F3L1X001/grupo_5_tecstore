@@ -6,20 +6,18 @@
             <div class="header-right">
             <nav>
             <a class="hoverBlue" href="/">Home</a>
-            <a class="hoverBlue" href="contact">Contacto</a>
+            <a class="hoverBlue" href="/contact">Contacto</a>
+            <a class="hoverBlue" href="/products">Productos</a>
             <% if (locals.usuarioSesion) { %>
      
    
               <% if (locals.usuarioSesion.typeuser_id>1) { %><a class="hoverBlue" href="/dash">Dashboard</a> <%}%>
               <a class="hoverBlue" href="/users/profile"><%= locals.usuarioSesion.email %><i class="fas fa-user"></i></a></li>
-              <a class="hoverBlue" href="/users/profile/edit/<%= locals.usuarioSesion.id %>  ">Editar perfil<i class="fas fa-user-edit"></i></a></li>
+              
               <a class="hoverBlue" href="/users/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a></li>
               
               <% }  else { %>
-                
-                  <a class="hoverBlue" href="/products">Productos</a>
-            
-               
+                                            
                 <a class="hoverBlue" href="/users/login"> Ingresar  <i class="fas fa-sign-in-alt"></i></a></li>
               
               <% } %> 

@@ -28,14 +28,10 @@ url("../../media/examples/lizard.png");">
                             <label for="email" class="profile-labels">Correo</label>
                             <input type="text" name="email" id="" value="<%=locals.usuarioSesion.email%>" class="inputs-fields profile-inputs" readonly>
                         </div>
-
-                        </form>
-
-                        
-
-                        <form action="/users/logout">
-                            <button class="buttons-style profile-logout-button"><i class="fas fa-sign-out-alt profile-icons"></i>Salir de la cuenta</button>
-                        </form>
+                        <div class="profile-information">
+                            <a class="fas fa-user-edit btn-edit" href="/users/profile/edit/<%= locals.usuarioSesion.id %>  "><bold>Editar perfil</bold>></a>
+                        </div>
+                    
                     </div>
                 </div>
             </div>
